@@ -187,6 +187,35 @@ namespace HomePage.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ShowSeats",
+                columns: table => new
+                {
+                    ShowSeatID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
+                    ShowID = table.Column<int>(type: "int", nullable: false),
+                    CinemaSeatID = table.Column<int>(type: "int", nullable: false),
+                    BookingID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ShowSeats", x => x.ShowSeatID);
+                    table.ForeignKey(
+                        name: "FK_ShowSeats_CinemaSeats_CinemaSeatID",
+                        column: x => x.CinemaSeatID,
+                        principalTable: "CinemaSeats",
+                        principalColumn: "CinemaSeatID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ShowSeats_Shows_ShowID",
+                        column: x => x.ShowID,
+                        principalTable: "Shows",
+                        principalColumn: "ShowID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Bookings",
                 columns: table => new
                 {
@@ -196,7 +225,8 @@ namespace HomePage.Migrations
                     Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     UserBookingID = table.Column<int>(type: "int", nullable: false),
-                    ShowID = table.Column<int>(type: "int", nullable: false)
+                    ShowID = table.Column<int>(type: "int", nullable: false),
+                    ShowSeatID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -207,6 +237,12 @@ namespace HomePage.Migrations
                         principalTable: "Shows",
                         principalColumn: "ShowID",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Bookings_ShowSeats_ShowSeatID",
+                        column: x => x.ShowSeatID,
+                        principalTable: "ShowSeats",
+                        principalColumn: "ShowSeatID",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Bookings_UserBookings_UserBookingID",
                         column: x => x.UserBookingID,
@@ -237,45 +273,15 @@ namespace HomePage.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "ShowSeats",
-                columns: table => new
-                {
-                    ShowSeatID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Status = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
-                    ShowID = table.Column<int>(type: "int", nullable: false),
-                    CinemaSeatID = table.Column<int>(type: "int", nullable: false),
-                    BookingID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ShowSeats", x => x.ShowSeatID);
-                    table.ForeignKey(
-                        name: "FK_ShowSeats_Bookings_BookingID",
-                        column: x => x.BookingID,
-                        principalTable: "Bookings",
-                        principalColumn: "BookingID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ShowSeats_CinemaSeats_CinemaSeatID",
-                        column: x => x.CinemaSeatID,
-                        principalTable: "CinemaSeats",
-                        principalColumn: "CinemaSeatID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ShowSeats_Shows_ShowID",
-                        column: x => x.ShowID,
-                        principalTable: "Shows",
-                        principalColumn: "ShowID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Bookings_ShowID",
                 table: "Bookings",
                 column: "ShowID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Bookings_ShowSeatID",
+                table: "Bookings",
+                column: "ShowSeatID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Bookings_UserBookingID",
@@ -318,11 +324,6 @@ namespace HomePage.Migrations
                 column: "MovieID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShowSeats_BookingID",
-                table: "ShowSeats",
-                column: "BookingID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ShowSeats_CinemaSeatID",
                 table: "ShowSeats",
                 column: "CinemaSeatID");
@@ -345,25 +346,25 @@ namespace HomePage.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
-                name: "ShowSeats");
+                name: "Bookings");
 
             migrationBuilder.DropTable(
                 name: "Shops");
 
             migrationBuilder.DropTable(
-                name: "Bookings");
+                name: "ShowSeats");
 
             migrationBuilder.DropTable(
-                name: "CinemaSeats");
+                name: "UserBookings");
 
             migrationBuilder.DropTable(
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "Shows");
+                name: "CinemaSeats");
 
             migrationBuilder.DropTable(
-                name: "UserBookings");
+                name: "Shows");
 
             migrationBuilder.DropTable(
                 name: "CinemaHells");

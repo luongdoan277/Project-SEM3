@@ -17,6 +17,6 @@ namespace HomePage.Models
         public int BookingID { get; set; }
         public virtual Show Shows { get; set; }
         public virtual CinemaSeat CinemaSeat { get; set; }
-        public virtual Booking Booking { get; set; }
+        public virtual ICollection<Booking> Booking { get; set; }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HomePage.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20210111181502_Initial")]
+    [Migration("20210112091403_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,9 @@ namespace HomePage.Migrations
                     b.Property<int>("ShowID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ShowSeatID")
+                        .HasColumnType("int");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -46,6 +49,8 @@ namespace HomePage.Migrations
                     b.HasKey("BookingID");
 
                     b.HasIndex("ShowID");
+
+                    b.HasIndex("ShowSeatID");
 
                     b.HasIndex("UserBookingID");
 
@@ -309,8 +314,6 @@ namespace HomePage.Migrations
 
                     b.HasKey("ShowSeatID");
 
-                    b.HasIndex("BookingID");
-
                     b.HasIndex("CinemaSeatID");
 
                     b.HasIndex("ShowID");
@@ -343,6 +346,10 @@ namespace HomePage.Migrations
                         .HasForeignKey("ShowID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("HomePage.Models.ShowSeat", null)
+                        .WithMany("Booking")
+                        .HasForeignKey("ShowSeatID");
 
                     b.HasOne("HomePage.Models.UserBooking", "UserBooking")
                         .WithMany()
@@ -429,12 +436,6 @@ namespace HomePage.Migrations
 
             modelBuilder.Entity("HomePage.Models.ShowSeat", b =>
                 {
-                    b.HasOne("HomePage.Models.Booking", "Booking")
-                        .WithMany()
-                        .HasForeignKey("BookingID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("HomePage.Models.CinemaSeat", "CinemaSeat")
                         .WithMany()
                         .HasForeignKey("CinemaSeatID")
@@ -446,8 +447,6 @@ namespace HomePage.Migrations
                         .HasForeignKey("ShowID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Booking");
 
                     b.Navigation("CinemaSeat");
 
@@ -462,6 +461,11 @@ namespace HomePage.Migrations
             modelBuilder.Entity("HomePage.Models.Shop", b =>
                 {
                     b.Navigation("Medias");
+                });
+
+            modelBuilder.Entity("HomePage.Models.ShowSeat", b =>
+                {
+                    b.Navigation("Booking");
                 });
 #pragma warning restore 612, 618
         }
