@@ -10,8 +10,7 @@ namespace HomePage.Migrations
                 name: "MovieID",
                 table: "Medias",
                 type: "int",
-                nullable: false,
-                defaultValue: 0);
+                nullable: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Medias_MovieID",
