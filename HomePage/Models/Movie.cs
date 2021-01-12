@@ -16,5 +16,6 @@ namespace HomePage.Models
         public DateTime ReleaseDate { get; set; }
         public string Country { get; set; }
         public string Genre { get; set; }
+        public int Status { get; set; }
     }
 }
