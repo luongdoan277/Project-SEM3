@@ -10,6 +10,8 @@ namespace HomePage.Models
         public int MediaID { get; set; }
         public string url { get; set; }
         public int ShopID { get; set; }
+        public int MovieID { get; set; }
         public virtual Shop Shops { get; set; }
+        public virtual Movie Movie { get; set; }
     }
 }
