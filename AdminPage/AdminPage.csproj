@@ -98,12 +98,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\lib\FontAwesome\webfonts\fa-brands-400.svg" />
-    <None Include="wwwroot\lib\FontAwesome\webfonts\fa-brands-400.woff2" />
-    <None Include="wwwroot\lib\FontAwesome\webfonts\fa-regular-400.svg" />
-    <None Include="wwwroot\lib\FontAwesome\webfonts\fa-regular-400.woff2" />
-    <None Include="wwwroot\lib\FontAwesome\webfonts\fa-solid-900.svg" />
-    <None Include="wwwroot\lib\FontAwesome\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\images\logo.svg" />
+    <None Include="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.svg" />
+    <None Include="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\icons\themify\themify.svg" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,6 +1,7 @@
-import * as $ from 'jquery';
+//import * as $ from '../../lib/jquery/dist/jquery';
+//import * as $ from 'jquery';
 
-export default (function () {
+
   // Sidebar links
   $('.sidebar .sidebar-menu li a').on('click', function () {
     const $this = $(this);
@@ -41,6 +42,45 @@ export default (function () {
         });
     }
   });
+$('.header .header-container li a').on('click', function () {
+    const $this = $(this);
+
+    if ($this.parent().hasClass('show')) {
+        $this
+            .parent()
+            .children('.dropdown-menu')
+            .slideUp(200, () => {
+                $this.parent().removeClass('show');
+            });
+    } else {
+        $this
+            .parent()
+            .parent()
+            .children('li.show')
+            .children('.dropdown-menu')
+            .slideUp(200);
+
+        $this
+            .parent()
+            .parent()
+            .children('li.show')
+            .children('a')
+            .removeClass('show');
+
+        $this
+            .parent()
+            .parent()
+            .children('li.show')
+            .removeClass('show');
+
+        $this
+            .parent()
+            .children('.dropdown-menu')
+            .slideDown(200, () => {
+                $this.parent().addClass('show');
+            });
+    }
+});
 
   // Sidebar Activity Class
   const sidebarLinks = $('.sidebar').find('.sidebar-link');
@@ -67,10 +107,9 @@ export default (function () {
    * then trigger window resize event in order to recalculate
    * masonry layout widths and gutters.
    */
+
   $('#sidebar-toggle').click(e => {
     e.preventDefault();
-    setTimeout(() => {
-      window.dispatchEvent(window.EVENT);
-    }, 300);
+    setTimeout(300);
   });
-}());
+

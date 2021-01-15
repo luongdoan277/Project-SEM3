@@ -22,7 +22,7 @@
                             <div class="peers ai-c fxw-nw">
                                 <div class="peer">
                                     <div class="logo">
-                                        <img src="assets/static/images/logo.png" alt="">
+                                        <img src="/images/logo.png" alt="">
                                     </div>
                                 </div>
                                 <div class="peer peer-greed">
@@ -92,7 +92,7 @@
                 <li class="nav-item">
                     <a class='sidebar-link' href="forms.html">
                         <span class="icon-holder">
-                            <i class="c-light-blue-500 fas fa-pencil"></i>
+                            <i class="c-light-blue-500 ti-pencil"></i>
                         </span>
                         <span class="title">Forms</span>
                     </a>
@@ -174,7 +174,7 @@
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle" href="javascript:void(0);">
                         <span class="icon-holder">
-                            <i class="c-teal-500 fas fa-view-list-alt"></i>
+                            <i class="c-teal-500 ti-view-list-alt"></i>
                         </span>
                         <span class="title">Multiple Levels</span>
                         <span class="arrow">
@@ -214,7 +214,7 @@
                 <ul class="nav-left">
                     <li>
                         <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
-                            <i class="fas fa-menu"></i>
+                            <i class="ti-menu"></i>
                         </a>
                     </li>
                     <li class="search-box">
@@ -230,7 +230,7 @@
                 <ul class="nav-right">
                     <li class="notifications dropdown">
                         <span class="counter bgc-red">3</span>
-                        <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle no-after" data-toggle="dropdown">
                             <i class="fas fa-bell"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -305,7 +305,7 @@
                     </li>
                     <li class="notifications dropdown">
                         <span class="counter bgc-blue">3</span>
-                        <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle no-after" data-toggle="dropdown" >
                             <i class="fas fa-envelope"></i>
                         </a>
 
@@ -392,7 +392,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
                             <div class="peer mR-10">
                                 <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
                             </div>
@@ -438,10 +438,11 @@
     <footer>
         <span>Copyright © 2019 Designed by. All rights reserved.</span>
     </footer>
-    <script src="~/js/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.x-git.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="~/js/sidebar/index.js"></script>
+    <script type="text/javascript" src="~/js/search/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <partial name="_ValidationScriptsPartial" />
+    @*<partial name="_ValidationScriptsPartial" />*@
     <script>
         const imgFuild = document.querySelectorAll('.img-fuild');
         const imgGallery = document.querySelector('.img-gallery');
@@ -456,6 +457,6 @@
             });
         })
     </script>
-    @RenderSection("Scripts", required: false)
+    @*@RenderSection("Scripts", required: false)*@
 </body>
 </html>

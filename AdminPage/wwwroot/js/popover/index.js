@@ -1,7 +1,4 @@
-import * as $ from 'jquery';
-import 'bootstrap';
 
-export default (function () {
   // ------------------------------------------------------
   // @Popover
   // ------------------------------------------------------
@@ -13,4 +10,4 @@ export default (function () {
   // ------------------------------------------------------
 
   $('[data-toggle="tooltip"]').tooltip();
-}());
+
