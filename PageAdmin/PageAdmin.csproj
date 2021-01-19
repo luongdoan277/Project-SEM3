@@ -1,0 +1,369 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\logo.svg" />
+    <Content Remove="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.svg" />
+    <Content Remove="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.woff2" />
+    <Content Remove="wwwroot\lib\fonts\icons\themify\themify.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\index.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\index.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\components\easyPieChart.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\components\footer.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\components\forms.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\components\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\components\loader.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\components\masonry.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\components\pageContainer.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\components\progressBar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\components\sidebar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\components\topbar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\generic\base.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\generic\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\screens\chat.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\screens\email.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\screens\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\settings\baseColors.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\settings\borders.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\settings\breakpoints.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\settings\fonts.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\settings\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\settings\materialColors.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\tools\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\tools\mixins\clearfix.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\tools\mixins\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\tools\mixins\mediaQueriesRanges.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\tools\mixins\placeholder.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\colors.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\border.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\flex.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\layout.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\lists.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\margin.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\objects.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\padding.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\positions.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\pseudo.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\sizes.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\helpers\typography.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\mixins\generateResponsive.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\mixins\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\mixins\mediaQueryCondition.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\utils\center.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\utils\gap.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\utils\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\utils\layers.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\spec\utils\layout\utils\peers.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\vendor\datepicker.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\vendor\font-awesome.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\vendor\fullcalendar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\vendor\index.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\vendor\jquery.datatables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\vendor\perfectScrollbar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\vendor\sparkline.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\vendor\themify-icons.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\404.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\500.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\BackgroundLogin.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\bg.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\datatables\sort_asc.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\datatables\sort_asc_disabled.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\datatables\sort_both.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\datatables\sort_desc.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\datatables\sort_desc_disabled.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\logo.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\logo.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\charts\chartJS\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\charts\easyPieChart\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\charts\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\charts\sparkline\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\chat\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\constants\colors.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\datatable\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\datepicker\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\email\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\fullcalendar\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\googleMaps\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\masonry\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\popover\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\scrollbar\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\search\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\sidebar\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\skycons\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\utils\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\vectorMaps\index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\vectorMaps\jquery-jvectormap-world-mill.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\vectorMaps\jquery-jvectormap.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\logo.svg" />
+    <None Include="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.svg" />
+    <None Include="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\lib\fonts\icons\themify\themify.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\css\site.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\favicon.ico">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\site.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\LICENSE">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\css\all.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-brands-400.eot">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-brands-400.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-brands-400.ttf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-brands-400.woff">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-brands-400.woff2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-regular-400.eot">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-regular-400.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-regular-400.ttf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-regular-400.woff">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-regular-400.woff2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-solid-900.eot">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-solid-900.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-solid-900.ttf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-solid-900.woff">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\FontAwesome\webfonts\fa-solid-900.woff2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.eot">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.ttf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.woff">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\fonts\icons\fontawesome\FontAwesome.otf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\fonts\icons\themify\themify.eot">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\fonts\icons\themify\themify.ttf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\fonts\icons\themify\themify.woff">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation\dist\additional-methods.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation\dist\additional-methods.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation\dist\jquery.validate.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation\LICENSE.md">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery\dist\jquery.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery\dist\jquery.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery\dist\jquery.min.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery\LICENSE.txt">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

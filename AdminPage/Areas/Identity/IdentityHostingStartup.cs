@@ -19,18 +19,9 @@ namespace AdminPage.Areas.Identity
                 services.AddDbContext<AdminPageContext>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("AdminPageContextConnection")));
-                services.ConfigureApplicationCookie(options =>
-                {
-                    // Cookie settings
-                    options.Cookie.HttpOnly = true;
-                    options.ExpireTimeSpan = TimeSpan.FromMinutes(90);
 
-                    //options.LoginPath = "/";
-                    options.AccessDeniedPath = "/404";
-                    options.SlidingExpiration = true;
-
-                });
-                services.AddDefaultIdentity<AdminPageUser>().AddEntityFrameworkStores<AdminPageContext>();
+                services.AddDefaultIdentity<AdminPageUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                    .AddEntityFrameworkStores<AdminPageContext>();
             });
         }
     }
