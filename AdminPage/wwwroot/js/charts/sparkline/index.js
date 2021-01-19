@@ -1,14 +1,5 @@
-import * as $ from 'jquery';
-import 'jquery-sparkline';
-import { debounce } from 'lodash';
-import { COLORS } from '../../constants/colors';
 
-export default (function () {
-  // ------------------------------------------------------
-  // @Dashboard Sparklines
-  // ------------------------------------------------------
-
-  const drawSparklines = () => {
+const drawSparklines = () => {
     if ($('#sparklinedash').length > 0) {
       $('#sparklinedash').sparkline([0, 5, 6, 10, 9, 12, 4, 9], {
         type: 'bar',
@@ -245,4 +236,3 @@ export default (function () {
     borderWidth: 1,
     borderColor: '000',
   });
-}())

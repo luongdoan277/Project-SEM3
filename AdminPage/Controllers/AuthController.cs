@@ -1,6 +1,8 @@
-﻿using HomePage.Models;
+﻿using AdminPage.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +12,19 @@ namespace AdminPage.Controllers
 {
     public class AuthController : Controller
     {
-        private readonly StoreDbContext context;
-        public AuthController(StoreDbContext _context)
+        private readonly SignInManager<AdminPageUser> _signInManager;
+        private readonly ILogger<AuthController> _logger;
+
+        public AuthController(SignInManager<AdminPageUser> signInManager, ILogger<AuthController> logger)
         {
-            context = _context;
+            _signInManager = signInManager;
+            _logger = logger;
         }
-        [HttpGet, AllowAnonymous]
-        public IActionResult Index()
+        public async Task<IActionResult> Logout(string returnUrl)
         {
-            return View();
+            await _signInManager.SignOutAsync();
+            _logger.LogInformation("User logged out.");
+            return LocalRedirect(returnUrl);
         }
-        //private 
     }
 }
