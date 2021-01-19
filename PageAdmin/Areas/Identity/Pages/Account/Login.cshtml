@@ -1,0 +1,47 @@
+﻿@page
+@model LoginModel
+
+<div style="width:590px;height:600px;background:#DBDBD5;margin: 150px auto">
+    <h1 style="padding: 54px 0;text-align:center">ABCD Mall</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <section>
+                <form id="account" method="post">
+                    <p style="text-align:center">Please log in or sign up for an account</p>
+                    <hr style="margin-bottom:2rem" />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group col-md-9 margin-login">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-9 margin-login">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-9 row margin-login">
+                        <div class="checkbox col-md-6">
+                            <label asp-for="Input.RememberMe">
+                                <input asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary btn-login">Log in</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
