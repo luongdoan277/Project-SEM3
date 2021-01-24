@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,24 +10,23 @@ using PageAdmin.Models;
 
 namespace PageAdmin.Controllers
 {
-    [Authorize]
-    public class ShopsController : Controller
+    public class ShowsController : Controller
     {
         private readonly PageAdminContext _context;
 
-        public ShopsController(PageAdminContext context)
+        public ShowsController(PageAdminContext context)
         {
             _context = context;
         }
 
-        // GET: Shops
+        // GET: Shows
         public async Task<IActionResult> Index()
         {
-            var pageAdminContext = _context.Shops.Include(s => s.Categories);
+            var pageAdminContext = _context.Shows.Include(s => s.CinemaHell).Include(s => s.Movie);
             return View(await pageAdminContext.ToListAsync());
         }
 
-        // GET: Shops/Details/5
+        // GET: Shows/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,42 +34,45 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shops
-                .Include(s => s.Categories)
-                .FirstOrDefaultAsync(m => m.ShopID == id);
-            if (shop == null)
+            var show = await _context.Shows
+                .Include(s => s.CinemaHell)
+                .Include(s => s.Movie)
+                .FirstOrDefaultAsync(m => m.ShowID == id);
+            if (show == null)
             {
                 return NotFound();
             }
 
-            return View(shop);
+            return View(show);
         }
 
-        // GET: Shops/Create
+        // GET: Shows/Create
         public IActionResult Create()
         {
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID");
+            ViewData["CinemaHellID"] = new SelectList(_context.CinemaHells, "CinemaHellID", "CinemaHellID");
+            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "MovieID");
             return View();
         }
 
-        // POST: Shops/Create
+        // POST: Shows/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ShopID,ShopName,ShopLocation,ShopOpenTime,ShopContact,CategoryID,ShopAbout")] Shop shop)
+        public async Task<IActionResult> Create([Bind("ShowID,Date,StartTime,EndTime,CinemaHellID,MovieID")] Show show)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(shop);
+                _context.Add(show);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
-            return View(shop);
+            ViewData["CinemaHellID"] = new SelectList(_context.CinemaHells, "CinemaHellID", "CinemaHellID", show.CinemaHellID);
+            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "MovieID", show.MovieID);
+            return View(show);
         }
 
-        // GET: Shops/Edit/5
+        // GET: Shows/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,23 +80,24 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shops.FindAsync(id);
-            if (shop == null)
+            var show = await _context.Shows.FindAsync(id);
+            if (show == null)
             {
                 return NotFound();
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
-            return View(shop);
+            ViewData["CinemaHellID"] = new SelectList(_context.CinemaHells, "CinemaHellID", "CinemaHellID", show.CinemaHellID);
+            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "MovieID", show.MovieID);
+            return View(show);
         }
 
-        // POST: Shops/Edit/5
+        // POST: Shows/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ShopID,ShopName,ShopLocation,ShopOpenTime,ShopContact,CategoryID,ShopAbout")] Shop shop)
+        public async Task<IActionResult> Edit(int id, [Bind("ShowID,Date,StartTime,EndTime,CinemaHellID,MovieID")] Show show)
         {
-            if (id != shop.ShopID)
+            if (id != show.ShowID)
             {
                 return NotFound();
             }
@@ -104,12 +106,12 @@ namespace PageAdmin.Controllers
             {
                 try
                 {
-                    _context.Update(shop);
+                    _context.Update(show);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ShopExists(shop.ShopID))
+                    if (!ShowExists(show.ShowID))
                     {
                         return NotFound();
                     }
@@ -120,11 +122,12 @@ namespace PageAdmin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
-            return View(shop);
+            ViewData["CinemaHellID"] = new SelectList(_context.CinemaHells, "CinemaHellID", "CinemaHellID", show.CinemaHellID);
+            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "MovieID", show.MovieID);
+            return View(show);
         }
 
-        // GET: Shops/Delete/5
+        // GET: Shows/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,31 +135,32 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shops
-                .Include(s => s.Categories)
-                .FirstOrDefaultAsync(m => m.ShopID == id);
-            if (shop == null)
+            var show = await _context.Shows
+                .Include(s => s.CinemaHell)
+                .Include(s => s.Movie)
+                .FirstOrDefaultAsync(m => m.ShowID == id);
+            if (show == null)
             {
                 return NotFound();
             }
 
-            return View(shop);
+            return View(show);
         }
 
-        // POST: Shops/Delete/5
+        // POST: Shows/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var shop = await _context.Shops.FindAsync(id);
-            _context.Shops.Remove(shop);
+            var show = await _context.Shows.FindAsync(id);
+            _context.Shows.Remove(show);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ShopExists(int id)
+        private bool ShowExists(int id)
         {
-            return _context.Shops.Any(e => e.ShopID == id);
+            return _context.Shows.Any(e => e.ShowID == id);
         }
     }
 }

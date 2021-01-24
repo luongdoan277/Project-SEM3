@@ -12,23 +12,22 @@ using PageAdmin.Models;
 namespace PageAdmin.Controllers
 {
     [Authorize]
-    public class ShopsController : Controller
+    public class CategoriesController : Controller
     {
         private readonly PageAdminContext _context;
 
-        public ShopsController(PageAdminContext context)
+        public CategoriesController(PageAdminContext context)
         {
             _context = context;
         }
 
-        // GET: Shops
+        // GET: Categories
         public async Task<IActionResult> Index()
         {
-            var pageAdminContext = _context.Shops.Include(s => s.Categories);
-            return View(await pageAdminContext.ToListAsync());
+            return View(await _context.Categories.ToListAsync());
         }
 
-        // GET: Shops/Details/5
+        // GET: Categories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,42 +35,39 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shops
-                .Include(s => s.Categories)
-                .FirstOrDefaultAsync(m => m.ShopID == id);
-            if (shop == null)
+            var category = await _context.Categories
+                .FirstOrDefaultAsync(m => m.CategoryID == id);
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return View(shop);
+            return View(category);
         }
 
-        // GET: Shops/Create
+        // GET: Categories/Create
         public IActionResult Create()
         {
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID");
             return View();
         }
 
-        // POST: Shops/Create
+        // POST: Categories/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ShopID,ShopName,ShopLocation,ShopOpenTime,ShopContact,CategoryID,ShopAbout")] Shop shop)
+        public async Task<IActionResult> Create([Bind("CategoryID,CategoryName,CategoryImage,CategoryIcon")] Category category)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(shop);
+                _context.Add(category);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
-            return View(shop);
+            return View(category);
         }
 
-        // GET: Shops/Edit/5
+        // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,23 +75,22 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shops.FindAsync(id);
-            if (shop == null)
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null)
             {
                 return NotFound();
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
-            return View(shop);
+            return View(category);
         }
 
-        // POST: Shops/Edit/5
+        // POST: Categories/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ShopID,ShopName,ShopLocation,ShopOpenTime,ShopContact,CategoryID,ShopAbout")] Shop shop)
+        public async Task<IActionResult> Edit(int id, [Bind("CategoryID,CategoryName,CategoryImage,CategoryIcon")] Category category)
         {
-            if (id != shop.ShopID)
+            if (id != category.CategoryID)
             {
                 return NotFound();
             }
@@ -104,12 +99,12 @@ namespace PageAdmin.Controllers
             {
                 try
                 {
-                    _context.Update(shop);
+                    _context.Update(category);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ShopExists(shop.ShopID))
+                    if (!CategoryExists(category.CategoryID))
                     {
                         return NotFound();
                     }
@@ -120,11 +115,10 @@ namespace PageAdmin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
-            return View(shop);
+            return View(category);
         }
 
-        // GET: Shops/Delete/5
+        // GET: Categories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,31 +126,30 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shops
-                .Include(s => s.Categories)
-                .FirstOrDefaultAsync(m => m.ShopID == id);
-            if (shop == null)
+            var category = await _context.Categories
+                .FirstOrDefaultAsync(m => m.CategoryID == id);
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return View(shop);
+            return View(category);
         }
 
-        // POST: Shops/Delete/5
+        // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var shop = await _context.Shops.FindAsync(id);
-            _context.Shops.Remove(shop);
+            var category = await _context.Categories.FindAsync(id);
+            _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ShopExists(int id)
+        private bool CategoryExists(int id)
         {
-            return _context.Shops.Any(e => e.ShopID == id);
+            return _context.Categories.Any(e => e.CategoryID == id);
         }
     }
 }

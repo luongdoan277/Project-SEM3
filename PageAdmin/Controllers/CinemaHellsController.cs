@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,24 +10,22 @@ using PageAdmin.Models;
 
 namespace PageAdmin.Controllers
 {
-    [Authorize]
-    public class ShopsController : Controller
+    public class CinemaHellsController : Controller
     {
         private readonly PageAdminContext _context;
 
-        public ShopsController(PageAdminContext context)
+        public CinemaHellsController(PageAdminContext context)
         {
             _context = context;
         }
 
-        // GET: Shops
+        // GET: CinemaHells
         public async Task<IActionResult> Index()
         {
-            var pageAdminContext = _context.Shops.Include(s => s.Categories);
-            return View(await pageAdminContext.ToListAsync());
+            return View(await _context.CinemaHells.ToListAsync());
         }
 
-        // GET: Shops/Details/5
+        // GET: CinemaHells/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,42 +33,39 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shops
-                .Include(s => s.Categories)
-                .FirstOrDefaultAsync(m => m.ShopID == id);
-            if (shop == null)
+            var cinemaHell = await _context.CinemaHells
+                .FirstOrDefaultAsync(m => m.CinemaHellID == id);
+            if (cinemaHell == null)
             {
                 return NotFound();
             }
 
-            return View(shop);
+            return View(cinemaHell);
         }
 
-        // GET: Shops/Create
+        // GET: CinemaHells/Create
         public IActionResult Create()
         {
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID");
             return View();
         }
 
-        // POST: Shops/Create
+        // POST: CinemaHells/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ShopID,ShopName,ShopLocation,ShopOpenTime,ShopContact,CategoryID,ShopAbout")] Shop shop)
+        public async Task<IActionResult> Create([Bind("CinemaHellID,Name,TotalSeats")] CinemaHell cinemaHell)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(shop);
+                _context.Add(cinemaHell);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
-            return View(shop);
+            return View(cinemaHell);
         }
 
-        // GET: Shops/Edit/5
+        // GET: CinemaHells/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,23 +73,22 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shops.FindAsync(id);
-            if (shop == null)
+            var cinemaHell = await _context.CinemaHells.FindAsync(id);
+            if (cinemaHell == null)
             {
                 return NotFound();
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
-            return View(shop);
+            return View(cinemaHell);
         }
 
-        // POST: Shops/Edit/5
+        // POST: CinemaHells/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ShopID,ShopName,ShopLocation,ShopOpenTime,ShopContact,CategoryID,ShopAbout")] Shop shop)
+        public async Task<IActionResult> Edit(int id, [Bind("CinemaHellID,Name,TotalSeats")] CinemaHell cinemaHell)
         {
-            if (id != shop.ShopID)
+            if (id != cinemaHell.CinemaHellID)
             {
                 return NotFound();
             }
@@ -104,12 +97,12 @@ namespace PageAdmin.Controllers
             {
                 try
                 {
-                    _context.Update(shop);
+                    _context.Update(cinemaHell);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ShopExists(shop.ShopID))
+                    if (!CinemaHellExists(cinemaHell.CinemaHellID))
                     {
                         return NotFound();
                     }
@@ -120,11 +113,10 @@ namespace PageAdmin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
-            return View(shop);
+            return View(cinemaHell);
         }
 
-        // GET: Shops/Delete/5
+        // GET: CinemaHells/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,31 +124,30 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
 
-            var shop = await _context.Shops
-                .Include(s => s.Categories)
-                .FirstOrDefaultAsync(m => m.ShopID == id);
-            if (shop == null)
+            var cinemaHell = await _context.CinemaHells
+                .FirstOrDefaultAsync(m => m.CinemaHellID == id);
+            if (cinemaHell == null)
             {
                 return NotFound();
             }
 
-            return View(shop);
+            return View(cinemaHell);
         }
 
-        // POST: Shops/Delete/5
+        // POST: CinemaHells/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var shop = await _context.Shops.FindAsync(id);
-            _context.Shops.Remove(shop);
+            var cinemaHell = await _context.CinemaHells.FindAsync(id);
+            _context.CinemaHells.Remove(cinemaHell);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ShopExists(int id)
+        private bool CinemaHellExists(int id)
         {
-            return _context.Shops.Any(e => e.ShopID == id);
+            return _context.CinemaHells.Any(e => e.CinemaHellID == id);
         }
     }
 }
