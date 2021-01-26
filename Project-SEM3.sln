@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomePage", "HomePage\HomePa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminPage", "AdminPage\AdminPage.csproj", "{4CB828CE-FC3B-487D-A847-9D98470B9BC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageAdmin", "PageAdmin\PageAdmin.csproj", "{9DBC6ADE-C208-466A-911A-B65B824B63D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageAdmin", "PageAdmin\PageAdmin.csproj", "{9DBC6ADE-C208-466A-911A-B65B824B63D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
