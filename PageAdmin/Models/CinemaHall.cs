@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PageAdmin.Models
 {
-    public class CinemaHell
+    public class CinemaHall
     {
         public int CinemaHellID { get; set; }
         public string Name { get; set; }
