@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PageAdmin.Models.Shop>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopOpenTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopContact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopAbout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categories)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShopName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShopLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShopOpenTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShopContact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShopAbout)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categories.CategoryID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ShopID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ShopID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ShopID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

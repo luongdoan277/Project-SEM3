@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomePage", "HomePage\HomePage.csproj", "{5C5338B0-AF2B-4CA7-AFE8-FB2BCFDE1DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomePage", "HomePage\HomePage.csproj", "{5C5338B0-AF2B-4CA7-AFE8-FB2BCFDE1DF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPage", "AdminPage\AdminPage.csproj", "{4CB828CE-FC3B-487D-A847-9D98470B9BC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminPage", "AdminPage\AdminPage.csproj", "{4CB828CE-FC3B-487D-A847-9D98470B9BC9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageAdmin", "PageAdmin\PageAdmin.csproj", "{9DBC6ADE-C208-466A-911A-B65B824B63D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4CB828CE-FC3B-487D-A847-9D98470B9BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CB828CE-FC3B-487D-A847-9D98470B9BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CB828CE-FC3B-487D-A847-9D98470B9BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DBC6ADE-C208-466A-911A-B65B824B63D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DBC6ADE-C208-466A-911A-B65B824B63D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DBC6ADE-C208-466A-911A-B65B824B63D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DBC6ADE-C208-466A-911A-B65B824B63D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
