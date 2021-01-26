@@ -44,11 +44,12 @@ namespace HomePage.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Duration = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Duration = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Language = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Genre = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Genre = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -151,11 +152,18 @@ namespace HomePage.Migrations
                     MediaID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     url = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ShopID = table.Column<int>(type: "int", nullable: true)
+                    ShopID = table.Column<int>(type: "int", nullable: false),
+                    MovieID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Medias", x => x.MediaID);
+                    table.ForeignKey(
+                        name: "FK_Medias_Movies_MovieID",
+                        column: x => x.MovieID,
+                        principalTable: "Movies",
+                        principalColumn: "MovieID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Medias_Shops_ShopID",
                         column: x => x.ShopID,
@@ -292,6 +300,11 @@ namespace HomePage.Migrations
                 name: "IX_CinemaSeats_CinemaHellID",
                 table: "CinemaSeats",
                 column: "CinemaHellID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Medias_MovieID",
+                table: "Medias",
+                column: "MovieID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Medias_ShopID",
