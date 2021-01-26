@@ -4,14 +4,16 @@ using HomePage.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HomePage.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    partial class StoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210112091403_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,9 +129,6 @@ namespace HomePage.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("MovieID")
-                        .HasColumnType("int");
-
                     b.Property<int>("ShopID")
                         .HasColumnType("int");
 
@@ -137,8 +136,6 @@ namespace HomePage.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MediaID");
-
-                    b.HasIndex("MovieID");
 
                     b.HasIndex("ShopID");
 
@@ -158,8 +155,8 @@ namespace HomePage.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Duration")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Duration")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Genre")
                         .HasColumnType("nvarchar(max)");
@@ -376,19 +373,11 @@ namespace HomePage.Migrations
 
             modelBuilder.Entity("HomePage.Models.Media", b =>
                 {
-                    b.HasOne("HomePage.Models.Movie", "Movie")
-                        .WithMany()
-                        .HasForeignKey("MovieID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("HomePage.Models.Shop", "Shops")
                         .WithMany("Medias")
                         .HasForeignKey("ShopID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Movie");
 
                     b.Navigation("Shops");
                 });
