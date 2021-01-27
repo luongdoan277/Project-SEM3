@@ -10,8 +10,8 @@ using PageAdmin.Data;
 namespace PageAdmin.Migrations
 {
     [DbContext(typeof(PageAdminContext))]
-    [Migration("20210124101628_UpdateMedia")]
-    partial class UpdateMedia
+    [Migration("20210127211752_Update")]
+    partial class Update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -278,9 +278,9 @@ namespace PageAdmin.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("PageAdmin.Models.CinemaHell", b =>
+            modelBuilder.Entity("PageAdmin.Models.CinemaHall", b =>
                 {
-                    b.Property<int>("CinemaHellID")
+                    b.Property<int>("CinemaHallID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -291,9 +291,9 @@ namespace PageAdmin.Migrations
                     b.Property<int>("TotalSeats")
                         .HasColumnType("int");
 
-                    b.HasKey("CinemaHellID");
+                    b.HasKey("CinemaHallID");
 
-                    b.ToTable("CinemaHells");
+                    b.ToTable("CinemaHalls");
                 });
 
             modelBuilder.Entity("PageAdmin.Models.CinemaSeat", b =>
@@ -306,9 +306,6 @@ namespace PageAdmin.Migrations
                     b.Property<int>("CinemaHallID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CinemaHellID")
-                        .HasColumnType("int");
-
                     b.Property<string>("SeatNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -317,9 +314,39 @@ namespace PageAdmin.Migrations
 
                     b.HasKey("CinemaSeatID");
 
-                    b.HasIndex("CinemaHellID");
+                    b.HasIndex("CinemaHallID");
 
                     b.ToTable("CinemaSeats");
+                });
+
+            modelBuilder.Entity("PageAdmin.Models.Feedback", b =>
+                {
+                    b.Property<int>("FeedbackID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FeedbackDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumberPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FeedbackID");
+
+                    b.ToTable("Feedback");
                 });
 
             modelBuilder.Entity("PageAdmin.Models.Media", b =>
@@ -338,7 +365,7 @@ namespace PageAdmin.Migrations
                     b.Property<int?>("ShopID")
                         .HasColumnType("int");
 
-                    b.Property<string>("url")
+                    b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MediaID");
@@ -359,14 +386,20 @@ namespace PageAdmin.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<string>("Cast")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Country")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Duration")
+                    b.Property<string>("Director")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
 
                     b.Property<string>("Genre")
                         .HasColumnType("nvarchar(max)");
@@ -381,6 +414,9 @@ namespace PageAdmin.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Trailer")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MovieID");
@@ -479,6 +515,9 @@ namespace PageAdmin.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int?>("CinemaHallID")
+                        .HasColumnType("int");
+
                     b.Property<int>("CinemaHellID")
                         .HasColumnType("int");
 
@@ -496,7 +535,7 @@ namespace PageAdmin.Migrations
 
                     b.HasKey("ShowID");
 
-                    b.HasIndex("CinemaHellID");
+                    b.HasIndex("CinemaHallID");
 
                     b.HasIndex("MovieID");
 
@@ -628,11 +667,13 @@ namespace PageAdmin.Migrations
 
             modelBuilder.Entity("PageAdmin.Models.CinemaSeat", b =>
                 {
-                    b.HasOne("PageAdmin.Models.CinemaHell", "CinemaHell")
+                    b.HasOne("PageAdmin.Models.CinemaHall", "CinemaHall")
                         .WithMany()
-                        .HasForeignKey("CinemaHellID");
+                        .HasForeignKey("CinemaHallID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("CinemaHell");
+                    b.Navigation("CinemaHall");
                 });
 
             modelBuilder.Entity("PageAdmin.Models.Media", b =>
@@ -691,11 +732,9 @@ namespace PageAdmin.Migrations
 
             modelBuilder.Entity("PageAdmin.Models.Show", b =>
                 {
-                    b.HasOne("PageAdmin.Models.CinemaHell", "CinemaHell")
+                    b.HasOne("PageAdmin.Models.CinemaHall", "CinemaHall")
                         .WithMany()
-                        .HasForeignKey("CinemaHellID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CinemaHallID");
 
                     b.HasOne("PageAdmin.Models.Movie", "Movie")
                         .WithMany()
@@ -703,7 +742,7 @@ namespace PageAdmin.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CinemaHell");
+                    b.Navigation("CinemaHall");
 
                     b.Navigation("Movie");
                 });

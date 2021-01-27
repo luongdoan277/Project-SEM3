@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\images\logo.svg" />
     <Content Remove="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.svg" />
     <Content Remove="wwwroot\lib\fonts\icons\fontawesome\fontawesome-webfont.woff2" />

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using System;
+using PageAdmin.Data;
 
 namespace PageAdmin.Models
 {
@@ -10,8 +11,8 @@ namespace PageAdmin.Models
     {
         public static void EnsurePopulated(IApplicationBuilder app)
         {
-            StoreDbContext context = app.ApplicationServices
-                .CreateScope().ServiceProvider.GetRequiredService<StoreDbContext>();
+            PageAdminContext context = app.ApplicationServices
+                .CreateScope().ServiceProvider.GetRequiredService<PageAdminContext>();
 
             if (context.Database.GetPendingMigrations().Any())
             {
@@ -29,7 +30,7 @@ namespace PageAdmin.Models
                         Duration = 128,
                         Language = "ThaiLand",
                         ReleaseDate = DateTime.Parse("2021-01-15"),
-                        trailer = "https://www.youtube.com/embed/x9QhsIA4-LA",
+                        Trailer = "https://www.youtube.com/embed/x9QhsIA4-LA",
                         Director = "Mez Tharatorn",
                         Cast = "Nadech Kugimiya, Pimchanok Luevisadpaibul, Thiti Mahayotaruk",
                         Status = 1,
@@ -55,7 +56,7 @@ namespace PageAdmin.Models
                           Genre = "Humor",
                           Duration = 128,
                           Language = "English",
-                          trailer = "https://youtu.be/vxxJiVfMxCU",
+                          Trailer = "https://youtu.be/vxxJiVfMxCU",
                           ReleaseDate = DateTime.Parse("2021-01-22"),
                           Director = "Jacob Chase",
                           Cast = "Azhy Robertson, Gillian Jacobs, John Gallagher Jr.",
@@ -67,7 +68,7 @@ namespace PageAdmin.Models
                           Description = "In the film,Liam plays Jim - a rancher living near the Arizona border.One day,he discovered two mother and son Mexico were trying to escape to America when chased by the leaders of a drug gang of this country.In the emergency situation,Jim helped out and was reluctant to join and the dangerous escape brought the Mexican boy to safety.",
                           Genre = "Act",
                           Duration = 101,
-                          trailer = "https://youtu.be/0VEQ_x0wsr8",
+                          Trailer = "https://youtu.be/0VEQ_x0wsr8",
                           Language = "English",
                           ReleaseDate = DateTime.Parse("2021-01-22"),
                           Director = "Robert Lorenz",
@@ -81,7 +82,7 @@ namespace PageAdmin.Models
                           Description = "After being awarded the Medal of Honor for his courage in the gun battle against ISIS, US Marine Captain Brad Paxton(Gary Dourdan) suffered the lasting effects of being in a war zone. .Under the care of his loving wife, Kate(Serinda Swan), Brad tries to adapt to normal life.Kate, also a famous archaeologist, was given a once -in-a - lifetime career in Morocco, and Brad urged her to pursue it.However, when Kate arrives, she is caught by a terrorist group demanding $ 10 million in ransom.Brad rushed to Morocco when the US ambassador(Andy Garcia) stopped negotiations on Kate's release because the deal jeopardized future oil rights negotiations. When the unusual details of Kate's kidnapping are revealed, Brad is forced to use his military skills to find out who is responsible and save the woman he loves",
                           Genre = "Act",
                           Duration = 94,
-                          trailer = "https://youtu.be/jufq5ptDFco",
+                          Trailer = "https://youtu.be/jufq5ptDFco",
                           Language = "English",
                           ReleaseDate = DateTime.Parse("2021-01-22"),
                           Director = "Hicham Hajji",
@@ -95,7 +96,7 @@ namespace PageAdmin.Models
                            Description = "Model Hyo Jeong(Lee Chae Young) is facing the risk of unemployment when many generations of beautiful children appear.She decided to join a mysterious yoga class that is rumored to help students regain perfect fitness.Here, she studied with three other female trainees including a boxer, a mentally unstable person and an actress who was obsessed with appearance.However, the yoga class began to be investigated by the police because Bo Ra(Kan Mi Youn), who is a former practitioner here, committed a murder.",
                            Genre = "Humor",
                            Duration = 89,
-                           trailer = "https://youtu.be/d-8ccYablfM",
+                           Trailer = "https://youtu.be/d-8ccYablfM",
                            Language = "Korea",
                            ReleaseDate = DateTime.Parse("2021-2-25"),
                            Director = "Juhn Jai-hong, Kim Ji-han",
@@ -110,7 +111,7 @@ namespace PageAdmin.Models
                             Description = "What makes you yourself ? Later this year,the famous animated film studio Pixar will release a new work called SOUL - COLOR LIFE with protagonist Joe Gardner(voiced by Jamie Foxx),a music teacher in high school.He just got a unique chance in life when he could be playing Jazz for the most popular band in town.",
                             Genre = "Humor,Animation",
                             Duration = 108,
-                            trailer = "https://youtu.be/0-UHW0iHjpI",
+                            Trailer = "https://youtu.be/0-UHW0iHjpI",
                             Language = "English",
                             ReleaseDate = DateTime.Parse("2020-12-25"),
                             Director = "Pete Docter, Kemp Powers",
@@ -124,7 +125,7 @@ namespace PageAdmin.Models
                              Description = "Monster Hunter is adapted from the popular game series of the same name by Capcom. In the film, captain Artemis of actress Milla Jovovich (Resident Evil) and teammates accidentally step through a mysterious door leading to another world. Here, they have to fight many giant monsters in their journey back to the world. Accompanying them in the battle is the character Hunter of actor Tony Jaa (Ong Bak). Monster Hunter promises to be an action blockbuster with the most epic monster hunts in 2020.",
                              Genre = "Science Fiction",
                              Duration = 104,
-                             trailer = "https://youtu.be/tNQ6-zorzhg",
+                             Trailer = "https://youtu.be/tNQ6-zorzhg",
                              Language = "English",
                              ReleaseDate = DateTime.Parse("2020-12-31"),
                              Director = "Paul W.S. Anderson",
@@ -4045,9 +4046,9 @@ namespace PageAdmin.Models
                     new Category
                     {
 
-                    },
+                    }
 
-                    )
+                    );
             }
         }
     }

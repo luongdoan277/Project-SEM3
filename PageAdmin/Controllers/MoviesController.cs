@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PageAdmin.Data;
 using PageAdmin.Models;
+using PageAdmin.Models.ViewModels;
 
 namespace PageAdmin.Controllers
 {
@@ -15,10 +19,11 @@ namespace PageAdmin.Controllers
     public class MoviesController : Controller
     {
         private readonly PageAdminContext _context;
-
-        public MoviesController(PageAdminContext context)
+        private readonly IWebHostEnvironment webHostEnvironment;
+        public MoviesController(PageAdminContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            webHostEnvironment = hostEnvironment;
         }
 
         // GET: Movies
@@ -56,17 +61,33 @@ namespace PageAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MovieID,Title,Description,Duration,Language,ReleaseDate,Country,Genre,Status")] Movie movie)
+        public async Task<IActionResult> Create(MovieListViewModel movie, IFormFile file)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(movie);
+                string uniqueFileName = UploadedFile(file);
+                await _context.AddAsync(movie.Movie);
+                await _context.SaveChangesAsync();
+                await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.Movie.MovieID});
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(movie);
         }
+        public string UploadedFile(IFormFile file)
+        {
+            string uniqueFileName = null;
 
+            if (file != null)
+            {
+                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using FileStream fileStream = new FileStream(filePath, FileMode.Create);
+                file.CopyTo(fileStream);
+            }
+            return uniqueFileName;
+        }
         // GET: Movies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -76,11 +97,16 @@ namespace PageAdmin.Controllers
             }
 
             var movie = await _context.Movies.FindAsync(id);
+            MovieListViewModel model = new MovieListViewModel
+            {
+                Movie = movie,
+                PagingInfo = null
+            };
             if (movie == null)
             {
                 return NotFound();
             }
-            return View(movie);
+            return View(model);
         }
 
         // POST: Movies/Edit/5
@@ -88,9 +114,9 @@ namespace PageAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MovieID,Title,Description,Duration,Language,ReleaseDate,Country,Genre,Status")] Movie movie)
+        public async Task<IActionResult> Edit(int id, MovieListViewModel movie, IFormFile file)
         {
-            if (id != movie.MovieID)
+            if (id != movie.Movie.MovieID)
             {
                 return NotFound();
             }
@@ -99,12 +125,15 @@ namespace PageAdmin.Controllers
             {
                 try
                 {
-                    _context.Update(movie);
+                    string uniqueFileName = UploadedFile(file);
+                    _context.Update(movie.Movie);
+                    await _context.SaveChangesAsync();
+                    await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.Movie.MovieID });
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.MovieID))
+                    if (!MovieExists(movie.Movie.MovieID))
                     {
                         return NotFound();
                     }

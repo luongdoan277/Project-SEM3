@@ -18,7 +18,7 @@ namespace PageAdmin.Data
         }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<CinemaHell> CinemaHells { get; set; }
+        public DbSet<CinemaHall> CinemaHalls { get; set; }
         public DbSet<CinemaSeat> CinemaSeats { get; set; }
         public DbSet<Media> Medias { get; set; }
         public DbSet<Movie> Movies { get; set; }

@@ -55,7 +55,7 @@ namespace PageAdmin.Controllers
         // GET: Shops/Create
         public IActionResult Create()
         {
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID");
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryName");
             ViewData["MediaID"] = new SelectList(_context.Medias, "MediaID", "MediaID");
             return View();
         }
@@ -72,11 +72,11 @@ namespace PageAdmin.Controllers
                 string uniqueFileName = UploadedFile(file);
                 await _context.AddAsync(shop.Shops);
                 await _context.SaveChangesAsync();
-                await _context.AddAsync(new Media { url = uniqueFileName, ShopID = shop.Shops.ShopID });
+                await _context.AddAsync(new Media { Url = uniqueFileName, ShopID = shop.Shops.ShopID });
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.Shops.CategoryID);
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryName", shop.Shops.CategoryID);
             return View(shop);
         }
         public string UploadedFile(IFormFile file)
@@ -102,12 +102,18 @@ namespace PageAdmin.Controllers
             }
 
             var shop = await _context.Shops.FindAsync(id);
+            ShopListViewModel model = new ShopListViewModel
+            {
+                Shops = shop,
+                Categories = null,
+                PagingInfo = null
+            };
             if (shop == null)
             {
                 return NotFound();
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
-            return View(shop);
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryName", shop.CategoryID);
+            return View(model);
         }
 
         // POST: Shops/Edit/5
@@ -115,9 +121,9 @@ namespace PageAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ShopID,ShopName,ShopLocation,ShopOpenTime,ShopContact,CategoryID,ShopAbout")] Shop shop)
+        public async Task<IActionResult> Edit(int id, ShopListViewModel shop, IFormFile file)
         {
-            if (id != shop.ShopID)
+            if (id != shop.Shops.ShopID)
             {
                 return NotFound();
             }
@@ -126,12 +132,15 @@ namespace PageAdmin.Controllers
             {
                 try
                 {
-                    _context.Update(shop);
+                    string uniqueFileName = UploadedFile(file);
+                    _context.Update(shop.Shops);
+                    await _context.SaveChangesAsync();
+                    await _context.AddAsync(new Media { Url = uniqueFileName, ShopID = shop.Shops.ShopID });
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ShopExists(shop.ShopID))
+                    if (!ShopExists(shop.Shops.ShopID))
                     {
                         return NotFound();
                     }
@@ -142,7 +151,7 @@ namespace PageAdmin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.CategoryID);
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryName", shop.Shops.CategoryID);
             return View(shop);
         }
 
@@ -157,6 +166,12 @@ namespace PageAdmin.Controllers
             var shop = await _context.Shops
                 .Include(s => s.Categories)
                 .FirstOrDefaultAsync(m => m.ShopID == id);
+            //ShopListViewModel model = new ShopListViewModel
+            //{
+            //    Shops = shop,
+            //    Categories = null,
+            //    PagingInfo = null
+            //};
             if (shop == null)
             {
                 return NotFound();

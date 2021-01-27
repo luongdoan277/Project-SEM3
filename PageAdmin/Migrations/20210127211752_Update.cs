@@ -62,17 +62,35 @@ namespace PageAdmin.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CinemaHells",
+                name: "CinemaHalls",
                 columns: table => new
                 {
-                    CinemaHellID = table.Column<int>(type: "int", nullable: false)
+                    CinemaHallID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TotalSeats = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CinemaHells", x => x.CinemaHellID);
+                    table.PrimaryKey("PK_CinemaHalls", x => x.CinemaHallID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Feedback",
+                columns: table => new
+                {
+                    FeedbackID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Subject = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NumberPhone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FeedbackDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Feedback", x => x.FeedbackID);
                 });
 
             migrationBuilder.CreateTable(
@@ -83,7 +101,10 @@ namespace PageAdmin.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Duration = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Trailer = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Director = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Cast = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Duration = table.Column<int>(type: "int", nullable: false),
                     Language = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -247,18 +268,17 @@ namespace PageAdmin.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SeatNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Type = table.Column<int>(type: "int", nullable: false),
-                    CinemaHallID = table.Column<int>(type: "int", nullable: false),
-                    CinemaHellID = table.Column<int>(type: "int", nullable: true)
+                    CinemaHallID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CinemaSeats", x => x.CinemaSeatID);
                     table.ForeignKey(
-                        name: "FK_CinemaSeats_CinemaHells_CinemaHellID",
-                        column: x => x.CinemaHellID,
-                        principalTable: "CinemaHells",
-                        principalColumn: "CinemaHellID",
-                        onDelete: ReferentialAction.Restrict);
+                        name: "FK_CinemaSeats_CinemaHalls_CinemaHallID",
+                        column: x => x.CinemaHallID,
+                        principalTable: "CinemaHalls",
+                        principalColumn: "CinemaHallID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -271,49 +291,23 @@ namespace PageAdmin.Migrations
                     StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CinemaHellID = table.Column<int>(type: "int", nullable: false),
-                    MovieID = table.Column<int>(type: "int", nullable: false)
+                    MovieID = table.Column<int>(type: "int", nullable: false),
+                    CinemaHallID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Shows", x => x.ShowID);
                     table.ForeignKey(
-                        name: "FK_Shows_CinemaHells_CinemaHellID",
-                        column: x => x.CinemaHellID,
-                        principalTable: "CinemaHells",
-                        principalColumn: "CinemaHellID",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Shows_CinemaHalls_CinemaHallID",
+                        column: x => x.CinemaHallID,
+                        principalTable: "CinemaHalls",
+                        principalColumn: "CinemaHallID",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Shows_Movies_MovieID",
                         column: x => x.MovieID,
                         principalTable: "Movies",
                         principalColumn: "MovieID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Medias",
-                columns: table => new
-                {
-                    MediaID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    url = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ShopID = table.Column<int>(type: "int", nullable: false),
-                    MovieID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Medias", x => x.MediaID);
-                    table.ForeignKey(
-                        name: "FK_Medias_Movies_MovieID",
-                        column: x => x.MovieID,
-                        principalTable: "Movies",
-                        principalColumn: "MovieID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Medias_Shops_ShopID",
-                        column: x => x.ShopID,
-                        principalTable: "Shops",
-                        principalColumn: "ShopID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -366,6 +360,40 @@ namespace PageAdmin.Migrations
                         principalTable: "Shows",
                         principalColumn: "ShowID",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Medias",
+                columns: table => new
+                {
+                    MediaID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ShopID = table.Column<int>(type: "int", nullable: true),
+                    MovieID = table.Column<int>(type: "int", nullable: true),
+                    ProductID = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Medias", x => x.MediaID);
+                    table.ForeignKey(
+                        name: "FK_Medias_Movies_MovieID",
+                        column: x => x.MovieID,
+                        principalTable: "Movies",
+                        principalColumn: "MovieID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Medias_Products_ProductID",
+                        column: x => x.ProductID,
+                        principalTable: "Products",
+                        principalColumn: "ProductID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Medias_Shops_ShopID",
+                        column: x => x.ShopID,
+                        principalTable: "Shops",
+                        principalColumn: "ShopID",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -481,14 +509,19 @@ namespace PageAdmin.Migrations
                 column: "UserBookingID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CinemaSeats_CinemaHellID",
+                name: "IX_CinemaSeats_CinemaHallID",
                 table: "CinemaSeats",
-                column: "CinemaHellID");
+                column: "CinemaHallID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Medias_MovieID",
                 table: "Medias",
                 column: "MovieID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Medias_ProductID",
+                table: "Medias",
+                column: "ProductID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Medias_ShopID",
@@ -511,9 +544,9 @@ namespace PageAdmin.Migrations
                 column: "CategoryID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Shows_CinemaHellID",
+                name: "IX_Shows_CinemaHallID",
                 table: "Shows",
-                column: "CinemaHellID");
+                column: "CinemaHallID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Shows_MovieID",
@@ -549,19 +582,22 @@ namespace PageAdmin.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Feedback");
+
+            migrationBuilder.DropTable(
                 name: "Medias");
 
             migrationBuilder.DropTable(
                 name: "Payments");
 
             migrationBuilder.DropTable(
-                name: "Products");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Bookings");
@@ -585,7 +621,7 @@ namespace PageAdmin.Migrations
                 name: "Shows");
 
             migrationBuilder.DropTable(
-                name: "CinemaHells");
+                name: "CinemaHalls");
 
             migrationBuilder.DropTable(
                 name: "Movies");

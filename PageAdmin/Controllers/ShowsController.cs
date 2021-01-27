@@ -22,7 +22,7 @@ namespace PageAdmin.Controllers
         // GET: Shows
         public async Task<IActionResult> Index()
         {
-            var pageAdminContext = _context.Shows.Include(s => s.CinemaHell).Include(s => s.Movie);
+            var pageAdminContext = _context.Shows.Include(s => s.Movie);
             return View(await pageAdminContext.ToListAsync());
         }
 
@@ -35,7 +35,6 @@ namespace PageAdmin.Controllers
             }
 
             var show = await _context.Shows
-                .Include(s => s.CinemaHell)
                 .Include(s => s.Movie)
                 .FirstOrDefaultAsync(m => m.ShowID == id);
             if (show == null)
@@ -49,8 +48,7 @@ namespace PageAdmin.Controllers
         // GET: Shows/Create
         public IActionResult Create()
         {
-            ViewData["CinemaHellID"] = new SelectList(_context.CinemaHells, "CinemaHellID", "CinemaHellID");
-            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "MovieID");
+            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "Title");
             return View();
         }
 
@@ -67,8 +65,7 @@ namespace PageAdmin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CinemaHellID"] = new SelectList(_context.CinemaHells, "CinemaHellID", "CinemaHellID", show.CinemaHellID);
-            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "MovieID", show.MovieID);
+            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "Title", show.MovieID);
             return View(show);
         }
 
@@ -85,8 +82,7 @@ namespace PageAdmin.Controllers
             {
                 return NotFound();
             }
-            ViewData["CinemaHellID"] = new SelectList(_context.CinemaHells, "CinemaHellID", "CinemaHellID", show.CinemaHellID);
-            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "MovieID", show.MovieID);
+            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "Title", show.MovieID);
             return View(show);
         }
 
@@ -122,8 +118,7 @@ namespace PageAdmin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CinemaHellID"] = new SelectList(_context.CinemaHells, "CinemaHellID", "CinemaHellID", show.CinemaHellID);
-            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "MovieID", show.MovieID);
+            ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "Title", show.MovieID);
             return View(show);
         }
 
@@ -136,7 +131,6 @@ namespace PageAdmin.Controllers
             }
 
             var show = await _context.Shows
-                .Include(s => s.CinemaHell)
                 .Include(s => s.Movie)
                 .FirstOrDefaultAsync(m => m.ShowID == id);
             if (show == null)

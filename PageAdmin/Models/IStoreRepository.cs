@@ -8,6 +8,7 @@ namespace PageAdmin.Models
     public interface IStoreRepository
     {
         IQueryable<Product> Products { get; }
+        IQueryable<Movie> Movies { get; }
         IQueryable<Media> Medias { get; }
         IQueryable<Category> Categories { get; }
     }
