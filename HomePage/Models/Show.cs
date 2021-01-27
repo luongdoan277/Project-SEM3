@@ -13,7 +13,7 @@ namespace HomePage.Models
         public DateTime EndTime { get; set; }
         public int CinemaHellID { get; set; }
         public int MovieID { get; set; }
-        public virtual CinemaHell CinemaHell { get; set; }
+        public virtual CinemaHall CinemaHall { get; set; }
         public virtual Movie Movie { get; set; }
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HomePage.Models
+namespace PageAdmin.Models
 {
-    public class CinemaHell
+    public class CinemaHall
     {
         public int CinemaHellID { get; set; }
         public string Name { get; set; }

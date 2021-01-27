@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace HomePage.Models
+namespace PageAdmin.Models
 {
     public static class SeedData
     {
@@ -267,395 +267,395 @@ namespace HomePage.Models
                         SeatNumber = "B1",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B2",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B3",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B4",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B5",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B6",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B7",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B8",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B9",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B10",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B11",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B12",
                         Type = 1,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "B13",
                         Type = 1,
                         CinemaHallID = 1
                     },
-                    
+
                     new CinemaSeat
                     {
                         SeatNumber = "C1",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C2",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C3",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C4",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C5",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C6",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C7",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C8",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C9",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C10",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C11",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C12",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "C13",
                         Type = 2,
                         CinemaHallID = 1
                     },
-                    
+
                     new CinemaSeat
                     {
                         SeatNumber = "D1",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D2",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D3",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D4",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D5",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D6",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D7",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D8",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D9",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D10",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D11",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D12",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "D13",
                         Type = 2,
                         CinemaHallID = 1
                     },
-                    
+
                     new CinemaSeat
                     {
                         SeatNumber = "E1",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E2",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E3",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E4",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E5",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E6",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E7",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E8",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E9",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E10",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E11",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E12",
                         Type = 2,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "E13",
                         Type = 2,
                         CinemaHallID = 1
                     },
-                    
+
                     new CinemaSeat
                     {
                         SeatNumber = "F1",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F2",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F3",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F4",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F5",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F6",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F7",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F8",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F9",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F10",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F11",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F12",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "F13",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G1",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G2",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G3",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G4",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G5",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G6",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G7",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G8",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G9",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G10",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G11",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G12",
                         Type = 3,
                         CinemaHallID = 1
-                    },new CinemaSeat
+                    }, new CinemaSeat
                     {
                         SeatNumber = "G13",
                         Type = 3,

@@ -10,8 +10,11 @@ namespace HomePage.Models
         public int MovieID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public string trailer { get; set; }
+        public string Director { get; set; }
+        public string Cast { get; set; }
         //Thời lượng
-        public string Duration { get; set; }
+        public int Duration { get; set; }
         public string Language { get; set; }
         public DateTime ReleaseDate { get; set; }
         public string Country { get; set; }

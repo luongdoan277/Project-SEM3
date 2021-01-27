@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HomePage.Models
+namespace PageAdmin.Models
 {
     public class StoreDbContext : DbContext
     {

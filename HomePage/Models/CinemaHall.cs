@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PageAdmin.Models
+namespace HomePage.Models
 {
-    public class CinemaHell
+    public class CinemaHall
     {
-        public int CinemaHellID { get; set; }
+        public int CinemaHallID { get; set; }
         public string Name { get; set; }
         public int TotalSeats { get; set; }
     }
