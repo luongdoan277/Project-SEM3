@@ -65,11 +65,11 @@ namespace PageAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ShopListViewModel shop, IFormFile Image)
+        public async Task<IActionResult> Create(ShopListViewModel shop, IFormFile file)
         {
             if (ModelState.IsValid)
             {
-                string uniqueFileName = UploadedFile(Image);
+                string uniqueFileName = UploadedFile(file);
                 await _context.AddAsync(shop.Shops);
                 await _context.SaveChangesAsync();
                 await _context.AddAsync(new Media { url = uniqueFileName, ShopID = shop.Shops.ShopID });
@@ -79,17 +79,17 @@ namespace PageAdmin.Controllers
             ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", shop.Shops.CategoryID);
             return View(shop);
         }
-        private string UploadedFile(IFormFile Image)
+        public string UploadedFile(IFormFile file)
         {
             string uniqueFileName = null;
 
-            if (Image != null)
+            if (file != null)
             {
                 string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
-                uniqueFileName = Guid.NewGuid().ToString() + "_" + Image.FileName;
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
                 string filePath = Path.Combine(uploadsFolder, uniqueFileName);
                 using FileStream fileStream = new FileStream(filePath, FileMode.Create);
-                Image.CopyTo(fileStream);
+                file.CopyTo(fileStream);
             }
             return uniqueFileName;
         }

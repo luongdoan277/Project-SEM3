@@ -14,7 +14,7 @@ namespace PageAdmin.Models.ViewModels
         public virtual Category Categories { get; set; }
         public virtual Shop Shops { get; set; }
         //[Display(Name = "Image")]
-        //public IFormFile Media { get; set; }
+        //public IFormFile Image { get; set; }
         public PagingInfo PagingInfo { get; set; }
     }
 }

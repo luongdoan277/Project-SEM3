@@ -1,4 +1,5 @@
 ﻿@model PageAdmin.Models.ViewModels.ShopListViewModel
+@*@using HttpContext.Request.Form.Files;*@
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create" asp-controller="Shops">
+        <form asp-action="Create" asp-controller="Shops" enctype="multipart/form-data" method="post">
             <div class="form-group">
                 <label asp-for="Shops.ShopName" class="control-label"></label>
                 <input asp-for="Shops.ShopName" class="form-control" />
@@ -43,7 +44,7 @@
             <div class="form-group">
                 <label class="control-label">Image</label>
                 <div class="custom-file">
-                    <input name="Image" type="file" class="custom-file-input" id="customFile">
+                    <input name="file" type="file" class="custom-file-input" id="customFile">
                     <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
                 @*<span asp-validation-for="Media" class="text-danger"></span>*@
