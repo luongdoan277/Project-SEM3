@@ -11,6 +11,6 @@ namespace PageAdmin.Models
         public string SeatNumber { get; set; }
         public int Type { get; set; }
         public int CinemaHallID { get; set; }
-        public virtual CinemaHell CinemaHell { get; set; }
+        public virtual CinemaHall CinemaHall { get; set; }
     }
 }
