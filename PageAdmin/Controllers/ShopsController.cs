@@ -150,10 +150,12 @@ namespace PageAdmin.Controllers
             {
                 try
                 {
-                    string uniqueFileName = UploadedFile(file);
                     _context.Update(shop.Shops);
                     await _context.SaveChangesAsync();
-                    await _context.AddAsync(new Media { Url = uniqueFileName, ShopID = shop.Shops.ShopID });
+                    if( file != null) { 
+                        string uniqueFileName = UploadedFile(file);
+                        await _context.AddAsync(new Media { Url = uniqueFileName, ShopID = shop.Shops.ShopID });
+                    }
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
