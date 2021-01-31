@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.5/jquery-jvectormap.css" />
     <link href="~/css/index.css" rel="stylesheet" />
+    <link href="~/css/admin.css" rel="stylesheet" />
     <link href="~/lib/FontAwesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -91,16 +92,16 @@
                         <li>
                             <a class='sidebar-link' asp-controller="Movies" asp-action="Index">List movies</a>
                         </li>
-                        <li>
+                        @*<li>
                             <a class='sidebar-link' asp-controller="CinemaHells" asp-action="Index">List theater</a>
-                        </li>
+                        </li>*@
                         <li>
                             <a class='sidebar-link' asp-controller="Shows" asp-action="Index">Showtimes</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class='sidebar-link' href="#">
+                    <a class='sidebar-link' asp-controller="Feedbacks" asp-action="Index">
                         <span class="icon-holder">
                             <i class="c-deep-purple-500 ti-comment"></i>
                         </span>
@@ -108,7 +109,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class='sidebar-link' href="#">
+                    <a class='sidebar-link' asp-controller="Users" asp-action="Index">
                         <span class="icon-holder">
                             <i class="c-indigo-500 ti-user"></i>
                         </span>
