@@ -1,0 +1,154 @@
+.beta__slide {
+  width: 100%;
+  height: 30rem;
+  position: relative;
+}
+.beta__slide-content > span {
+  padding: 36px;
+  font-size: 17px;
+}
+.beta__slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+.beta__slide-content > h3 {
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.beta__slide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.nav-film {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 30px;
+}
+
+.tab-films {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  text-transform: uppercase;
+  list-style: none;
+  font-size: 20px;
+  border-bottom: 1px solid rgb(209, 205, 205);
+}
+.tab-films > li {
+  padding: 20px;
+}
+
+.tab-films > li > a {
+  padding-bottom: 16px;
+  font-size: 18px;
+  transition: 0.3s all;
+  font-weight: bold;  
+  cursor: pointer;
+}
+
+.active-films {
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(to right, #39adf0 0%, #075fa3 100%);
+  border-image-slice: 1;
+  border-width: 0px 0px 4px 0px;
+  color: #075fa3;
+}
+
+.tab-films > li > a:hover {
+  color: #075fa3;
+}
+
+
+.movie {
+  max-width: 23%;
+  margin: 0 auto;
+  margin-bottom: 63px;
+}
+
+.movie-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.img-movie {
+  margin-bottom: 10px;
+}
+.img-movie > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.movie__title {
+  color: #075fa3;
+  font-size: 16px;
+  
+}
+
+.movie__title:hover {
+  color: #085692;
+  text-decoration: underline;
+}
+
+.cate-movie {
+  margin: 20px 0;
+}
+.cate-movie > p {
+  margin-bottom: 0;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.cate-movie > p > span{
+  color: #5a5858;
+}
+.buy-ticket {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+  color: #ffffff;
+  background-image: linear-gradient(
+    to right,
+    #0a64a7 0%,
+    #258dcf 51%,
+    #3db1f3 100%
+  ) !important;
+
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 13px;
+  position: relative;
+  overflow: hidden;
+}
+
+.buy-ticket > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-45deg);
+  font-size: 50px;
+}
+.movies {
+  padding-bottom: 30px;
+}

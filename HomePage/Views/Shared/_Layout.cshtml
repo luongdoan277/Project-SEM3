@@ -1,48 +1,159 @@
-﻿<!DOCTYPE html>
+﻿@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - HomePage</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HomePage</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - HomePage - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+    </html>*@
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon"
+          href="../image/bird_silhouette_hand_drawn_abstraction_icon_177440.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;500;900&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./FontAwesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/gallery.css" />
+    <link rel="stylesheet" href="~/css/contact.css" />
+    <link rel="stylesheet" href="~/css/feedBack.css" />
+    <link rel="stylesheet" href="~/css/moviePage.css" />
+    <link rel="stylesheet" href="~/css/movieDetail.css" />
+    <link rel="stylesheet" href="~/css/paymentMovie.css">
+    <link rel="stylesheet" href="~/css/shoppingDetails.css">
+    <link rel="stylesheet" href="~/css/cinemaSeat.css">
+    <link rel="stylesheet" href="~/css/reponsive.css">
     <title>@ViewData["Title"] - HomePage</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HomePage</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+    <div class="on-top">
+        <button class="btn-top"><i class="fas fa-chevron-up"></i></button>
+    </div>
+    <div class="header">
+        <div class="row" style="margin: 0;">
+            <header class="col-md-12">
+                <div class="row">
+                    <ul class="col-md-12 header__menu">
+                        <li><a href="#">About CTW</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">directOry</a></li>
                     </ul>
                 </div>
+            </header>
+            <div class="navbars">
+                <div class="navbar__container">
+                    <div class=" navbar__logo">
+                        <a href="index.html">
+                            <img src="~/image/Logo_Central_World.png" alt="" />
+                        </a>
+                    </div>
+                    <div class=" navbar__content">
+                        <ul class="navbar__menu">
+                            <li><a class="link active">Home</a></li>
+                            <li><a class="link">Gallery</a></li>
+                            <li><a class="link">ContactUS</a></li>
+                            <li><a class="link">Feedback</a></li>
+                            <li><a class="link">Trademark</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-control">
+                        <button type="submit" class="menu-btn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <button type="submit" class="search-bt">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <form action="" class="navbar__searchItem">
+                    <input type="search"
+                           name=""
+                           placeholder="What are you looking for?..." />
+                </form>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </div>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - HomePage - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <main>
+        <div id="main-content">
+            @RenderBody()
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <div class="col-md-12 text-center footer__start">
+                    <div class="row">
+                        <div class="col-md-12 footer__head">
+                            <h2 style="font-size: 45px;color: #ffffff;">fOllOw us</h2>
+                        </div>
+                        <div class="col-md-12 follow">
+                            <a href="" class="links-follow"><i class="fab fa-facebook"></i></a>
+                            <a href="" class="links-follow"><i class="fab fa-instagram"></i></a>
+                            <a href="" class="links-follow"><i class="fab fa-twitter"></i></a>
+                        </div>
+                        <div class="col-md-12 follow">
+                            <p href="" style="font-size: 20px;color: #ffffff;">CPN call center : +662 021 9999</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 footer__end">
+                    <p class="mb-0">All rights reserved 2019 Central Pattana PLC</p>
+                </div>
+            </div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/navigationMenu.js"></script>
+    <script src="/js/slide.js"></script>
+    <script src="~/js/moviePage.js"></script>
+    <script src="~/js/ScrollTop.js"></script>
 </body>
 </html>
+

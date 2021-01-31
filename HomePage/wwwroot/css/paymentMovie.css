@@ -1,0 +1,82 @@
+.payment-page-title{
+    padding: 12px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #494c62;
+}
+
+.payment-page-title > i{
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.payment-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.user-info > label{
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.user-info > input{
+    width: 95%;
+    font-size: 13px;
+    padding: 7px 10px;
+    border: none;
+    border: none;
+    outline: none;
+
+}
+
+.movie-ticket-page{
+    background: #ffffff;
+    padding: 30px;
+}
+
+.seat-infor{
+    margin: 50px 0;
+    padding: 10px;
+    border-bottom: 1px solid #494c62;
+}
+.total-seat{
+    color: #494c62;
+}
+
+.disable-input{
+    border: none;
+    background: none;
+    width: 100%;
+}
+
+.total-title-price{
+    color: rgb(197, 37, 37);
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.credit-card{
+    display: flex;
+    align-items: center;
+    color: #494c62;
+}
+.credit-card > input{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.credit-card > i{
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.title-card-payment{
+    margin: 30px 0;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
