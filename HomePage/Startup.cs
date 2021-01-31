@@ -59,11 +59,53 @@ namespace HomePage
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("Home",
+                   "/",
+                   new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("Gallery",
+                   "Gallery",
+                   new { Controller = "Gallery", action = "Index" });
+
+                //endpoints.MapControllerRoute("GalleryDetail",
+                //   "GalleryDetail/{id}",
+                //   new { Controller = "Movie", action = "Detail" });
+
+                endpoints.MapControllerRoute("GalleryDetail",
+                   "GalleryDetail",
+                   new { Controller = "Gallery", action = "Detail" });
+
+
+                endpoints.MapControllerRoute("Movie",
+                   "Movie",
+                   new { Controller = "Movie", action = "Index" });
+
+                //endpoints.MapControllerRoute("MovieDetail",
+                //   "MovieDetail/{id}",
+                //   new { Controller = "Movie", action = "Detail" });
+
+                endpoints.MapControllerRoute("MovieDetail",
+                   "MovieDetail",
+                   new { Controller = "Movie", action = "Detail" });
+
+                endpoints.MapControllerRoute("ContactUs",
+                   "ContactUs",
+                   new { Controller = "ContactUs", action = "Index" });
+
+                endpoints.MapControllerRoute("FeedBack",
+                  "FeedBack",
+                  new { Controller = "FeedBack", action = "Index" });
+
+                endpoints.MapControllerRoute("CinemaSeat",
+                  "CinemaSeat",
+                  new { Controller = "CinemaSeat", action = "Index" });
+
+                endpoints.MapControllerRoute("PaymentTicket",
+                  "PaymentTicket",
+                  new { Controller = "PaymentTicket", action = "Index" });
+
             });
-            SeedData.EnsurePopulated(app);
+            //SeedData.EnsurePopulated(app);
         }
     }
 }
