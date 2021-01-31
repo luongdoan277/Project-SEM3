@@ -49,6 +49,7 @@ namespace PageAdmin.Controllers
         public IActionResult Create()
         {
             ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "Title");
+            ViewData["CinemaHallID"] = new SelectList(_context.CinemaHalls, "CinemaHallID", "Name");
             return View();
         }
 

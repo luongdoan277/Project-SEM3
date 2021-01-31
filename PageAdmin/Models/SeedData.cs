@@ -14,10 +14,6 @@ namespace PageAdmin.Models
             PageAdminContext context = app.ApplicationServices
                 .CreateScope().ServiceProvider.GetRequiredService<PageAdminContext>();
 
-            if (context.Database.GetPendingMigrations().Any())
-            {
-                context.Database.Migrate();
-            }
             if (!context.Movies.Any())
             {
                 context.Movies.AddRange(
