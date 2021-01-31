@@ -9,9 +9,9 @@ namespace PageAdmin.Models.ViewModels
 {
     public class ShopListViewModel
     {
-        //public IEnumerable<Category> Categories { get; set; }
-        //public IEnumerable<Shop> Shops { get; set; }
-        public virtual Category Categories { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
+        public IEnumerable<Shop> Shop { get; set; }
+        //public virtual Category Categories { get; set; }
         public virtual Shop Shops { get; set; }
         //[Display(Name = "Image")]
         //public IFormFile Image { get; set; }

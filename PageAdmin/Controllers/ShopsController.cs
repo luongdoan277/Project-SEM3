@@ -25,12 +25,30 @@ namespace PageAdmin.Controllers
             _context = context;
             webHostEnvironment = hostEnvironment;
         }
+        public int PageSize = 20;
 
         // GET: Shops
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string category, int productPage = 1)
         {
-            var pageAdminContext = _context.Shops.Include(s => s.Categories);
-            return View(await pageAdminContext.ToListAsync());
+            ShopListViewModel shopList = new ShopListViewModel
+            {
+                Shop = _context.Shops
+                .Where(d => category == null || d.Categories.CategoryName == category)
+                .OrderBy(d => d.ShopID)
+                .Skip((productPage - 1) * PageSize)
+                .Take(PageSize),
+                Categories = _context.Categories.OrderBy(d => d.CategoryID),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = productPage,
+                    ItemsPerPage = PageSize,
+                    TotalItems = category == null ?
+                    _context.Shops.Count() :
+                    _context.Shops.Where(
+                        e => e.Categories.CategoryName == category).Count()
+                },
+            };
+            return View(shopList);
         }
 
         // GET: Shops/Details/5
