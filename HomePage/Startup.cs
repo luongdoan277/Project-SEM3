@@ -103,9 +103,7 @@ namespace HomePage
                 endpoints.MapControllerRoute("PaymentTicket",
                   "PaymentTicket",
                   new { Controller = "PaymentTicket", action = "Index" });
-
             });
-            //SeedData.EnsurePopulated(app);
         }
     }
 }
