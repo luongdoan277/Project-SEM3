@@ -11,7 +11,7 @@ namespace PageAdmin.Models
         public DateTime Date { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public int CinemaHellID { get; set; }
+        public int CinemaHallID { get; set; }
         public int MovieID { get; set; }
         public virtual CinemaHall CinemaHall { get; set; }
         public virtual Movie Movie { get; set; }
