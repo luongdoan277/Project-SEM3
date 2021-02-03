@@ -32,9 +32,14 @@ namespace HomePage.Controllers
         {
             ContentListViewModel model = new ContentListViewModel
             {
-                Shops = repository.Shops
-                .Include(s => s.Categories)
+                Medias = repository.Medias
+                .OrderBy(m => m.ShopID)
+                .Include(s => s.Shops)
                 .Where(m => m.ShopID == ShopID)
+
+                //Shops = repository.Shops
+                //.Include(s => s.Categories)
+                //.Where(m => m.ShopID == ShopID)
             };
             return View(model);
         }
