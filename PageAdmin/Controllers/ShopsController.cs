@@ -133,7 +133,11 @@ namespace PageAdmin.Controllers
             ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryName", shop.CategoryID);
             return View(model);
         }
-
+        public ActionResult Search(string term)
+        {
+            var names = _context.Shops.Where(p => p.ShopName.Contains(term)).Select(p => p.ShopName).ToList();
+            return Json(names, System.Web.Mvc.JsonRequestBehavior.AllowGet);
+        }
         // POST: Shops/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.

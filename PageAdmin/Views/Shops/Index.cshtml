@@ -1,26 +1,25 @@
 ﻿@model PageAdmin.Models.ViewModels.ShopListViewModel
 
-<h1>Shops</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
-<div class="container-fuild">
-    <div class="page-title">
-        <div class="title__dashboard">
-            <p>Product</p>
-        </div>
-        <div class="title__dashboardchild">
-            <a href="#">Ecommerce</a>
-            <span>/</span>
-            <p>Product</p>
-        </div>
-    </div>
-    <div class="product-content">
-        <div class="filter">
-            <div>
-                <h5 style="
+<div class="content">
+    <div class="page-content">
+        <div class="container-fuild">
+            <div class="page-title">
+                <div class="title__dashboard">
+                    <h1>Shops</h1>
+                </div>
+                <div class="title__dashboardchild">
+                    <a href="#">Ecommerce</a>
+                    <span>/</span>
+                    <p>Product</p>
+                </div>
+            </div>
+            <p>
+                <a asp-action="Create" class="btn btn-info">Create New</a>
+            </p>
+            <div class="product-content">
+                <div class="filter">
+                    <div>
+                        <h5 style="
                         font-size: 14px;
                         color: #495057;
                         margin-bottom: 1rem;
@@ -79,36 +78,28 @@
                             <th>
                                 Categories
                             </th>
-                            <th>
-                                Status
-                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model.Shop)
                         {
-                        <tr>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.ShopID">@Html.DisplayFor(modelItem => item.ShopName)</a>
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ShopLocation)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ShopOpenTime)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ShopContact)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Categories.CategoryName)
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.ShopID">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.ShopID">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.ShopID">Delete</a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.ShopID">@Html.DisplayFor(modelItem => item.ShopName)</a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShopLocation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShopOpenTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShopContact)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Categories.CategoryName)
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
