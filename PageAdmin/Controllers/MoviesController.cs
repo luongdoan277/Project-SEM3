@@ -125,10 +125,13 @@ namespace PageAdmin.Controllers
             {
                 try
                 {
-                    string uniqueFileName = UploadedFile(file);
                     _context.Update(movie.Movie);
                     await _context.SaveChangesAsync();
-                    await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.Movie.MovieID });
+                    if (file != null)
+                    {
+                        string uniqueFileName = UploadedFile(file);
+                        await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.Movie.MovieID });
+                    }
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

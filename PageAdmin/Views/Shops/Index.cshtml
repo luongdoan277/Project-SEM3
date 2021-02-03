@@ -79,28 +79,36 @@
                             <th>
                                 Categories
                             </th>
+                            <th>
+                                Status
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model.Shop)
                         {
-                            <tr>
-                                <td>
-                                    <a asp-action="Edit" asp-route-id="@item.ShopID">@Html.DisplayFor(modelItem => item.ShopName)</a>
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ShopLocation)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ShopOpenTime)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ShopContact)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Categories.CategoryName)
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ShopID">@Html.DisplayFor(modelItem => item.ShopName)</a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShopLocation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShopOpenTime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShopContact)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Categories.CategoryName)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ShopID">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.ShopID">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.ShopID">Delete</a>
+                            </td>
+                        </tr>
                         }
                     </tbody>
                 </table>

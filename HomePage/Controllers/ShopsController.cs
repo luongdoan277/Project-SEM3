@@ -9,37 +9,34 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HomePage.Controllers
 {
-    public class MovieController : Controller
+    public class ShopsController : Controller
     {
         private IStoreRepository repository;
 
-        public MovieController(IStoreRepository repo)
+        public ShopsController(IStoreRepository repo)
         {
             repository = repo;
         }
 
-
+        
         public ViewResult Index()
         {
             ContentListViewModel model = new ContentListViewModel
             {
-                //Movies = repository.Movies.OrderBy(m => m.MovieID)
-
-                Medias = repository.Medias.OrderBy(m => m.MovieID).Include(m => m.Movies)
+                Medias = repository.Medias.OrderBy(m => m.ShopID).Include(m => m.Shops)
             };
             return View(model);
         }
 
-        public ViewResult Detail(int MovieID)
+        public ViewResult Detail(int ShopID)
         {
-            return View(new ContentListViewModel
+            ContentListViewModel model = new ContentListViewModel
             {
-                //Movies = repository.Movies.Where(p => p.MovieID == MovieID)
-
-                Medias = repository.Medias
-                .Include(s => s.Movies)
-                .Where(m => m.MovieID == MovieID)
-            });
+                Shops = repository.Shops
+                .Include(s => s.Categories)
+                .Where(m => m.ShopID == ShopID)
+            };
+            return View(model);
         }
     }
 }
