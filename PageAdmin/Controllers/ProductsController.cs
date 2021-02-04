@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -15,10 +18,13 @@ namespace PageAdmin.Controllers
     public class ProductsController : Controller
     {
         private readonly PageAdminContext _context;
+        private readonly IWebHostEnvironment webHostEnvironment;
 
-        public ProductsController(PageAdminContext context)
+        public ProductsController(PageAdminContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            webHostEnvironment = hostEnvironment;
+
         }
 
         // GET: Products
@@ -50,24 +56,38 @@ namespace PageAdmin.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
-            ViewData["ShopID"] = new SelectList(_context.Shops, "ShopID", "ShopID");
+            ViewData["ShopID"] = new SelectList(_context.Shops, "ShopID", "ShopName");
             return View();
         }
+        public string UploadedFile(IFormFile file)
+        {
+            string uniqueFileName = null;
 
+            if (file != null)
+            {
+                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using FileStream fileStream = new FileStream(filePath, FileMode.Create);
+                file.CopyTo(fileStream);
+            }
+            return uniqueFileName;
+        }
         // POST: Products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductID,ProductName,ProductImage,ShopID,ProductLike")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductID,ProductName,ShopID,ProductLike")] Product product, IFormFile file)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(product);
+                string uniqueFileName = UploadedFile(file);
+                _context.Add(new Product { ProductName = product.ProductName, ProductImage = uniqueFileName, ProductLike = product.ProductLike, ShopID = product.ShopID});
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ShopID"] = new SelectList(_context.Shops, "ShopID", "ShopID", product.ShopID);
+            ViewData["ShopID"] = new SelectList(_context.Shops, "ShopID", "ShopName", product.ShopID);
             return View(product);
         }
 
@@ -84,7 +104,7 @@ namespace PageAdmin.Controllers
             {
                 return NotFound();
             }
-            ViewData["ShopID"] = new SelectList(_context.Shops, "ShopID", "ShopID", product.ShopID);
+            ViewData["ShopID"] = new SelectList(_context.Shops, "ShopID", "ShopName", product.ShopID);
             return View(product);
         }
 
@@ -120,7 +140,7 @@ namespace PageAdmin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ShopID"] = new SelectList(_context.Shops, "ShopID", "ShopID", product.ShopID);
+            ViewData["ShopID"] = new SelectList(_context.Shops, "ShopID", "ShopName", product.ShopID);
             return View(product);
         }
 
