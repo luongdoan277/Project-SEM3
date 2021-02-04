@@ -13,6 +13,8 @@ namespace HomePage.Models.ViewModels
 
         public IEnumerable<Media> Medias { get; set; }
 
+        public IEnumerable<Product> Products { get; set; }
+
         public IEnumerable<Shop> Shops { get; set; }
 
     }

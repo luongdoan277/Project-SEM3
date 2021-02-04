@@ -32,7 +32,7 @@ namespace HomePage.Controllers
         {
             ContentListViewModel model = new ContentListViewModel
             {
-                Medias = repository.Medias
+                Products = repository.Products
                 .OrderBy(m => m.ShopID)
                 .Include(s => s.Shops)
                 .Where(m => m.ShopID == ShopID)
