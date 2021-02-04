@@ -23,9 +23,9 @@ namespace HomePage.Controllers
         {
             ContentListViewModel model = new ContentListViewModel
             {
-                //Movies = repository.Movies.OrderBy(m => m.MovieID)
+                Movies = repository.Movies.OrderBy(m => m.MovieID)
 
-                Medias = repository.Medias.OrderBy(m => m.MovieID).Include(m => m.Movies)
+                //Medias = repository.Medias.Where(m => m.MovieID != null).OrderBy(m => m.MovieID).Include(m => m.Movies)
             };
             return View(model);
         }
@@ -34,11 +34,11 @@ namespace HomePage.Controllers
         {
             return View(new ContentListViewModel
             {
-                //Movies = repository.Movies.Where(p => p.MovieID == MovieID)
+                Movies = repository.Movies.Where(p => p.MovieID == MovieID)
 
-                Medias = repository.Medias
-                .Include(s => s.Movies)
-                .Where(m => m.MovieID == MovieID)
+                //Medias = repository.Medias
+                //.Include(s => s.Movies)
+                //.Where(m => m.MovieID == MovieID)
             });
         }
     }

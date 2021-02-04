@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row movie-list">
-                        @foreach (var p in Model.Medias)
+                        @foreach (var p in Model.Movies)
                         {
                             <div class="col-md-4 movie">
                                 <div class="row">
@@ -42,10 +42,10 @@
                                         <img src="~/image/movie.jpg" alt="" />
                                     </div>
                                     <div class="col-md-12 movie-infor">
-                                        <a @*asp-action="Detail" asp-controller="Movie" asp-route-MovieID="@p.Movie.MovieID"*@ class="movie__title">@p.Movies.Title</a>
+                                        <a asp-action="Detail" asp-controller="Movie" asp-route-MovieID="@p.MovieID" class="movie__title">@p.Title</a>
                                         <div class="cate-movie">
-                                            <p><span>Genre:</span> @p.Movies.Genre</p>
-                                            <p><span>Durations:</span> @p.Movies.Duration minute</p>
+                                            <p><span>Genre:</span> @p.Genre</p>
+                                            <p><span>Durations:</span> @p.Duration minute</p>
                                         </div>
                                         <a href="" class="buy-ticket">
                                             <span>

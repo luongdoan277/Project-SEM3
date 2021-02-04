@@ -23,7 +23,7 @@ namespace HomePage.Controllers
         {
             ContentListViewModel model = new ContentListViewModel
             {
-                Medias = repository.Medias.OrderBy(m => m.ShopID).Include(m => m.Shops)
+                Medias = repository.Medias.Where(m => m.ShopID != null).OrderBy(m => m.ShopID).Include(m => m.Shops)
             };
             return View(model);
         }

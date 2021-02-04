@@ -13,7 +13,7 @@ namespace HomePage.Controllers
 {
     public class HomeController : Controller
     {
-        public int ShopSize = 7;
+        public int ShopSize = 5;
 
         private IStoreRepository repository;
 
