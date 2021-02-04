@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +14,6 @@ using PageAdmin.Models.ViewModels;
 
 namespace PageAdmin.Controllers
 {
-    [Authorize]
     public class MoviesController : Controller
     {
         private readonly PageAdminContext _context;
@@ -61,14 +59,14 @@ namespace PageAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(MovieListViewModel movie, IFormFile file)
+        public async Task<IActionResult> Create([Bind("MovieID,Title,Description,Trailer,Director,Cast,Duration,Language,ReleaseDate,Country,Genre,Status")] Movie movie, IFormFile file)
         {
             if (ModelState.IsValid)
             {
                 string uniqueFileName = UploadedFile(file);
-                await _context.AddAsync(movie.Movie);
+                await _context.AddAsync(movie);
                 await _context.SaveChangesAsync();
-                await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.Movie.MovieID});
+                await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.MovieID });
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -97,16 +95,11 @@ namespace PageAdmin.Controllers
             }
 
             var movie = await _context.Movies.FindAsync(id);
-            MovieListViewModel model = new MovieListViewModel
-            {
-                Movie = movie,
-                PagingInfo = null
-            };
             if (movie == null)
             {
                 return NotFound();
             }
-            return View(model);
+            return View(movie);
         }
 
         // POST: Movies/Edit/5
@@ -114,9 +107,9 @@ namespace PageAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, MovieListViewModel movie, IFormFile file)
+        public async Task<IActionResult> Edit(int id, [Bind("MovieID,Title,Description,Trailer,Director,Cast,Duration,Language,ReleaseDate,Country,Genre,Status")] Movie movie, IFormFile file)
         {
-            if (id != movie.Movie.MovieID)
+            if (id != movie.MovieID)
             {
                 return NotFound();
             }
@@ -125,15 +118,18 @@ namespace PageAdmin.Controllers
             {
                 try
                 {
-                    string uniqueFileName = UploadedFile(file);
-                    _context.Update(movie.Movie);
+                    _context.Update(movie);
                     await _context.SaveChangesAsync();
-                    await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.Movie.MovieID });
+                    if (file != null)
+                    {
+                        string uniqueFileName = UploadedFile(file);
+                        await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.MovieID });
+                    }
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.Movie.MovieID))
+                    if (!MovieExists(movie.MovieID))
                     {
                         return NotFound();
                     }
