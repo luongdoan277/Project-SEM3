@@ -1,4 +1,7 @@
-﻿<div class="slider">
+﻿@model ContentListViewModel
+
+
+<div class="slider">
     <div class="slides">
         <div class="slide">
             <a href="">
@@ -56,84 +59,74 @@
             </div>
             <div class="col-md-12 ourWorld__content">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen-small.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-8 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen-big.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
-                            </div>
+                    @foreach (var s in Model.Medias)
+                    {
+                        <div class="col-md-4 banner">
+                            <a href="" class="banner__links">
+                                <img src="~/images/@s.Url" alt="" />
+                                <div class="banner__content">
+                                    <p>Lorem</p>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen1-big.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-6 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen2-big.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="col-md-8 banner">
+                            <a href="" class="banner__links">
+                                <img src="~/images/@s.Url" alt="" />
+                                <div class="banner__content">
+                                    <p>Lorem</p>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen1-small.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen2-small.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen3-small.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="col-md-6 banner">
+                            <a href="" class="banner__links">
+                                <img src="~/images/@s.Url" alt="" />
+                                <div class="banner__content">
+                                    <p>Lorem</p>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                                </div>
+                            </a>
                         </div>
-                    </div>
+                        <div class="col-md-6 banner">
+                            <a href="" class="banner__links">
+                                <img src="~/images/@s.Url" alt="" />
+                                <div class="banner__content">
+                                    <p>Lorem</p>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 banner">
+                            <a href="" class="banner__links">
+                                <img src="~/images/@s.Url" alt="" />
+                                <div class="banner__content">
+                                    <p>Lorem</p>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 banner">
+                            <a href="" class="banner__links">
+                                <img src="~/images/@s.Url" alt="" />
+                                <div class="banner__content">
+                                    <p>Lorem</p>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 banner">
+                            <a href="" class="banner__links">
+                                <img src="~/images/@s.Url" alt="" />
+                                <div class="banner__content">
+                                    <p>Lorem</p>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                                </div>
+                            </a>
+                        </div>
+                    }
                 </div>
             </div>
-        </div>
     </div>
 </section>
 

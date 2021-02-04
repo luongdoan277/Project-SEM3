@@ -6,32 +6,35 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using HomePage.Models.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace HomePage.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        public int ShopSize = 7;
 
-        public HomeController(ILogger<HomeController> logger)
+        private IStoreRepository repository;
+
+        public HomeController(IStoreRepository repo)
         {
-            _logger = logger;
+            repository = repo;
         }
 
         public IActionResult Index()
         {
-            return View();
+            ContentListViewModel model = new ContentListViewModel
+            {
+                Medias = repository.Medias.OrderBy(m => m.ShopID).Include(m => m.Shops).Take(ShopSize)
+            };
+
+            return View(model);
         }
 
         public IActionResult Privacy()
         {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

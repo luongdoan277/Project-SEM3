@@ -4036,16 +4036,16 @@ namespace PageAdmin.Models
                     });
                 context.SaveChanges();
             }
-            if (!context.Categories.Any())
-            {
-                context.Categories.AddRange(
-                    new Category
-                    {
+            //if (!context.Categories.Any())
+            //{
+            //    context.Categories.AddRange(
+            //        new Category
+            //        {
 
-                    }
+            //        }
 
-                    );
-            }
+            //        );
+            //}
         }
     }
 }

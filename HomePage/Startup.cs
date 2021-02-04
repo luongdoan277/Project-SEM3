@@ -63,30 +63,26 @@ namespace HomePage
                    "/",
                    new { Controller = "Home", action = "Index" });
 
-                endpoints.MapControllerRoute("Gallery",
-                   "Gallery",
-                   new { Controller = "Gallery", action = "Index" });
+                endpoints.MapControllerRoute("Shops",
+                   "Shops",
+                   new { Controller = "Shops", action = "Index" });
 
-                //endpoints.MapControllerRoute("GalleryDetail",
-                //   "GalleryDetail/{id}",
-                //   new { Controller = "Movie", action = "Detail" });
-
-                endpoints.MapControllerRoute("GalleryDetail",
-                   "GalleryDetail",
-                   new { Controller = "Gallery", action = "Detail" });
+                endpoints.MapControllerRoute("ShopsDetails",
+                   "ShopsDetails/ID={ShopID}",
+                   new { Controller = "Shops", action = "Detail" });
 
 
                 endpoints.MapControllerRoute("Movie",
                    "Movie",
                    new { Controller = "Movie", action = "Index" });
 
-                //endpoints.MapControllerRoute("MovieDetail",
-                //   "MovieDetail/{id}",
-                //   new { Controller = "Movie", action = "Detail" });
-
                 endpoints.MapControllerRoute("MovieDetail",
-                   "MovieDetail",
+                   "MovieDetail/ID={MovieID}",
                    new { Controller = "Movie", action = "Detail" });
+
+                //endpoints.MapControllerRoute("MovieDetail",
+                //   "MovieDetail",
+                //   new { Controller = "Movie", action = "Detail" });
 
                 endpoints.MapControllerRoute("ContactUs",
                    "ContactUs",
@@ -103,9 +99,8 @@ namespace HomePage
                 endpoints.MapControllerRoute("PaymentTicket",
                   "PaymentTicket",
                   new { Controller = "PaymentTicket", action = "Index" });
-
+                
             });
-            //SeedData.EnsurePopulated(app);
         }
     }
 }

@@ -118,12 +118,20 @@ namespace PageAdmin.Controllers
             {
                 try
                 {
+
                     _context.Update(movie);
+
+                    _context.Update(movie.Movie);
+
                     await _context.SaveChangesAsync();
                     if (file != null)
                     {
                         string uniqueFileName = UploadedFile(file);
+
                         await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.MovieID });
+
+                        await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.Movie.MovieID });
+
                     }
                     await _context.SaveChangesAsync();
                 }

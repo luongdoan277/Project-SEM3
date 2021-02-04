@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 
 namespace HomePage.Models
 {
-    public class IStoreRepository
+    public interface IStoreRepository
     {
+        IQueryable<Movie> Movies { get; }
         IQueryable<Product> Products { get; }
         IQueryable<Media> Medias { get; }
         IQueryable<Category> Categories { get; }
+        IQueryable<Shop> Shops { get; }
     }
 }

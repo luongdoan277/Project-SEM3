@@ -1,4 +1,7 @@
-﻿<section class="beta">
+﻿@model ContentListViewModel
+
+
+<section class="beta">
         <div class="beta__slide">
             <img src="./image/slide-beta.png" alt="" />
             <!-- <div class="beta__slide-content">
@@ -31,206 +34,29 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row movie-list">
-                        <div class="col-md-4 movie">
-                            <div class="row">
-                                <div class="col-md-12 img-movie">
-                                    <img src="~/image/movie.jpg" alt="" />
-                                </div>
-                                <div class="col-md-12 movie-infor">
-                                    <a href="" class="movie__title">Thanh Gươm Diệt Quỷ: Chuyến tàu vô tận</a>
-                                    <div class="cate-movie">
-                                        <p><span>Thể loại:</span> Tiểu sử, Tâm lý</p>
-                                        <p><span>Thời lượng:</span> 96 phút</p>
+                        @foreach (var p in Model.Medias)
+                        {
+                            <div class="col-md-4 movie">
+                                <div class="row">
+                                    <div class="col-md-12 img-movie">
+                                        <img src="~/image/movie.jpg" alt="" />
                                     </div>
-                                    <a href="" class="buy-ticket">
-                                        <span>
-                                            <i class="fas fa-ticket-alt"></i>
-                                        </span>
-                                        Buy Ticket
-                                    </a>
+                                    <div class="col-md-12 movie-infor">
+                                        <a @*asp-action="Detail" asp-controller="Movie" asp-route-MovieID="@p.Movie.MovieID"*@ class="movie__title">@p.Movies.Title</a>
+                                        <div class="cate-movie">
+                                            <p><span>Genre:</span> @p.Movies.Genre</p>
+                                            <p><span>Durations:</span> @p.Movies.Duration minute</p>
+                                        </div>
+                                        <a href="" class="buy-ticket">
+                                            <span>
+                                                <i class="fas fa-ticket-alt"></i>
+                                            </span>
+                                            Buy Ticket
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 movie">
-                            <div class="row">
-                                <div class="col-md-12 img-movie">
-                                    <img src="~/image/movie.jpg" alt="" />
-                                </div>
-                                <div class="col-md-12 movie-infor">
-                                    <a href="" class="movie__title">Thanh Gươm Diệt Quỷ: Chuyến tàu vô tận</a>
-                                    <div class="cate-movie">
-                                        <p><span>Thể loại:</span> Tiểu sử, Tâm lý</p>
-                                        <p><span>Thời lượng:</span> 96 phút</p>
-                                    </div>
-                                    <a href="" class="buy-ticket">
-                                        <span>
-                                            <i class="fas fa-ticket-alt"></i>
-                                        </span>
-                                        Buy Ticket
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 movie">
-                            <div class="row">
-                                <div class="col-md-12 img-movie">
-                                    <img src="~/image/movie.jpg" alt="" />
-                                </div>
-                                <div class="col-md-12 movie-infor">
-                                    <a href="" class="movie__title">Cậu Vàng</a>
-                                    <div class="cate-movie">
-                                        <p><span>Thể loại:</span> Tiểu sử, Tâm lý</p>
-                                        <p><span>Thời lượng:</span> 96 phút</p>
-                                    </div>
-                                    <a href="" class="buy-ticket">
-                                        <span>
-                                            <i class="fas fa-ticket-alt"></i>
-                                        </span>
-                                        Buy Ticket
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 movie">
-                            <div class="row">
-                                <div class="col-md-12 img-movie">
-                                    <img src="~/image/movie.jpg" alt="" />
-                                </div>
-                                <div class="col-md-12 movie-infor">
-                                    <a href="" class="movie__title">Thanh Gươm Diệt Quỷ: Chuyến tàu vô tận</a>
-                                    <div class="cate-movie">
-                                        <p><span>Thể loại:</span> Tiểu sử, Tâm lý</p>
-                                        <p><span>Thời lượng:</span> 96 phút</p>
-                                    </div>
-                                    <a href="" class="buy-ticket">
-                                        <span>
-                                            <i class="fas fa-ticket-alt"></i>
-                                        </span>
-                                        Buy Ticket
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 movie">
-                            <div class="row">
-                                <div class="col-md-12 img-movie">
-                                    <img src="~/image/movie.jpg" alt="" />
-                                </div>
-                                <div class="col-md-12 movie-infor">
-                                    <a href="" class="movie__title">Cậu Vàng</a>
-                                    <div class="cate-movie">
-                                        <p><span>Thể loại:</span> Tiểu sử, Tâm lý</p>
-                                        <p><span>Thời lượng:</span> 96 phút</p>
-                                    </div>
-                                    <a href="" class="buy-ticket">
-                                        <span>
-                                            <i class="fas fa-ticket-alt"></i>
-                                        </span>
-                                        Buy Ticket
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 movie">
-                            <div class="row">
-                                <div class="col-md-12 img-movie">
-                                    <img src="~/image/movie.jpg" alt="" />
-                                </div>
-                                <div class="col-md-12 movie-infor">
-                                    <a href="" class="movie__title">Thanh Gươm Diệt Quỷ: Chuyến tàu vô tận</a>
-                                    <div class="cate-movie">
-                                        <p><span>Thể loại:</span> Tiểu sử, Tâm lý</p>
-                                        <p><span>Thời lượng:</span> 96 phút</p>
-                                    </div>
-                                    <a href="" class="buy-ticket">
-                                        <span>
-                                            <i class="fas fa-ticket-alt"></i>
-                                        </span>
-                                        Buy Ticket
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 movie">
-                            <div class="row">
-                                <div class="col-md-12 img-movie">
-                                    <img src="~/image/movie.jpg" alt="" />
-                                </div>
-                                <div class="col-md-12 movie-infor">
-                                    <a href="" class="movie__title">Thanh Gươm Diệt Quỷ: Chuyến tàu vô tận</a>
-                                    <div class="cate-movie">
-                                        <p><span>Thể loại:</span> Tiểu sử, Tâm lý</p>
-                                        <p><span>Thời lượng:</span> 96 phút</p>
-                                    </div>
-                                    <a href="" class="buy-ticket">
-                                        <span>
-                                            <i class="fas fa-ticket-alt"></i>
-                                        </span>
-                                        Buy Ticket
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 movie">
-                            <div class="row">
-                                <div class="col-md-12 img-movie">
-                                    <img src="~/image/movie.jpg" alt="" />
-                                </div>
-                                <div class="col-md-12 movie-infor">
-                                    <a href="" class="movie__title">Thanh Gươm Diệt Quỷ: Chuyến tàu vô tận</a>
-                                    <div class="cate-movie">
-                                        <p><span>Thể loại:</span> Tiểu sử, Tâm lý</p>
-                                        <p><span>Thời lượng:</span> 96 phút</p>
-                                    </div>
-                                    <a href="" class="buy-ticket">
-                                        <span>
-                                            <i class="fas fa-ticket-alt"></i>
-                                        </span>
-                                        Buy Ticket
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 movie">
-                            <div class="row">
-                                <div class="col-md-12 img-movie">
-                                    <img src="~/image/movie.jpg" alt="" />
-                                </div>
-                                <div class="col-md-12 movie-infor">
-                                    <a href="" class="movie__title">Thanh Gươm Diệt Quỷ: Chuyến tàu vô tận</a>
-                                    <div class="cate-movie">
-                                        <p><span>Thể loại:</span> Tiểu sử, Tâm lý</p>
-                                        <p><span>Thời lượng:</span> 96 phút</p>
-                                    </div>
-                                    <a href="" class="buy-ticket">
-                                        <span>
-                                            <i class="fas fa-ticket-alt"></i>
-                                        </span>
-                                        Buy Ticket
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 movie">
-                            <div class="row">
-                                <div class="col-md-12 img-movie">
-                                    <img src="~/image/movie.jpg" alt="" />
-                                </div>
-                                <div class="col-md-12 movie-infor">
-                                    <a href="" class="movie__title">Thanh Gươm Diệt Quỷ: Chuyến tàu vô tận</a>
-                                    <div class="cate-movie">
-                                        <p><span>Thể loại:</span> Tiểu sử, Tâm lý</p>
-                                        <p><span>Thời lượng:</span> 96 phút</p>
-                                    </div>
-                                    <a href="" class="buy-ticket">
-                                        <span>
-                                            <i class="fas fa-ticket-alt"></i>
-                                        </span>
-                                        Buy Ticket
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
