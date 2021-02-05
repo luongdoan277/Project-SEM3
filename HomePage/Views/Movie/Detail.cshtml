@@ -1,6 +1,6 @@
 ﻿@model ContentListViewModel
 
-@foreach (var m in Model.Movies)
+@foreach (var m in Model.Medias)
 {
     <section>
         <div class="main-content">
@@ -8,22 +8,22 @@
                 <div class="row">
                     <div class="col-md-3 img-movie">
                         <a href="">
-                            <img src="./image/movie.jpg" alt="" />
+                            <img src="~/images/@m.Url" alt="" />
                         </a>
                     </div>
                     <div class="col-md-9 movie-info-page">
                         <div class="mb-3 title-movie">
                             <h1>
-                                <a href="">@m.Title</a>
+                                <a href="">@m.Movies.Title</a>
                             </h1>
                             <p>
-                                @m.Title the Movie: @m.Genre
+                                @m.Movies.Title the Movie: @m.Movies.Genre
                             </p>
                         </div>
                         <div class="row">
                             <div class="col-md-8 movie-des">
                                 <p>
-                                    @m.Description
+                                    @m.Movies.Description
                                 </p>
                                 <div class="row">
                                     <div class="col-md-3 info">
@@ -32,14 +32,14 @@
                                     </div>
                                     <div class="col-md-3 info">
                                         <p><i class="far fa-calendar"></i> Khởi chiếu</p>
-                                        <span>@m.ReleaseDate</span>
+                                        <span>@m.Movies.ReleaseDate</span>
                                     </div>
                                     <div class="col-md-3 info">
                                         <p>
                                             <i class="far fa-clock"></i>
                                             Thời lượng
                                         </p>
-                                        <span>@m.Duration</span>
+                                        <span>@m.Movies.Duration minute</span>
                                     </div>
                                     <div class="col-md-3 info">
                                         <p>
@@ -55,18 +55,13 @@
                                     <strong>Diễn viên</strong>
                                     <br />
                                     <span>
-                                        @m.Cast
+                                        @m.Movies.Cast
                                     </span>
                                 </p>
                                 <p class="">
                                     <strong>Đạo diễn</strong>
                                     <br />
-                                    <span>@m.Director</span>
-                                </p>
-                                <p class="">
-                                    <strong>Nhà sản xuất</strong>
-                                    <br />
-                                    <span>Yūma Takahashi</span>
+                                    <span>@m.Movies.Director</span>
                                 </p>
                             </div>
                         </div>
@@ -123,9 +118,13 @@
                     <h3>Trailer</h3>
                 </div>
                 <div class="col-md-12 trailer__content">
-                    <video controls>
-                        <source src="@m.Trailer">
-                    </video>
+                    @*<iframe controls
+            src="@m.Movies.Trailer">
+        </iframe>*@
+
+                    <iframe width="420" height="315"
+                            src="@m.Movies.Trailer">
+                    </iframe>
                 </div>
             </div>
         </div>

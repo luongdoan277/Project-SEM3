@@ -26,9 +26,8 @@ namespace HomePage.Controllers
         {
             ContentListViewModel model = new ContentListViewModel
             {
-                Medias = repository.Medias.OrderBy(m => m.ShopID).Include(m => m.Shops).Take(ShopSize)
+                Medias = repository.Medias.Where(m => m.ShopID != null).OrderBy(m => m.ShopID).Include(m => m.Shops).Take(ShopSize)
             };
-
             return View(model);
         }
 

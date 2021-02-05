@@ -102,12 +102,9 @@
     color: #ffffff;
 }
 
-.trailer__content > video {
+.trailer__content > iframe {
     width: 100%;
-    height: 100%;
+    height: 40rem;
     padding: 30px;
-}
-
-video {
     outline: none;
 }
