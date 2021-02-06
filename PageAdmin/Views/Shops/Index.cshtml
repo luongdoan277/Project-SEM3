@@ -25,94 +25,104 @@
                         margin-bottom: 1rem;
                         font-weight: bold;
                       ">
-                    <a style="color:black" asp-action="Index" asp-controller="Shops"
-                       asp-route-category=""
-                       asp-route-productPage="1">
-                        Category
-                    </a>
-                </h5>
-                <ul class="product-list">
-                    @foreach (var item in Model.Categories)
-                    {
-                        <li>
-                            <a style="padding-left:20px"
-                               asp-action="Index" asp-controller="Products"
-                               asp-route-category="@item.CategoryName"
+                            <a style="color:black" asp-action="Index" asp-controller="Shops"
+                               asp-route-category=""
                                asp-route-productPage="1">
-                                <i class="@item.CategoryIcon"></i>
-                                @item.CategoryName
+                                Category
                             </a>
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>
-        <div class="clothes">
-            <div class="head-clothes">
-                <div class="title-clothes">
-                    <p>Clothes</p>
+                        </h5>
+                        <ul class="product-list">
+                            @foreach (var item in Model.Categories)
+                            {
+                                <li>
+                                    <a style="padding-left:20px"
+                                       asp-action="Index" asp-controller="Products"
+                                       asp-route-category="@item.CategoryName"
+                                       asp-route-productPage="1">
+                                        <i class="@item.CategoryIcon"></i>
+                                        @item.CategoryName
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
                 </div>
-                <div class="style-clothes">
-                    <form action="" class="form-search__clothes">
-                        <input type="text" placeholder="Search..." />
-                        <span><i class="fas fa-search"></i></span>
-                    </form>
+                <div class="clothes">
+                    <div class="head-clothes">
+                        <div class="title-clothes">
+                            <p>Clothes</p>
+                        </div>
+                        <div class="style-clothes">
+                            <form action="" class="form-search__clothes">
+                                <input type="text" placeholder="Search..." />
+                                <span><i class="fas fa-search"></i></span>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="clothes__content">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Location
+                                    </th>
+                                    <th>
+                                        OpenTime
+                                    </th>
+                                    <th>
+                                        Contact
+                                    </th>
+                                    <th>
+                                        Categories
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Shop)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.ShopID">@Html.DisplayFor(modelItem => item.ShopName)</a>
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ShopLocation)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ShopOpenTime)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ShopContact)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Categories.CategoryName)
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.ShopID">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.ShopID">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.ShopID">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div page-model="@Model.PagingInfo" page-action="Index"
+                             page-classes-enabled="true"
+                             page-class="btn" page-class-normal="btn-outline-dark"
+                             page-class-selected="btn-primary"
+                             class="btn-group pull-right m-1">
+                        </div>
+                    </div>
+                    @*<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+                        page-class="btn" page-class-normal="btn-outline-dark"
+                        page-class-selected="btn-primary" class="btn-group pull-right mt-3"></div>*@
                 </div>
             </div>
-            <div class="clothes__content">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Location
-                            </th>
-                            <th>
-                                OpenTime
-                            </th>
-                            <th>
-                                Contact
-                            </th>
-                            <th>
-                                Categories
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.Shop)
-                        {
-                            <tr>
-                                <td>
-                                    <a asp-action="Edit" asp-route-id="@item.ShopID">@Html.DisplayFor(modelItem => item.ShopName)</a>
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ShopLocation)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ShopOpenTime)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ShopContact)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Categories.CategoryName)
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-                <div page-model="@Model.PagingInfo" page-action="Index"
-                     page-classes-enabled="true"
-                     page-class="btn" page-class-normal="btn-outline-dark"
-                     page-class-selected="btn-primary"
-                     class="btn-group pull-right m-1">
-                </div>
-            </div>
-            @*<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
-                page-class="btn" page-class-normal="btn-outline-dark"
-                page-class-selected="btn-primary" class="btn-group pull-right mt-3"></div>*@
         </div>
     </div>
 </div>

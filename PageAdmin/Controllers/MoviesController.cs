@@ -114,6 +114,7 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
 
+
             if (ModelState.IsValid)
             {
                 try
@@ -121,7 +122,7 @@ namespace PageAdmin.Controllers
 
                     _context.Update(movie);
 
-                    _context.Update(movie.Movie);
+                    //_context.Update(movie.Movie);
 
                     await _context.SaveChangesAsync();
                     if (file != null)
@@ -130,7 +131,7 @@ namespace PageAdmin.Controllers
 
                         await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.MovieID });
 
-                        await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.Movie.MovieID });
+                        //await _context.AddAsync(new Media { Url = uniqueFileName, MovieID = movie.Movie.MovieID });
 
                     }
                     await _context.SaveChangesAsync();
