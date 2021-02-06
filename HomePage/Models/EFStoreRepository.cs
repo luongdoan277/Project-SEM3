@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace HomePage.Models
 {
@@ -13,8 +10,10 @@ namespace HomePage.Models
         {
             context = ctx;
         }
+        public IQueryable<Movie> Movies => context.Movies;
         public IQueryable<Product> Products => context.Products;
         public IQueryable<Category> Categories => context.Categories;
         public IQueryable<Media> Medias => context.Medias;
+        public IQueryable<Shop> Shops => context.Shops;
     }
 }

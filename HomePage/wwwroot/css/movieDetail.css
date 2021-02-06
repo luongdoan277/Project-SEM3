@@ -1,107 +1,111 @@
 .main-content {
-  padding: 46px;
-  background: #12263f;
+    padding: 46px;
+    background: #12263f;
 }
 
 .img-movie > a > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-  border: 2px solid #ffffff;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
 }
 
 .title-movie > h1 > a {
-  color: #ffffff;
-  font-size: 30px;
+    color: #ffffff;
+    font-size: 30px;
 }
 
 .title-movie > p {
-  color: #e2dcdc;
-  font-size: 13px;
+    color: #e2dcdc;
+    font-size: 13px;
 }
 
 .movie-des > p {
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 300;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 .info {
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 300;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 300;
 }
 
 .movie-info {
-  color: #ffffff;
-  font-weight: 300;
+    color: #ffffff;
+    font-weight: 300;
 }
 
-.movie-info > p > span {
-  color: red;
-  font-weight: 300;
+    .movie-info > p > span {
+        color: red;
+        font-weight: 300;
+    }
+
+.times {
+    margin: 30px 0;
 }
 
-.times{
-     margin: 30px 0;
-}
-
-.time-list{
+.time-list {
     border-bottom: 1px solid #d5cece;
     padding: 30px 0;
 }
-.time{
+
+.time {
     cursor: pointer;
-
 }
 
-.time > span{
-    font-size: 25px;
-    font-weight: 500;
-}
+    .time > span {
+        font-size: 25px;
+        font-weight: 500;
+    }
 
-.active-time{
+.active-time {
     color: #03599D;
     border-bottom: 3px solid #03599D;
 }
-.time-content{
-   padding: 20px 10px;
+
+.time-content {
+    padding: 20px 10px;
 }
 
-.time-content > h4{
-    font-weight: bold;
-    color: #5c5858;
-}
-.time-hall{
+    .time-content > h4 {
+        font-weight: bold;
+        color: #5c5858;
+    }
+
+.time-hall {
     text-align: center;
-}
-.time-hall > a{
-    display: inline-block;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    background-color: lightgray;
-}
-.time-hall > p{
-    color: rgb(138, 134, 134);
-    font-size: 14px;
 }
 
-.trailers{
+    .time-hall > a {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background-color: lightgray;
+    }
+
+    .time-hall > p {
+        color: rgb(138, 134, 134);
+        font-size: 14px;
+    }
+
+.trailers {
     background: #3C3E4D;
 }
-.trailer__title > h3{
+
+.trailer__title > h3 {
     padding: 30px;
     text-transform: uppercase;
     color: #ffffff;
 }
 
-.trailer__content > video{
+.trailer__content > iframe {
     width: 100%;
-    height: 100%;
+    height: 40rem;
     padding: 30px;
-} 
-video{
     outline: none;
+    border: none;
 }

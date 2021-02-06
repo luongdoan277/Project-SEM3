@@ -36,7 +36,7 @@
                             {
                                 <li>
                                     <a style="padding-left:20px"
-                                       asp-action="Index" asp-controller="Shops"
+                                       asp-action="Index" asp-controller="Products"
                                        asp-route-category="@item.CategoryName"
                                        asp-route-productPage="1">
                                         <i class="@item.CategoryIcon"></i>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="style-clothes">
                             <form action="" class="form-search__clothes">
-                                <input type="text" placeholder="Search..." id="productName" />
+                                <input type="text" placeholder="Search..." />
                                 <span><i class="fas fa-search"></i></span>
                             </form>
                         </div>
@@ -78,6 +78,9 @@
                                     <th>
                                         Categories
                                     </th>
+                                    <th>
+                                        Status
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -99,6 +102,11 @@
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Categories.CategoryName)
                                         </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.ShopID">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.ShopID">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.ShopID">Delete</a>
+                                        </td>
                                     </tr>
                                 }
                             </tbody>
@@ -118,12 +126,3 @@
         </div>
     </div>
 </div>
-@section Scripts {
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#productName').autocomplete({
-                source: '@Url.Action("Search", "Shops")'
-            });
-        });
-    </script>
-}

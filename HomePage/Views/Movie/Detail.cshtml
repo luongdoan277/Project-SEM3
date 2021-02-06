@@ -1,136 +1,263 @@
-﻿<section>
-    <div class="main-content">
+﻿@model ContentListViewModel
+
+<section>
+    @foreach (var m in Model.Medias)
+    {
+        <div class="main-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 img-movie">
+                        <a href="">
+                            <img src="~/images/@m.Url" alt="" />
+                        </a>
+                    </div>
+                    <div class="col-md-9 movie-info-page">
+                        <div class="mb-3 title-movie">
+                            <h1>
+                                <a href="">@m.Movies.Title</a>
+                            </h1>
+                            <p>
+                                @m.Movies.Title the Movie: @m.Movies.Genre
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 movie-des">
+                                <p>
+                                    @m.Movies.Description
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-3 info">
+                                        <p><i class="far fa-thumbs-up"></i> Hài lòng</p>
+                                        <span>97%</span>
+                                    </div>
+                                    <div class="col-md-3 info">
+                                        <p><i class="far fa-calendar"></i> Khởi chiếu</p>
+                                        <span>@m.Movies.ReleaseDate</span>
+                                    </div>
+                                    <div class="col-md-3 info">
+                                        <p>
+                                            <i class="far fa-clock"></i>
+                                            Thời lượng
+                                        </p>
+                                        <span>@m.Movies.Duration minute</span>
+                                    </div>
+                                    <div class="col-md-3 info">
+                                        <p>
+                                            <i class="fas fa-user-check"></i>
+                                            Giới hạn tuổi
+                                        </p>
+                                        <span>NC13</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 movie-info">
+                                <p class="">
+                                    <strong>Diễn viên</strong>
+                                    <br />
+                                    <span>
+                                        @m.Movies.Cast
+                                    </span>
+                                </p>
+                                <p class="">
+                                    <strong>Đạo diễn</strong>
+                                    <br />
+                                    <span>@m.Movies.Director</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    </section>
+    <section>
+        <div class="times">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row time-list">
+                            <a class="col-md-2 col-4 time active-time">
+                                <span>27</span> /01-T3
+                            </a>
+                            <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
+                            <a class="col-md-2 col-4 time"> <span>28</span> /01-T4 </a>
+                            <a class="col-md-2 col-4 time"> <span>29</span> /01-T5 </a>
+                            <a class="col-md-2 col-4 time"> <span>30</span> /01-T6 </a>
+                            <a class="col-md-2 col-4 time"> <span>31</span> /01-T7 </a>
+                            <a class="col-md-2 col-4 time"> <span>01</span> /02-CN </a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 time-content">
+                                <h4>2D Phụ đề</h4>
+                            </div>
+                            <div class="col-md-2 col-4 time-hall">
+                                <a asp-action="index" asp-controller="CinemaSeat">11:30</a>
+                                <p>15 ghế trống</p>
+                            </div>
+                            <div class="col-md-2 col-4 time-hall">
+                                <a asp-action="index" asp-controller="CinemaSeat">11:30</a>
+                                <p>15 ghế trống</p>
+                            </div>
+                            <div class="col-md-2 col-4 time-hall">
+                                <a asp-action="index" asp-controller="CinemaSeat">11:30</a>
+                                <p>15 ghế trống</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="trailers">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 img-movie">
-                    <a href="">
-                        <img src="~/image/movie.jpg" alt="" />
-                    </a>
+                <div class="col-md-12 trailer__title text-center">
+                    <h3>Trailer</h3>
                 </div>
-                <div class="col-md-9 movie-info-page">
-                    <div class="mb-3 title-movie">
-                        <h1>
-                            <a href="">Demon slayer: Chuyến tàu vô tận</a>
-                        </h1>
-                        <p>
-                            Demon Slayer the Movie: Mugen Train - Action, Adventure,
-                            Animation, Fantasy, History
-                        </p>
+                @foreach (var m in Model.Medias)
+                {
+                    <div class="col-md-12 trailer__content">
+                        <iframe
+                                src="@m.Movies.Trailer">
+                        </iframe>
                     </div>
+                }
+
+            </div>
+        </div>
+    </section>
+
+@*@foreach (var m in Model.Medias)
+    {
+        <section>
+            <div class="main-content">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-8 movie-des">
-                            <p>
-                                Trên đường điều tra sự mất tích của các Kiếm Sĩ thuộc Đội
-                                Diệt Quỷ, Tanjiro và các đồng đội cùng Viêm Trụ Rengoku
-                                rơi vào Huyết Quỷ Thuật ảo mộng của Quỷ Hạ Huyền Enmu. Cả
-                                bọn phải hiệp lực để bảo toàn tính mạng cho 200 hành khách
-                                trên chuyến tàu Vô Tận. Nhờ sự hi sinh của Viêm Trụ
-                                Rengoku, Quỷ Hạ Huyền đã bị đánh bại và mọi người được
-                                sống sót
-                            </p>
+                        <div class="col-md-3 img-movie">
+                            <a href="">
+                                <img src="./image/movie.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="col-md-9 movie-info-page">
+                            <div class="mb-3 title-movie">
+                                <h1>
+                                    <a href="">@m.Movies.Title</a>
+                                </h1>
+                                <p>
+                                    @m.Movies.Title the Movie: @m.Movies.Genre
+                                </p>
+                            </div>
                             <div class="row">
-                                <div class="col-md-3 info">
-                                    <p><i class="far fa-thumbs-up"></i> Hài lòng</p>
-                                    <span>97%</span>
-                                </div>
-                                <div class="col-md-3 info">
-                                    <p><i class="far fa-calendar"></i> Khởi chiếu</p>
-                                    <span>20-1-2021</span>
-                                </div>
-                                <div class="col-md-3 info">
+                                <div class="col-md-8 movie-des">
                                     <p>
-                                        <i class="far fa-clock"></i>
-                                        Thời lượng
+                                        @m.Movies.Description
                                     </p>
-                                    <span>98'</span>
+                                    <div class="row">
+                                        <div class="col-md-3 info">
+                                            <p><i class="far fa-thumbs-up"></i> Hài lòng</p>
+                                            <span>97%</span>
+                                        </div>
+                                        <div class="col-md-3 info">
+                                            <p><i class="far fa-calendar"></i> Khởi chiếu</p>
+                                            <span>@m.Movies.ReleaseDate</span>
+                                        </div>
+                                        <div class="col-md-3 info">
+                                            <p>
+                                                <i class="far fa-clock"></i>
+                                                Thời lượng
+                                            </p>
+                                            <span>@m.Movies.Duration</span>
+                                        </div>
+                                        <div class="col-md-3 info">
+                                            <p>
+                                                <i class="fas fa-user-check"></i>
+                                                Giới hạn tuổi
+                                            </p>
+                                            <span>NC13</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-3 info">
-                                    <p>
-                                        <i class="fas fa-user-check"></i>
-                                        Giới hạn tuổi
+                                <div class="col-md-4 movie-info">
+                                    <p class="">
+                                        <strong>Diễn viên</strong>
+                                        <br />
+                                        <span>
+                                            @m.Movies.Cast
+                                        </span>
                                     </p>
-                                    <span>NC13</span>
+                                    <p class="">
+                                        <strong>Đạo diễn</strong>
+                                        <br />
+                                        <span>@m.Movies.Director</span>
+                                    </p>
+                                    <p class="">
+                                        <strong>Nhà sản xuất</strong>
+                                        <br />
+                                        <span>Yūma Takahashi</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 movie-info">
-                            <p class="">
-                                <strong>Diễn viên</strong>
-                                <br />
-                                <span>
-                                    Natsuki Hanae, Akari Kitō, Hiro Shimono, Yoshitsugu
-                                    Matsuoka, Satoshi Hino
-                                </span>
-                            </p>
-                            <p class="">
-                                <strong>Đạo diễn</strong>
-                                <br />
-                                <span>Haruo Sotozaki, Hideki Hosokawa, Masashi Takeuchi</span>
-                            </p>
-                            <p class="">
-                                <strong>Nhà sản xuất</strong>
-                                <br />
-                                <span>Yūma Takahashi</span>
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section>
-    <div class="times">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row time-list">
-                        <a class="col-md-2 col-4 time active-time">
-                            <span>27</span> /01-T3
-                        </a>
-                        <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
-                        <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
-                        <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
-                        <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
-                        <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
-                        <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
-                        <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
-                    </div>
-                </div>
-                <div class="col-md-12">
+        </section>
+        <section>
+            <div class="times">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-12 time-content">
-                            <h4>2D Phụ đề</h4>
+                        <div class="col-md-12">
+                            <div class="row time-list">
+                                <a class="col-md-2 col-4 time active-time">
+                                    <span>27</span> /01-T3
+                                </a>
+                                <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
+                                <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
+                                <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
+                                <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
+                                <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
+                                <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
+                                <a class="col-md-2 col-4 time"> <span>27</span> /01-T3 </a>
+                            </div>
                         </div>
-                        <div class="col-md-2 col-4 time-hall">
-                            <a href="">11:30</a>
-                            <p>15 ghế trống</p>
-                        </div>
-                        <div class="col-md-2 col-4 time-hall">
-                            <a href="">11:30</a>
-                            <p>15 ghế trống</p>
-                        </div>
-                        <div class="col-md-2 col-4 time-hall">
-                            <a href="">11:30</a>
-                            <p>15 ghế trống</p>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12 time-content">
+                                    <h4>2D Phụ đề</h4>
+                                </div>
+                                <div class="col-md-2 col-4 time-hall">
+                                    <a href="">11:30</a>
+                                    <p>15 ghế trống</p>
+                                </div>
+                                <div class="col-md-2 col-4 time-hall">
+                                    <a href="">11:30</a>
+                                    <p>15 ghế trống</p>
+                                </div>
+                                <div class="col-md-2 col-4 time-hall">
+                                    <a href="">11:30</a>
+                                    <p>15 ghế trống</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="trailers">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 trailer__title text-center">
-                <h3>Trailer</h3>
+        </section>
+        <section class="trailers">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 trailer__title text-center">
+                        <h3>Trailer</h3>
+                    </div>
+                    <div class="col-md-12 trailer__content">
+                        <video controls>
+                            <source src="../video/pexels-charles-parker-5825783.mp4">
+                        </video>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-12 trailer__content">
-                <video controls>
-                    <source src="../video/pexels-charles-parker-5825783.mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    }*@

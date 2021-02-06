@@ -1,4 +1,5 @@
-﻿<div id='mainContent'>
+﻿@*@model IEnumerable<PageAdmin.Models.Media>*@
+<div id='mainContent'>
     <div class="row gap-20 masonry pos-r">
         <div class="masonry-sizer col-md-6"></div>
         <div class="masonry-item  w-100">
@@ -258,6 +259,23 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
+@*<table class="table">
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => m.Url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => m.Shops.ShopName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => m.Shops.ShopOpenTime)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@

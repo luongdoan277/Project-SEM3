@@ -3,19 +3,43 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HomePage.Models;
+using HomePage.Models.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace HomePage.Controllers
 {
     public class MovieController : Controller
     {
-        public IActionResult Index()
+        private IStoreRepository repository;
+
+        public MovieController(IStoreRepository repo)
         {
-            return View();
+            repository = repo;
         }
 
-        public IActionResult Detail()
+
+        public ViewResult Index()
         {
-            return View();
+            ContentListViewModel model = new ContentListViewModel
+            {
+                //Movies = repository.Movies.OrderBy(m => m.MovieID)
+
+                Medias = repository.Medias.Where(m => m.MovieID != null).OrderBy(m => m.MovieID).Include(m => m.Movies)
+            };
+            return View(model);
+        }
+
+        public ViewResult Detail(int MovieID)
+        {
+            return View(new ContentListViewModel
+            {
+                //Movies = repository.Movies.Where(p => p.MovieID == MovieID)
+
+                Medias = repository.Medias
+                .Include(s => s.Movies)
+                .Where(m => m.MovieID == MovieID)
+            });
         }
     }
 }

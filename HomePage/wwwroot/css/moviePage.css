@@ -94,7 +94,7 @@
 }
 .img-movie > img {
   width: 100%;
-  height: 100%;
+  height: 22rem;
   border-radius: 20px;
   object-fit: cover;
 }

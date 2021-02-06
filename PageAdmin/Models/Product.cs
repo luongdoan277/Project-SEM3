@@ -11,7 +11,7 @@ namespace PageAdmin.Models
         public string ProductName { get; set; }
         public string ProductImage { get; set; }
         public int ShopID { get; set; }
-        public int ProductLike { get; set; }
+        public int? ProductLike { get; set; }
         public virtual Shop Shops { get; set; }
     }
 }

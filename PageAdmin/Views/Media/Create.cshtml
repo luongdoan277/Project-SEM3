@@ -1,0 +1,66 @@
+﻿@model PageAdmin.Models.Media
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Media</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Image</label>
+                <div class="custom-file">
+                    <input name="file" type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Shop</label>
+                <select asp-for="ShopID" class="form-control">
+                    <option value="">--Please choose an option--</option>
+                    @foreach (var o in ViewBag.ShopID)
+                    {
+                        <option value="@o.ShopID">@o.ShopName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Movie</label>
+                <select asp-for="MovieID" class="form-control">
+                    <option value="">--Please choose an option--</option>
+                    @foreach (var o in ViewBag.MovieID)
+                    {
+                        <option value="@o.MovieID">@o.Title</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Product</label>
+                <select asp-for="ProductID" class="form-control">
+                    <option value="">--Please choose an option--</option>
+                    @foreach (var o in ViewBag.ProductID)
+                    {
+                        <option value="@o.ProductID">@o.ProductName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

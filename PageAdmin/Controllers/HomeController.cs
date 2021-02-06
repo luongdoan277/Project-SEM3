@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using PageAdmin.Data;
 using PageAdmin.Models;
 using System;
 using System.Collections.Generic;
@@ -13,10 +15,16 @@ namespace PageAdmin.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        [HttpGet]
-        public IActionResult Index()
+        private readonly PageAdminContext _context;
+        public HomeController(PageAdminContext context)
         {
-            return View();
+            _context = context;
+        }
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var model = _context.Medias.OrderBy(m => m.ShopID).Include(m => m.Shops);
+            return View(await model.ToListAsync());
         }
     }
 }

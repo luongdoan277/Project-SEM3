@@ -1,4 +1,7 @@
-﻿<div class="slider">
+﻿@model ContentListViewModel
+
+
+<div class="slider">
     <div class="slides">
         <div class="slide">
             <a href="">
@@ -56,85 +59,73 @@
             </div>
             <div class="col-md-12 ourWorld__content">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen-small.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
+                    <div class="col-md-4 banner">
+                        <a href="" class="banner__links">
+                            <img src="../image/screen-small.jpg" alt="" />
+                            <div class="banner__content">
+                                <p>Lorem</p>
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
                             </div>
-                            <div class="col-md-8 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen-big.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen1-big.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
+                    <div class="col-md-8 banner">
+                        <a href="" class="banner__links">
+                            <img src="../image/screen-big.jpg" alt="" />
+                            <div class="banner__content">
+                                <p>Lorem</p>
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
                             </div>
-                            <div class="col-md-6 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen2-big.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen1-small.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
+                    <div class="col-md-6 banner">
+                        <a href="" class="banner__links">
+                            <img src="../image/screen1-big.jpg" alt="" />
+                            <div class="banner__content">
+                                <p>Lorem</p>
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
                             </div>
-                            <div class="col-md-4 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen2-small.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
+                        </a>
+                    </div>
+                    <div class="col-md-6 banner">
+                        <a href="" class="banner__links">
+                            <img src="../image/screen2-big.jpg" alt="" />
+                            <div class="banner__content">
+                                <p>Lorem</p>
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
                             </div>
-                            <div class="col-md-4 banner">
-                                <a href="" class="banner__links">
-                                    <img src="../image/screen3-small.jpg" alt="" />
-                                    <div class="banner__content">
-                                        <p>Lorem</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                    </div>
-                                </a>
+                        </a>
+                    </div>
+                    <div class="col-md-4 banner">
+                        <a href="" class="banner__links">
+                            <img src="../image/screen1-small.jpg" alt="" />
+                            <div class="banner__content">
+                                <p>Lorem</p>
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
                             </div>
-                        </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 banner">
+                        <a href="" class="banner__links">
+                            <img src="../image/screen2-small.jpg" alt="" />
+                            <div class="banner__content">
+                                <p>Lorem</p>
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 banner">
+                        <a href="" class="banner__links">
+                            <img src="../image/screen3-small.jpg" alt="" />
+                            <div class="banner__content">
+                                <p>Lorem</p>
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
 </section>
 
 <section class="videos">
@@ -142,7 +133,7 @@
         <div class="row">
             <div class="col-md-12 video__content">
                 <video controls>
-                    <source src="../video/pexels-charles-parker-5825783.mp4">
+                    <source src="~/video/pexels-charles-parker-5825783.mp4">
                 </video>
             </div>
             <div class="col-md-12 text-center video__more">
@@ -153,51 +144,17 @@
 </section>
 <section class="zones">
     <div class="row zones__list">
-        <div class="col-md-5 col-6 col-sm-6 zones__item">
-            <a href="">
-                <img src="../image/festive.jpg" alt="" />
-                <div class="zones__content">
-                    <p class="text-center mb-0">Festive</p>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-                </div>
-            </a>
-
-        </div>
-        <div class="col-md-5 col-6 col-sm-6 zones__item">
-            <a href="">
-                <img src="../image/hisher_world.jpg" alt="" />
-                <div class="zones__content">
-                    <p class="text-center mb-0">Festive</p>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-5 col-6 col-sm-6 zones__item">
-            <a href="">
-                <img src="../image/flavor.jpg" alt="" />
-                <div class="zones__content">
-                    <p class="text-center mb-0">Festive</p>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-5 col-6 col-sm-6 zones__item">
-            <a href="">
-                <img src="../image/born_to_shop.jpg" alt="" />
-                <div class="zones__content">
-                    <p class="text-center mb-0">Festive</p>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-5 col-6 col-sm-6 zones__item">
-            <a href="">
-                <img src="../image/born_to_shop.jpg" alt="" />
-                <div class="zones__content">
-                    <p class="text-center mb-0">Festive</p>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-                </div>
-            </a>
-        </div>
+        @foreach (var p in Model.Medias)
+        {
+            <div class="col-md-5 col-6 col-sm-6 zones__item">
+                <a href="">
+                    <img src="~/images/@p.Url" alt="" />
+                    <div class="zones__content">
+                        <p class="text-center mb-0">@p.Shops.ShopName</p>
+                        <span>@p.Shops.ShopOpenTime</span>
+                    </div>
+                </a>
+            </div>
+        }
     </div>
 </section>
