@@ -458,7 +458,7 @@ namespace PageAdmin.Migrations
                     b.Property<string>("ProductImage")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductLike")
+                    b.Property<int?>("ProductLike")
                         .HasColumnType("int");
 
                     b.Property<string>("ProductName")

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PageAdmin.Migrations
 {
-    public partial class Update : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -290,9 +290,8 @@ namespace PageAdmin.Migrations
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CinemaHellID = table.Column<int>(type: "int", nullable: false),
-                    MovieID = table.Column<int>(type: "int", nullable: false),
-                    CinemaHallID = table.Column<int>(type: "int", nullable: true)
+                    CinemaHallID = table.Column<int>(type: "int", nullable: false),
+                    MovieID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -302,7 +301,7 @@ namespace PageAdmin.Migrations
                         column: x => x.CinemaHallID,
                         principalTable: "CinemaHalls",
                         principalColumn: "CinemaHallID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Shows_Movies_MovieID",
                         column: x => x.MovieID,
@@ -320,7 +319,7 @@ namespace PageAdmin.Migrations
                     ProductName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProductImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ShopID = table.Column<int>(type: "int", nullable: false),
-                    ProductLike = table.Column<int>(type: "int", nullable: false)
+                    ProductLike = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
