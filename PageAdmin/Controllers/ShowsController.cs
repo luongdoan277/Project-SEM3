@@ -58,7 +58,7 @@ namespace PageAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ShowID,Date,StartTime,EndTime,CinemaHellID,MovieID")] Show show)
+        public async Task<IActionResult> Create([Bind("ShowID,Date,StartTime,EndTime,CinemaHallID,MovieID")] Show show)
         {
             if (ModelState.IsValid)
             {
