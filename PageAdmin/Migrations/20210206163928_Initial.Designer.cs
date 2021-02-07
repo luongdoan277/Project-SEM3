@@ -10,8 +10,8 @@ using PageAdmin.Data;
 namespace PageAdmin.Migrations
 {
     [DbContext(typeof(PageAdminContext))]
-    [Migration("20210127211752_Update")]
-    partial class Update
+    [Migration("20210206163928_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -460,7 +460,7 @@ namespace PageAdmin.Migrations
                     b.Property<string>("ProductImage")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductLike")
+                    b.Property<int?>("ProductLike")
                         .HasColumnType("int");
 
                     b.Property<string>("ProductName")
@@ -515,10 +515,7 @@ namespace PageAdmin.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("CinemaHallID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CinemaHellID")
+                    b.Property<int>("CinemaHallID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -734,7 +731,9 @@ namespace PageAdmin.Migrations
                 {
                     b.HasOne("PageAdmin.Models.CinemaHall", "CinemaHall")
                         .WithMany()
-                        .HasForeignKey("CinemaHallID");
+                        .HasForeignKey("CinemaHallID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("PageAdmin.Models.Movie", "Movie")
                         .WithMany()
