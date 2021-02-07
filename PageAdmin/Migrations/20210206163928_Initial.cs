@@ -319,7 +319,7 @@ namespace PageAdmin.Migrations
                     ProductName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProductImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ShopID = table.Column<int>(type: "int", nullable: false),
-                    ProductLike = table.Column<int>(type: "int", nullable: false)
+                    ProductLike = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -10,7 +10,7 @@ using PageAdmin.Data;
 namespace PageAdmin.Migrations
 {
     [DbContext(typeof(PageAdminContext))]
-    [Migration("20210131140426_Initial")]
+    [Migration("20210207040254_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -460,7 +460,7 @@ namespace PageAdmin.Migrations
                     b.Property<string>("ProductImage")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductLike")
+                    b.Property<int?>("ProductLike")
                         .HasColumnType("int");
 
                     b.Property<string>("ProductName")
@@ -546,16 +546,16 @@ namespace PageAdmin.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("BookingID")
+                    b.Property<int?>("BookingID")
                         .HasColumnType("int");
 
-                    b.Property<int>("CinemaSeatID")
+                    b.Property<int?>("CinemaSeatID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(8,2)");
 
-                    b.Property<int>("ShowID")
+                    b.Property<int?>("ShowID")
                         .HasColumnType("int");
 
                     b.Property<int>("Status")
@@ -750,15 +750,11 @@ namespace PageAdmin.Migrations
                 {
                     b.HasOne("PageAdmin.Models.CinemaSeat", "CinemaSeat")
                         .WithMany()
-                        .HasForeignKey("CinemaSeatID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CinemaSeatID");
 
                     b.HasOne("PageAdmin.Models.Show", "Shows")
                         .WithMany()
-                        .HasForeignKey("ShowID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ShowID");
 
                     b.Navigation("CinemaSeat");
 
