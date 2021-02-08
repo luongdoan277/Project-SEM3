@@ -22,7 +22,7 @@ namespace HomePage.Controllers
         {
             ContentListViewModel model = new ContentListViewModel
             {
-                CinemaSeats = repository.CinemaSeats.OrderBy(m => m.CinemaSeatID)
+                CinemaSeats = repository.CinemaSeats.OrderBy(m => m.SeatNumber)
                 .Include(m => m.CinemaHall).Where(m => m.CinemaHallID == CinemaHallID),
 
                 Medias = repository.Medias.OrderBy(m => m.MovieID).Include(m => m.Movies).Where(m => m.MovieID == MovieID),

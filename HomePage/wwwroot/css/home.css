@@ -395,6 +395,7 @@ a:hover {
 .zones__item {
     margin-bottom: 30px;
     max-width: 20%;
+    height: 17rem;
 }
 
     .zones__item > a {

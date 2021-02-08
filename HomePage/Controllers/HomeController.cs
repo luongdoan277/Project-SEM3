@@ -13,7 +13,6 @@ namespace HomePage.Controllers
 {
     public class HomeController : Controller
     {
-        public int ShopSize = 5;
 
         private IStoreRepository repository;
 
@@ -26,7 +25,7 @@ namespace HomePage.Controllers
         {
             ContentListViewModel model = new ContentListViewModel
             {
-                Medias = repository.Medias.Where(m => m.ShopID != null).OrderBy(m => m.ShopID).Include(m => m.Shops).Take(ShopSize)
+                Medias = repository.Medias.Where(m => m.ShopID != null).OrderBy(m => m.ShopID).Include(m => m.Shops)
             };
             return View(model);
         }
