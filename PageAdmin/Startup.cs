@@ -28,7 +28,9 @@ namespace PageAdmin
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
             services.AddDefaultIdentity<PageAdminUser>().AddEntityFrameworkStores<PageAdminContext>();
+
             services.AddDbContext<PageAdminContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("PageAdminContextConnection")));
             services.AddRazorPages();

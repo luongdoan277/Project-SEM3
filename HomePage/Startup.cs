@@ -93,7 +93,7 @@ namespace HomePage
                   new { Controller = "FeedBack", action = "Index" });
 
                 endpoints.MapControllerRoute("CinemaSeat",
-                  "CinemaSeat",
+                  "CinemaSeat/CinemaHallID={CinemaHallID}",
                   new { Controller = "CinemaSeat", action = "Index" });
 
                 endpoints.MapControllerRoute("PaymentTicket",

@@ -340,9 +340,9 @@ namespace PageAdmin.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Status = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
-                    ShowID = table.Column<int>(type: "int", nullable: false),
-                    CinemaSeatID = table.Column<int>(type: "int", nullable: false),
-                    BookingID = table.Column<int>(type: "int", nullable: false)
+                    ShowID = table.Column<int>(type: "int", nullable: true),
+                    CinemaSeatID = table.Column<int>(type: "int", nullable: true),
+                    BookingID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -352,13 +352,13 @@ namespace PageAdmin.Migrations
                         column: x => x.CinemaSeatID,
                         principalTable: "CinemaSeats",
                         principalColumn: "CinemaSeatID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ShowSeats_Shows_ShowID",
                         column: x => x.ShowID,
                         principalTable: "Shows",
                         principalColumn: "ShowID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

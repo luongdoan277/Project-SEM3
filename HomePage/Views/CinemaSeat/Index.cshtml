@@ -1,586 +1,166 @@
-﻿<section class="choose-seat">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul class="links-list">
-                                <li><a href="">Trang chủ </a><span> > </span></li>
-                                <li><a href="">Đặt vé </a> <span> > </span></li>
-                                <li><a href="">(Tên phim)</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-12 limit">
-                            <span>
-                                Theo quy định của cục điện ảnh, phim này không dành cho khán
-                                giả dưới 13 tuổi.
-                            </span>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="row seats">
-                                <div class="col-md-3 seat-icon">
-                                    <img src="~/image/seat-buy-normal.png" alt="" />
-                                    <span>Ghế đã bán</span>
-                                </div>
-                                <div class="col-md-3 seat-icon">
-                                    <img src="~/image/seat-process-normal.png" alt="" />
-                                    <span>Ghế đã bán</span>
-                                </div>
-                                <div class="col-md-3 seat-icon">
-                                    <img src="~/image/seat-set-normal.png" alt="" />
-                                    <span>Ghế đã bán</span>
-                                </div>
-                                <div class="col-md-3 seat-icon">
-                                    <img src="~/image/seat-select-normal.png" alt="" />
-                                    <span>Ghế đã bán</span>
-                                </div>
-                                <div class="col-md-3 seat-icon">
-                                    <img src="~/image/seat-unselect-normal.png" alt="" />
-                                    <span>Ghế đã bán</span>
-                                </div>
+﻿@model ContentListViewModel
+
+<section class="choose-seat">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="links-list">
+                            <li><a href="">Trang chủ </a><span> > </span></li>
+                            <li><a href="">Đặt vé </a> <span> > </span></li>
+                            <li><a href="">(Tên phim)</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 limit">
+                        <span>
+                            Theo quy định của cục điện ảnh, phim này không dành cho khán
+                            giả dưới 13 tuổi.
+                        </span>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row seats">
+                            <div class="col-md-3 seat-icon">
+                                <img src="~/image/seat-buy-normal.png" alt="" />
+                                <span>Ghế đã bán</span>
+                            </div>
+                            <div class="col-md-3 seat-icon">
+                                <img src="~/image/seat-process-normal.png" alt="" />
+                                <span>Ghế đã bán</span>
+                            </div>
+                            <div class="col-md-3 seat-icon">
+                                <img src="~/image/seat-set-normal.png" alt="" />
+                                <span>Ghế đã bán</span>
+                            </div>
+                            <div class="col-md-3 seat-icon">
+                                <img src="~/image/seat-select-normal.png" alt="" />
+                                <span>Ghế đã bán</span>
+                            </div>
+                            <div class="col-md-3 seat-icon">
+                                <img src="~/image/seat-unselect-normal.png" alt="" />
+                                <span>Ghế đã bán</span>
                             </div>
                         </div>
-                        <div class="screen">
-                            <div class="full-screen">
-                                <img src="~/image/ic-screen.png" alt="" />
-                                <div class="seat-list">
-                                    <div class="row">
-                                        <div class="col-md-12 col-12 mb-3">
-                                            <div class="row seats-list">
+                    </div>
+                    <div class="screen">
+                        <div class="full-screen">
+                            <img src="~/image/ic-screen.png" alt="" />
+                            <div class="seat-list">
+                                <div class="row">
+                                    <!-- Normal -->
+                                    <div class="col-md-12 col-12 mb-3">
+                                        <div class="row seats-list">
+                                            @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 1))
+                                            {
                                                 <div class="col-md-3 seat">
                                                     <img src="~/image/seat-unselect-normal.png"
+                                                         style="width: 100%"
                                                          alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
+                                                    <div class="seat-content"><p>@s.SeatNumber</p></div>
                                                 </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                            </div>
+                                            }
                                         </div>
-                                        <div class="col-md-12 col-12 mb-3">
-                                            <div class="row seats-list">
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    </div>
 
-                                        <!-- Vip -->
-                                        <div class="col-md-12 col-12 mb-3">
-                                            <div class="row seats-list">
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 col-12 mb-3">
-                                            <div class="row seats-list">
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 col-12 mb-3">
-                                            <div class="row seats-list">
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <!-- COuple -->
-                                        <div class="col-md-12 col-12 mb-3">
-                                            <div class="row seats-list">
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         width="100%"
+                                    <!-- Vip -->
+                                    <div class="col-md-12 col-12 mb-3">
+                                        <div class="row seats-list">
+                                            @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 2))
+                                            {
+
+                                                <div class="col-md-3 seat">
+                                                    <img src="~/image/seat-unselect-vip.png"
+                                                         style="width: 100%"
                                                          alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
+                                                    <div class="seat-content"><p>@s.SeatNumber</p></div>
                                                 </div>
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         width="100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>A1</p></div>
-                                                </div>
-                                            </div>
+
+                                            }
+
+
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="seat-type-panel">
-                            <div class="row">
-                                <div class="col-md-2 col-12 seat-type">
-                                    <div class="row">
-                                        <div class="col-md-6 col-3 seat-img">
-                                            <img src="~/image/seat-unselect-normal.png" alt="" />
-                                        </div>
-                                        <div class="col-md-6 col-9 seat-des">
-                                            <p>Ghế thường</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-12 seat-type">
-                                    <div class="row">
-                                        <div class="col-md-6 col-3 seat-img">
-                                            <img src="~/image/seat-unselect-vip.png" alt="" />
-                                        </div>
-                                        <div class="col-md-6 col-9 seat-des">
-                                            <p>Ghế VIP</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-12 seat-type">
-                                    <div class="row">
-                                        <div class="col-md-6 col-3 seat-img">
-                                            <img src="~/image/seat-unselect-double.png" alt="" />
-                                        </div>
-                                        <div class="col-md-6 col-9 seat-des">
-                                            <p>Ghế đôi</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-12 seat-type">
-                                    <div class="row">
-                                        <div class="col-md-12 col-12 total-title">
-                                            <span>Tổng tiền</span>
-                                        </div>
-                                        <div class="col-md-12 col-12 total-price">
-                                            <span>0</span>
+
+
+                                    <!-- COuple -->
+                                    <div class="col-md-12 col-12 mb-3">
+                                        <div class="row seats-list">
+                                            @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 3))
+                                            {
+
+                                                <div class="col-md-3 seat-couple">
+                                                    <img src="~/image/seat-unselect-double.png"
+                                                         style="width: 100%"
+                                                         alt="" />
+                                                    <div class="seat-content"><p>@s.SeatNumber</p></div>
+                                                </div>
+
+
+                                            }
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="seat-type-panel">
+                        <div class="row">
+                            <div class="col-md-2 col-12 seat-type">
+                                <div class="row">
+                                    <div class="col-md-6 col-3 seat-img">
+                                        <img src="~/image/seat-unselect-normal.png" alt="" />
+                                    </div>
+                                    <div class="col-md-6 col-9 seat-des">
+                                        <p>Ghế thường</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-12 seat-type">
+                                <div class="row">
+                                    <div class="col-md-6 col-3 seat-img">
+                                        <img src="~/image/seat-unselect-vip.png" alt="" />
+                                    </div>
+                                    <div class="col-md-6 col-9 seat-des">
+                                        <p>Ghế VIP</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-12 seat-type">
+                                <div class="row">
+                                    <div class="col-md-6 col-3 seat-img">
+                                        <img src="~/image/seat-unselect-double.png" alt="" />
+                                    </div>
+                                    <div class="col-md-6 col-9 seat-des">
+                                        <p>Ghế đôi</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 seat-type">
+                                <div class="row">
+                                    <div class="col-md-12 col-12 total-title">
+                                        <span>Tổng tiền</span>
+                                    </div>
+                                    <div class="col-md-12 col-12 total-price">
+                                        <span>0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="row">
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    @foreach (var p in Model.Medias)
+                    {
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="~/image/movie.jpg" width="100%" alt="" />
+                                    <img src="~/images/@p.Url" style="width: 100%" alt="" />
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="" style="font-weight: bold;text-transform: uppercase;font-size: 14px;color:#1786C3;">Thanh gươm diệt quỷ</a>
+                                    <a href="" style="font-weight: bold;text-transform: uppercase;font-size: 14px;color:#1786C3;">@p.Movies.Title</a>
                                     <p>2D Phụ đề</p>
                                 </div>
                             </div>
@@ -593,14 +173,14 @@
                                             <i class="fas fa-tags"></i>Thể loại
                                         </div>
                                         <div class="col-md-6">
-                                            <span class="content-tickit"> Tâm lý, Trinh thám </span>
+                                            <span class="content-tickit">@p.Movies.Genre </span>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="row">
-                                        <div class="col-md-6 title-tickit"><i class="far fa-clock"></i>Thời lượng</div>
-                                        <div class="col-md-6"><span class="content-tickit">96 phút</span></div>
+                                        <div class="col-md-6 title-tickit"><i class="far fa-clock"></i>Duration</div>
+                                        <div class="col-md-6"><span class="content-tickit">@p.Movies.Duration minutes</span></div>
                                     </div>
                                 </li>
                             </ul>
@@ -608,54 +188,60 @@
                         <div class="col-md-12">
                             <hr class="border-dashed border-top-2">
                         </div>
+                    }
                         <div class="col-md-12">
                             <ul class="list-unstyled">
+                                @foreach (var p in Model.Shows)
+                                {
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-6 title-tickit"><i class="fas fa-university"></i>Cinema</div>
+                                            <div class="col-md-6"><span class="content-tickit">Beta Thái Nguyên</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-6 title-tickit"><i class="far fa-calendar-alt"></i>Start Times</div>
+                                            <div class="col-md-6"><span class="content-tickit">@p.StartTime</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-6 title-tickit"><i class="far fa-clock"></i>Start Times</div>
+                                            <div class="col-md-6"><span class="content-tickit">@p.StartTime</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-6 title-tickit"><i class="fas fa-desktop"></i>Cinema Room</div>
+                                            <div class="col-md-6"><span class="content-tickit">@p.CinemaHall.Name</span></div>
+                                        </div>
+                                    </li>
+}
                                 <li>
                                     <div class="row">
-                                        <div class="col-md-6 title-tickit"><i class="fas fa-university"></i>Rạp chiếu</div>
-                                        <div class="col-md-6"><span class="content-tickit">Beta Thái Nguyên</span></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-6 title-tickit"><i class="far fa-calendar-alt"></i>Ngày chiếu</div>
-                                        <div class="col-md-6"><span class="content-tickit">29/01/2021</span></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-6 title-tickit"><i class="far fa-clock"></i>Giờ chiếu</div>
-                                        <div class="col-md-6"><span class="content-tickit">20:00</span></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-6 title-tickit"><i class="fas fa-desktop"></i>Phòng chiếu</div>
-                                        <div class="col-md-6"><span class="content-tickit">P1</span></div>
-                                    </div>
-                                </li>
-                                <li>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-6 title-tickit"><i class="fas fa-cubes"></i>Ghế ngồi</div>
+                                        <div class="col-md-6 title-tickit"><i class="fas fa-cubes"></i>Seat</div>
                                         <div class="col-md-6"><span class="content-tickit">A1,A2</span></div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="row">
-                                        <div class="col-md-12 submit-ticket">
-                                            <a asp-action="index" asp-controller="PaymentTicket" class="buy-ticket">
-                                                <span>
-                                                    <i class="fas fa-ticket-alt"></i>
-                                                </span> Buy Ticket
-                                            </a>
-                                        </div>
+                                        @foreach (var p in Model.Shows)
+                                        {
+                                            <div class="col-md-12 submit-ticket">
+                                                <a asp-action="index" asp-controller="PaymentTicket" asp-route-CinemaHallID="@p.CinemaHallID" asp-route-MovieID="@p.MovieID" asp-route-ShowID="@p.ShowID" class="buy-ticket">
+                                                    <span>
+                                                        <i class="fas fa-ticket-alt"></i>
+                                                    </span> Buy Ticket
+                                                </a>
+                                            </div>
+                                        }
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>

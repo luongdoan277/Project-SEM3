@@ -93,18 +93,14 @@
                             <div class="col-md-12 time-content">
                                 <h4>2D Phụ đề</h4>
                             </div>
-                            <div class="col-md-2 col-4 time-hall">
-                                <a asp-action="index" asp-controller="CinemaSeat">11:30</a>
-                                <p>15 ghế trống</p>
-                            </div>
-                            <div class="col-md-2 col-4 time-hall">
-                                <a asp-action="index" asp-controller="CinemaSeat">11:30</a>
-                                <p>15 ghế trống</p>
-                            </div>
-                            <div class="col-md-2 col-4 time-hall">
-                                <a asp-action="index" asp-controller="CinemaSeat">11:30</a>
-                                <p>15 ghế trống</p>
-                            </div>
+
+                            @foreach (var p in Model.Shows)
+                            {
+                                <div class="col-md-2 col-4 time-hall">
+                                    <a asp-action="index" asp-controller="CinemaSeat" asp-route-CinemaHallID="@p.CinemaHallID" asp-route-MovieID="@p.MovieID" asp-route-ShowID="@p.ShowID" >@p.StartTime</a>
+                                    <p>@p.CinemaHall.TotalSeats ghế trống</p>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

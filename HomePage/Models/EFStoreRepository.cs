@@ -11,9 +11,11 @@ namespace HomePage.Models
             context = ctx;
         }
         public IQueryable<Movie> Movies => context.Movies;
+        public IQueryable<CinemaSeat> CinemaSeats => context.CinemaSeats;
         public IQueryable<Product> Products => context.Products;
         public IQueryable<Category> Categories => context.Categories;
         public IQueryable<Media> Medias => context.Medias;
         public IQueryable<Shop> Shops => context.Shops;
+        public IQueryable<Show> Shows => context.Shows;
     }
 }
