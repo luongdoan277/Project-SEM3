@@ -47,59 +47,77 @@
                             <img src="~/image/ic-screen.png" alt="" />
                             <div class="seat-list">
                                 <div class="row">
-                                    <!-- Normal -->
-                                    <div class="col-md-12 col-12 mb-3">
-                                        <div class="row seats-list">
-                                            @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 1))
-                                            {
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-normal.png"
-                                                         style="width: 100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>@s.SeatNumber</p></div>
-                                                </div>
-                                            }
+
+                                    <form action="" class="form-seat">
+                                        <!-- Normail -->
+                                        <div class="col-md-12 col-12 mb-3">
+                                            <div class="row seats-list">
+                                                @{ int i = 1;}
+
+                                                @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 1))
+                                                {
+                                                    <div class="col-md-3 seat">
+                                                        <label for=@i>
+                                                            <img src="~/image/seat-unselect-normal.png"
+                                                                 alt="" />
+                                                            <div class="seat-content"><p>@s.SeatNumber</p></div>
+                                                        </label>
+                                                        <input type="checkbox" id=@i class="seat-item" value=@s.SeatNumber>
+                                                    </div>
+
+                                                    @(i++)
+                                                }
+                                            </div>
                                         </div>
-                                    </div>
 
 
-                                    <!-- Vip -->
-                                    <div class="col-md-12 col-12 mb-3">
-                                        <div class="row seats-list">
-                                            @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 2))
-                                            {
-
-                                                <div class="col-md-3 seat">
-                                                    <img src="~/image/seat-unselect-vip.png"
-                                                         style="width: 100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>@s.SeatNumber</p></div>
-                                                </div>
-
-                                            }
 
 
+
+                                        <!-- Vipp -->
+                                        <div class="col-md-12 col-12 mb-3">
+                                            <div class="row seats-list">
+                                                @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 2))
+                                                {
+                                                    <div class="col-md-3 seat">
+                                                        <label for=@i>
+                                                            <img src="~/image/seat-unselect-vip.png"
+                                                                 alt="" />
+                                                            <div class="seat-content"><p>@s.SeatNumber</p></div>
+                                                        </label>
+                                                        <input type="checkbox" id=@i class="seat-item" value=@s.SeatNumber>
+                                                    </div>
+
+                                                    @(i++)
+                                                }
+                                            </div>
                                         </div>
-                                    </div>
+
+                                        
 
 
-                                    <!-- COuple -->
-                                    <div class="col-md-12 col-12 mb-3">
-                                        <div class="row seats-list">
-                                            @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 3))
-                                            {
 
-                                                <div class="col-md-3 seat-couple">
-                                                    <img src="~/image/seat-unselect-double.png"
-                                                         style="width: 100%"
-                                                         alt="" />
-                                                    <div class="seat-content"><p>@s.SeatNumber</p></div>
-                                                </div>
-
-
-                                            }
+                                        <!-- Cup;dlasd -->
+                                        <div class="col-md-12 col-12 mb-3">
+                                            <div class="row seats-list">
+                                                @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 3))
+                                                {
+                                                    <div class="col-md-3 seat">
+                                                        <label for=@i>
+                                                            <img src="~/image/seat-unselect-double.png"
+                                                                 alt="" />
+                                                            <div class="seat-content"><p>@s.SeatNumber</p></div>
+                                                        </label>
+                                                        <input type="checkbox" id=@i class="seat-item" value=@s.SeatNumber></input>
+                                                    </div>
+                                                    @(i++)
+                                                }
+                                            </div>
                                         </div>
-                                    </div>
+
+                                    </form>
+
+
                                 </div>
                             </div>
                         </div>
@@ -189,57 +207,57 @@
                             <hr class="border-dashed border-top-2">
                         </div>
                     }
-                        <div class="col-md-12">
-                            <ul class="list-unstyled">
-                                @foreach (var p in Model.Shows)
-                                {
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-6 title-tickit"><i class="fas fa-university"></i>Cinema</div>
-                                            <div class="col-md-6"><span class="content-tickit">Beta Thái Nguyên</span></div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-6 title-tickit"><i class="far fa-calendar-alt"></i>Start Times</div>
-                                            <div class="col-md-6"><span class="content-tickit">@p.StartTime</span></div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-6 title-tickit"><i class="far fa-clock"></i>Start Times</div>
-                                            <div class="col-md-6"><span class="content-tickit">@p.StartTime</span></div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-6 title-tickit"><i class="fas fa-desktop"></i>Cinema Room</div>
-                                            <div class="col-md-6"><span class="content-tickit">@p.CinemaHall.Name</span></div>
-                                        </div>
-                                    </li>
-}
+                    <div class="col-md-12">
+                        <ul class="list-unstyled">
+                            @foreach (var p in Model.Shows)
+                            {
                                 <li>
                                     <div class="row">
-                                        <div class="col-md-6 title-tickit"><i class="fas fa-cubes"></i>Seat</div>
-                                        <div class="col-md-6"><span class="content-tickit">A1,A2</span></div>
+                                        <div class="col-md-6 title-tickit"><i class="fas fa-university"></i>Cinema</div>
+                                        <div class="col-md-6"><span class="content-tickit">Beta Thái Nguyên</span></div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="row">
-                                        @foreach (var p in Model.Shows)
-                                        {
-                                            <div class="col-md-12 submit-ticket">
-                                                <a asp-action="index" asp-controller="PaymentTicket" asp-route-CinemaHallID="@p.CinemaHallID" asp-route-MovieID="@p.MovieID" asp-route-ShowID="@p.ShowID" class="buy-ticket">
-                                                    <span>
-                                                        <i class="fas fa-ticket-alt"></i>
-                                                    </span> Buy Ticket
-                                                </a>
-                                            </div>
-                                        }
+                                        <div class="col-md-6 title-tickit"><i class="far fa-calendar-alt"></i>Start Times</div>
+                                        <div class="col-md-6"><span class="content-tickit">@p.StartTime</span></div>
                                     </div>
                                 </li>
-                            </ul>
-                        </div>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6 title-tickit"><i class="far fa-clock"></i>Start Times</div>
+                                        <div class="col-md-6"><span class="content-tickit">@p.StartTime</span></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6 title-tickit"><i class="fas fa-desktop"></i>Cinema Room</div>
+                                        <div class="col-md-6"><span class="content-tickit">@p.CinemaHall.Name</span></div>
+                                    </div>
+                                </li>
+                            }
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-6 title-tickit"><i class="fas fa-cubes"></i>Seat</div>
+                                    <div class="col-md-6"><span class="content-tickit">A1,A2</span></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row">
+                                    @foreach (var p in Model.Shows)
+                                    {
+                                        <div class="col-md-12 submit-ticket">
+                                            <a asp-action="index" asp-controller="PaymentTicket" asp-route-CinemaHallID="@p.CinemaHallID" asp-route-MovieID="@p.MovieID" asp-route-ShowID="@p.ShowID" class="buy-ticket">
+                                                <span>
+                                                    <i class="fas fa-ticket-alt"></i>
+                                                </span> Buy Ticket
+                                            </a>
+                                        </div>
+                                    }
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
