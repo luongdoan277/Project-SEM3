@@ -18,11 +18,17 @@ namespace HomePage.Controllers
             repository = repo;
         }
 
-        public ViewResult Index()
+        public ViewResult Index(int MovieID,int CinemaHallID,int ShowID)
         {
             ContentListViewModel model = new ContentListViewModel
             {
-                CinemaSeats = repository.CinemaSeats.OrderBy(m => m.CinemaHallID).Include(m => m.CinemaHall)
+                CinemaSeats = repository.CinemaSeats.OrderBy(m => m.CinemaSeatID)
+                .Include(m => m.CinemaHall).Where(m => m.CinemaHallID == CinemaHallID),
+
+                Medias = repository.Medias.OrderBy(m => m.MovieID).Include(m => m.Movies).Where(m => m.MovieID == MovieID),
+
+                Shows = repository.Shows.OrderBy(m => m.ShowID).Include(m => m.CinemaHall).Where(m => m.ShowID == ShowID),
+
             };
             return View(model);
         }

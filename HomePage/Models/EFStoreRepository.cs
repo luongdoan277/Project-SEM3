@@ -16,5 +16,6 @@ namespace HomePage.Models
         public IQueryable<Category> Categories => context.Categories;
         public IQueryable<Media> Medias => context.Medias;
         public IQueryable<Shop> Shops => context.Shops;
+        public IQueryable<Show> Shows => context.Shows;
     }
 }

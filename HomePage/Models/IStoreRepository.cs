@@ -10,6 +10,8 @@ namespace HomePage.Models
         IQueryable<Movie> Movies { get; }
         IQueryable<Product> Products { get; }
         IQueryable<Media> Medias { get; }
+        IQueryable<Show> Shows { get; }
+
         IQueryable<CinemaSeat> CinemaSeats { get; }
         IQueryable<Category> Categories { get; }
         IQueryable<Shop> Shops { get; }

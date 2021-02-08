@@ -264,7 +264,8 @@ namespace PageAdmin.Models
                         SeatNumber = "B1",
                         Type = 1,
                         CinemaHallID = 1
-                    }, new CinemaSeat
+                    },
+                    new CinemaSeat
                     {
                         SeatNumber = "B2",
                         Type = 1,

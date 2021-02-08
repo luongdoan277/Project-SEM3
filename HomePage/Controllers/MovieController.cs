@@ -18,7 +18,6 @@ namespace HomePage.Controllers
             repository = repo;
         }
 
-
         public ViewResult Index()
         {
             ContentListViewModel model = new ContentListViewModel
@@ -30,7 +29,7 @@ namespace HomePage.Controllers
             return View(model);
         }
 
-        public ViewResult Detail(int MovieID)
+        public ViewResult Detail(int MovieID,int ShowID)
         {
             return View(new ContentListViewModel
             {
@@ -38,7 +37,11 @@ namespace HomePage.Controllers
 
                 Medias = repository.Medias
                 .Include(s => s.Movies)
-                .Where(m => m.MovieID == MovieID)
+                .Where(m => m.MovieID == MovieID),
+
+                Shows = repository.Shows.OrderBy(m => m.ShowID).Include(m => m.CinemaHall).Where(m => m.MovieID == MovieID)
+
+
             });
         }
     }
