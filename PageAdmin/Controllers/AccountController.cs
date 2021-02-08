@@ -41,6 +41,7 @@ namespace PageAdmin.Controllers
                 {
                     var user = new PageAdminUser { UserName = Email, Email = Email };
                     var result = await _context.CreateAsync(user, Password);
+                    return RedirectToAction(nameof(Index));
                 }
                 else
                 {
