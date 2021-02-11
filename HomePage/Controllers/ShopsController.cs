@@ -35,7 +35,11 @@ namespace HomePage.Controllers
                 Products = repository.Products
                 .OrderBy(m => m.ShopID)
                 .Include(s => s.Shops)
-                .Where(m => m.ShopID == ShopID)
+                .Where(m => m.ShopID == ShopID),
+
+
+                Medias = repository.Medias.Where(m => m.ShopID != null).OrderBy(m => m.ShopID).Include(m => m.Shops)
+
 
                 //Shops = repository.Shops
                 //.Include(s => s.Categories)

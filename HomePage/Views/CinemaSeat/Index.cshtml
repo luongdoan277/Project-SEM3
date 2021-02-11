@@ -8,40 +8,51 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="row">
-                            <div class="col-md-12">
-                                <ul class="links-list">
-                                    <li><a href="">Trang chủ </a><span> > </span></li>
-                                    <li><a href="">Đặt vé </a> <span> > </span></li>
-                                    <li><a href="">(Tên phim)</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-12 limit">
-                                <span>
-                                    Theo quy định của cục điện ảnh, phim này không dành cho khán
-                                    giả dưới 13 tuổi.
-                                </span>
-                            </div>
+                            @foreach (var p in Model.Medias)
+                            {
+                                <div class="col-md-12">
+                                    <ul class="links-list">
+                                        <li><a href="">Home</a><span> > </span></li>
+                                        <li><a href="">Book ticket</a> <span> > </span></li>
+                                        <li><a href="">@p.Movies.Title</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12 limit">
+                                    <span>
+                                        @p.Movies.Description
+                                    </span>
+                                </div>
+                            }
+
                             <div class="col-md-12">
                                 <div class="row seats">
                                     <div class="col-md-3 seat-icon">
                                         <img src="~/image/seat-buy-normal.png" alt="" />
-                                        <span>Ghế đã bán</span>
+                                        <span>Seats sold</span>
                                     </div>
                                     <div class="col-md-3 seat-icon">
                                         <img src="~/image/seat-process-normal.png" alt="" />
-                                        <span>Ghế đã bán</span>
+                                        <span>
+                                            Selected seat
+                                        </span>
                                     </div>
                                     <div class="col-md-3 seat-icon">
                                         <img src="~/image/seat-set-normal.png" alt="" />
-                                        <span>Ghế đã bán</span>
+                                        <span>
+                                            Seat reservation
+                                        </span>
                                     </div>
                                     <div class="col-md-3 seat-icon">
                                         <img src="~/image/seat-select-normal.png" alt="" />
-                                        <span>Ghế đã bán</span>
+                                        <span>
+                                            Chairs are on hold
+                                        </span>
                                     </div>
                                     <div class="col-md-3 seat-icon">
                                         <img src="~/image/seat-unselect-normal.png" alt="" />
-                                        <span>Ghế đã bán</span>
+                                        <span>
+                                            Empty seat
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -58,9 +69,7 @@
                                                     @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 1))
                                                     {
                                                         <div class="col-md-3 seat">
-                                                            <label for=@i>
-                                                                <img src="~/image/seat-unselect-normal.png"
-                                                                     alt="" />
+                                                            <label for=@i class="normal-seat-index">
                                                                 <div class="seat-content"><p>@s.SeatNumber</p></div>
                                                             </label>
                                                             <input type="checkbox" id=@i class="seat-item" value=@s.SeatNumber>
@@ -81,9 +90,7 @@
                                                     @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 2))
                                                     {
                                                         <div class="col-md-3 seat">
-                                                            <label for=@i>
-                                                                <img src="~/image/seat-unselect-vip.png"
-                                                                     alt="" />
+                                                            <label for=@i class="vip-seat-index">
                                                                 <div class="seat-content"><p>@s.SeatNumber</p></div>
                                                             </label>
                                                             <input type="checkbox" id=@i class="seat-item" value=@s.SeatNumber>
@@ -104,9 +111,7 @@
                                                     @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 3))
                                                     {
                                                         <div class="col-md-3 seat">
-                                                            <label for=@i>
-                                                                <img src="~/image/seat-unselect-double.png"
-                                                                     alt="" />
+                                                            <label for=@i class="double-seat-index">
                                                                 <div class="seat-content"><p>@s.SeatNumber</p></div>
                                                             </label>
                                                             <input type="checkbox" id=@i class="seat-item" value=@s.SeatNumber></input>
@@ -128,7 +133,9 @@
                                                 <img src="~/image/seat-unselect-normal.png" alt="" />
                                             </div>
                                             <div class="col-md-6 col-9 seat-des">
-                                                <p>Ghế thường</p>
+                                                <p>
+                                                    Ordinary chair
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -138,7 +145,9 @@
                                                 <img src="~/image/seat-unselect-vip.png" alt="" />
                                             </div>
                                             <div class="col-md-6 col-9 seat-des">
-                                                <p>Ghế VIP</p>
+                                                <p>
+                                                    VIP seats
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -148,17 +157,17 @@
                                                 <img src="~/image/seat-unselect-double.png" alt="" />
                                             </div>
                                             <div class="col-md-6 col-9 seat-des">
-                                                <p>Ghế đôi</p>
+                                                <p>Double chair</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12 seat-type">
                                         <div class="row">
                                             <div class="col-md-12 col-12 total-title">
-                                                <span>Tổng tiền</span>
+                                                <span>Total price</span>
                                             </div>
                                             <div class="col-md-12 col-12 total-price">
-                                                <span>0</span>
+                                                <span id="total-price">0</span>
                                             </div>
                                         </div>
                                     </div>
@@ -166,7 +175,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 movie-ticket-page">
                         <div class="row">
                             @foreach (var p in Model.Medias)
                             {
@@ -177,7 +186,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <a href="" style="font-weight: bold;text-transform: uppercase;font-size: 14px;color:#1786C3;">@p.Movies.Title</a>
-                                            <p>2D Phụ đề</p>
+                                            <p>2D</p>
                                         </div>
                                     </div>
                                 </div>
@@ -186,7 +195,7 @@
                                         <li>
                                             <div class="row">
                                                 <div class="col-md-6 title-tickit">
-                                                    <i class="fas fa-tags"></i>Thể loại
+                                                    <i class="fas fa-tags"></i>Gerne
                                                 </div>
                                                 <div class="col-md-6">
                                                     <span class="content-tickit">@p.Movies.Genre </span>
@@ -217,14 +226,14 @@
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <div class="col-md-6 title-tickit"><i class="far fa-calendar-alt"></i>Start Times</div>
-                                                <div class="col-md-6"><span class="content-tickit">@p.StartTime</span></div>
+                                                <div class="col-md-6 title-tickit"><i class="far fa-calendar-alt"></i>Show Dates</div>
+                                                <div class="col-md-6"><span class="content-tickit">@p.StartTime.DayOfYear</span></div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="row">
                                                 <div class="col-md-6 title-tickit"><i class="far fa-clock"></i>Start Times</div>
-                                                <div class="col-md-6"><span class="content-tickit">@p.StartTime</span></div>
+                                                <div class="col-md-6"><span class="content-tickit">@p.StartTime.TimeOfDay</span></div>
                                             </div>
                                         </li>
                                         <li>
@@ -237,7 +246,7 @@
                                     <li>
                                         <div class="row">
                                             <div class="col-md-6 title-tickit"><i class="fas fa-cubes"></i>Seat</div>
-                                            <div class="col-md-6"><span class="content-tickit">A1,A2</span></div>
+                                            <div class="col-md-6"><span class="content-tickit" id="seat-cus"></span></div>
                                         </div>
                                     </li>
                                     <li>
