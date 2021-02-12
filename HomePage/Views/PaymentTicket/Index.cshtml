@@ -130,7 +130,7 @@
                           font-size: 14px;
                           color: #1786c3;
                         ">@p.Movies.Title</a>
-                        <p>2D Phụ đề</p>
+                                    <p>Format: 2D</p>
                     </div>
                 </div>
                 </div>
@@ -181,10 +181,10 @@
                                 <li>
                                     <div class="row">
                                         <div class="col-md-6 title-tickit">
-                                            <i class="far fa-calendar-alt"></i>Start Time
+                                            <i class="far fa-calendar-alt"></i>Show Date
                                         </div>
                                         <div class="col-md-6">
-                                            <span class="content-tickit">@p.StartTime</span>
+                                            <span class="content-tickit">@p.StartTime.DayOfYear</span>
                                         </div>
                                     </div>
                                 </li>
@@ -194,7 +194,7 @@
                                             <i class="far fa-clock"></i>Start Times
                                         </div>
                                         <div class="col-md-6">
-                                            <span class="content-tickit">@p.StartTime</span>
+                                            <span class="content-tickit">@p.StartTime.TimeOfDay minutes</span>
                                         </div>
                                     </div>
                                 </li>
@@ -215,7 +215,7 @@
                                             <i class="fas fa-cubes"></i>Seat
                                         </div>
                                         <div class="col-md-6">
-                                            <span class="content-tickit">A1,A2</span>
+                                            <span class="content-tickit"></span>
                                         </div>
                                     </div>
                                 </li>

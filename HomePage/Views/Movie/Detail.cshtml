@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="col-md-3 info">
                                         <p><i class="far fa-calendar"></i>Start Times</p>
-                                        <span>@m.Movies.ReleaseDate</span>
+                                        <span>@m.Movies.ReleaseDate.Date</span>
                                     </div>
                                     <div class="col-md-3 info">
                                         <p>
@@ -91,14 +91,14 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-12 time-content">
-                                <h4>2D Phụ đề</h4>
+                                <h4>2D</h4>
                             </div>
 
                             @foreach (var p in Model.Shows)
                             {
                                 <div class="col-md-2 col-4 time-hall">
-                                    <a asp-action="index" asp-controller="CinemaSeat" asp-route-CinemaHallID="@p.CinemaHallID" asp-route-MovieID="@p.MovieID" asp-route-ShowID="@p.ShowID" >@p.StartTime</a>
-                                    <p>@p.CinemaHall.TotalSeats ghế trống</p>
+                                    <a asp-action="index" asp-controller="CinemaSeat" asp-route-CinemaHallID="@p.CinemaHallID" asp-route-MovieID="@p.MovieID" asp-route-ShowID="@p.ShowID" >@p.StartTime.TimeOfDay</a>
+                                    <p>@p.CinemaHall.TotalSeats Emty seat</p>
                                 </div>
                             }
                         </div>

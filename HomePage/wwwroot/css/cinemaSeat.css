@@ -36,7 +36,7 @@
     }
 
     .seat-icon > span {
-        font-size: 13px;
+        font-size: 12px;
     }
 
 .seat-list {
@@ -56,7 +56,7 @@
 }
 
 .full-screen {
-    background: #F7F7F7;
+    background: #f7f7f7;
 }
 
     .full-screen > img {
@@ -71,7 +71,7 @@
 
 .seats-list {
     display: grid;
-    grid-template-columns: repeat(13,62px);
+    grid-template-columns: repeat(13, 62px);
     justify-content: center;
 }
 
@@ -80,6 +80,7 @@
     padding: 0;
     cursor: pointer;
     position: relative;
+    height: 50px;
 }
 
     .seat > label {
@@ -90,10 +91,22 @@
         cursor: pointer;
     }
 
+    .seat > .normal-seat-index {
+        background-image: url(../image/seat-unselect-normal.png);
+        background-size: 100%;
+    }
 
-        .seat > label > img {
-            width: 100%;
-        }
+    .seat > .vip-seat-index {
+        background-image: url(../image/seat-unselect-vip.png);
+        background-size: 100%;
+    }
+
+    .seat > .double-seat-index {
+        background-image: url(../image/seat-unselect-double.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
 .seat-couple {
     max-width: 10%;
@@ -130,14 +143,13 @@
     padding: 20px;
 }
 
-
-.total-title, .total-price {
+.total-title,
+.total-price {
     text-transform: uppercase;
     display: flex;
     justify-content: flex-end;
     font-size: 20px;
 }
-
 
 .ticket-infor {
     padding: 40px 15px;
@@ -191,6 +203,18 @@
 
 
 
-.seat-item {
-    display: none;
+.seat-item{
+  display: none;
+} 
+
+.normal-seat {
+    background-image: url(../image/seat-process-normal.png) !important;
+}
+
+.vip-seat {
+    background-image: url(../image/seat-process-vip.png) !important;
+}
+
+.douple-seat {
+    background-image: url(../image/seat-process-double.png) !important;
 }
