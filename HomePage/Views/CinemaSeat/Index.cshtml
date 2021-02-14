@@ -57,9 +57,8 @@
                                                 @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 1))
                                                 {
                                                     <div class="col-md-3 seat">
-                                                        <label for=@i>
-                                                            <img src="~/image/seat-unselect-normal.png"
-                                                                 alt="" />
+                                                        <label for=@i class="normal-seat-index">
+                                                
                                                             <div class="seat-content"><p>@s.SeatNumber</p></div>
                                                         </label>
                                                         <input type="checkbox" id=@i class="seat-item" value=@s.SeatNumber>
@@ -80,9 +79,8 @@
                                                 @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 2))
                                                 {
                                                     <div class="col-md-3 seat">
-                                                        <label for=@i>
-                                                            <img src="~/image/seat-unselect-vip.png"
-                                                                 alt="" />
+                                                        <label for=@i class="vip-seat-index">
+                                                           
                                                             <div class="seat-content"><p>@s.SeatNumber</p></div>
                                                         </label>
                                                         <input type="checkbox" id=@i class="seat-item" value=@s.SeatNumber>
@@ -103,9 +101,8 @@
                                                 @foreach (var s in Model.CinemaSeats.Where(m => m.Type == 3))
                                                 {
                                                     <div class="col-md-3 seat">
-                                                        <label for=@i>
-                                                            <img src="~/image/seat-unselect-double.png"
-                                                                 alt="" />
+                                                        <label for=@i class="double-seat-index">
+                                                           
                                                             <div class="seat-content"><p>@s.SeatNumber</p></div>
                                                         </label>
                                                         <input type="checkbox" id=@i class="seat-item" value=@s.SeatNumber></input>
@@ -237,7 +234,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col-md-6 title-tickit"><i class="fas fa-cubes"></i>Seat</div>
-                                    <div class="col-md-6"><span class="content-tickit">A1,A2</span></div>
+                                    <div class="col-md-6"><span class="content-tickit"  id="seat-cus"></span></div>
                                 </div>
                             </li>
                             <li>
