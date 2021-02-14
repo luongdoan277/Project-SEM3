@@ -1,21 +1,24 @@
-﻿<section class="feedBack-content">
-    <form action="" class="form-submit feedBack-form">
+﻿@model Feedback
+
+
+<section class="feedBack-content">
+    <form method="post" class="form-submit feedBack-form">
         <div class="name-user">
             <div class="first-name">
-                <label for="">First Name</label>
-                <input type="text" name="FirstName" placeholder="First Name..." />
+                <label asp-for="FullName"></label>
+                <input type="text" asp-for="FullName" placeholder="Full Name..." />
             </div>
             <div class="last-name">
-                <label for="">Last Name</label>
-                <input type="text" name="LastName" placeholder="Last Name..." />
+                <label asp-for="NumberPhone"></label>
+                <input type="number" asp-for="NumberPhone" placeholder="Number Phone..." />
             </div>
         </div>
         <div class="email">
-            <label for="">Email</label>
-            <input type="text" name="Email" placeholder="Email..." />
+            <label asp-for="Email"></label>
+            <input type="text" asp-for="Email" placeholder="Email..." />
         </div>
 
-        <div class="option-radio">
+        @*<div class="option-radio">
             <label for="">Which department do you have a suggestion for?</label>
             <div class="sales">
                 <input type="radio" name="a" value="Sales" />
@@ -34,18 +37,17 @@
             </div>
             <div class="other">
                 <input type="radio" name="a" value="Other" />
-
                 <label for="">Other</label>
             </div>
-        </div>
+        </div>*@
 
         <div class="subject">
-            <label for="">Subject</label>
-            <input type="text" name="subject" placeholder="Subject..." />
+            <label asp-for="Subject"></label>
+            <input type="text" asp-for="Subject" placeholder="Subject..." />
         </div>
         <div class="messgae">
-            <label for="">Message</label>
-            <textarea name="message" id="" cols="30" rows="10" placeholder="Message..."></textarea>
+            <label asp-for="Message"></label>
+            <textarea asp-for="Message" id="" cols="30" rows="10" placeholder="Message..."></textarea>
         </div>
         <button type="submit" class="btn-submit">Send Message</button>
     </form>

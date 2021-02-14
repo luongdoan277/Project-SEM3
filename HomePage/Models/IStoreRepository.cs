@@ -15,5 +15,6 @@ namespace HomePage.Models
         IQueryable<CinemaSeat> CinemaSeats { get; }
         IQueryable<Category> Categories { get; }
         IQueryable<Shop> Shops { get; }
+        IQueryable<Feedback> Feedbacks { get; }
     }
 }
