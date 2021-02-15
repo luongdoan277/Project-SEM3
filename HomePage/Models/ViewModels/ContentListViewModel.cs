@@ -21,6 +21,7 @@ namespace HomePage.Models.ViewModels
         public IEnumerable<Product> Products { get; set; }
 
         public IEnumerable<Shop> Shops { get; set; }
+        public IEnumerable<Feedback> Feedbacks { get; set; }
 
     }
 }

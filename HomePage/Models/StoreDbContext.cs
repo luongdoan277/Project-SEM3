@@ -24,5 +24,6 @@ namespace HomePage.Models
         public DbSet<Show> Shows { get; set; }
         public DbSet<ShowSeat> ShowSeats { get; set; }
         public DbSet<UserBooking> UserBookings { get; set; }
+        public DbSet<HomePage.Models.Feedback> Feedbacks { get; set; }
     }
 }
