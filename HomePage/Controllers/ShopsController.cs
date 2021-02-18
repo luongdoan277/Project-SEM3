@@ -50,7 +50,7 @@ namespace HomePage.Controllers
                 .Where(m => m.ShopID == ShopID),
 
 
-                Medias = repository.Medias.Where(m => m.ShopID != null).OrderBy(m => m.ShopID).Include(m => m.Shops)
+                Medias = repository.Medias.Where(m => m.ShopID == ShopID).OrderBy(m => m.ShopID).Include(m => m.Shops)
 
 
                 //Shops = repository.Shops

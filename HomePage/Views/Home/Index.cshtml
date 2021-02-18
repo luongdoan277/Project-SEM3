@@ -5,34 +5,34 @@
     <div class="slides">
         <div class="slide">
             <a href="">
-                <img src="~/image/Final-hilight-banner_0005.jpg" alt="">
+                <img src="~/image/apple.jpg" alt="">
                 @*<div class="slide__content">
-                    <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
-                </div>*@
-            </a>
-        </div>
-        <div class="slide">
-            <a href="">
-                <img src="~/image/Final-hilight-banner_0003.jpg" alt="">
-                @*<div class="slide__content">
-                    <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
-                </div>*@
+                        <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
+                    </div>*@
             </a>
         </div>
         <div class="slide">
             <a href="">
                 <img src="~/image/Final-hilight-banner_0006.jpg" alt="">
                 @*<div class="slide__content">
-                    <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
-                </div>*@
+                        <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
+                    </div>*@
+            </a>
+        </div>
+        <div class="slide">
+            <a href="">
+                <img src="~/image/Final-hilight-banner_0005.jpg" alt="">
+                @*<div class="slide__content">
+                        <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
+                    </div>*@
             </a>
         </div>
         <div class="slide">
             <a href="">
                 <img src="~/image/banner_high_street-1.jpg" alt="">
                 @*<div class="slide__content">
-                    <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
-                </div>*@
+                        <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
+                    </div>*@
             </a>
         </div>
     </div>
@@ -59,10 +59,10 @@
             </div>
             <div class="col-md-12 ourWorld__content">
                 <div class="row">
-                    @foreach (var p in Model.Medias.Where(m => m.ShopID == 1))
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "The North Face"))
                     {
                         <div class="col-md-4 banner">
-                            <a href="" class="banner__links">
+                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
                                 <img src="~/images/@p.Url" alt="" />
                                 <div class="banner__content">
                                     <p>@p.Shops.ShopName</p>
@@ -71,10 +71,11 @@
                             </a>
                         </div>
                     }
-                    @foreach (var p in Model.Medias.Where(m => m.ShopID == 2))
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Jim Thompson"))
+
                     {
                         <div class="col-md-8 banner">
-                            <a href="" class="banner__links">
+                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
                                 <img src="~/images/@p.Url" alt="" />
                                 <div class="banner__content">
                                     <p>@p.Shops.ShopName</p>
@@ -82,10 +83,11 @@
                                 </div>
                             </a>
                         </div>
-                    } @foreach (var p in Model.Medias.Where(m => m.ShopID == 3))
+                    }
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Apple"))
                     {
                         <div class="col-md-6 banner">
-                            <a href="" class="banner__links">
+                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
                                 <img src="~/images/@p.Url" alt="" />
                                 <div class="banner__content">
                                     <p>@p.Shops.ShopName</p>
@@ -93,9 +95,10 @@
                                 </div>
                             </a>
                         </div>
-                    } @foreach (var p in Model.Medias.Where(m => m.ShopID == 4))
+                    }                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Q&B"))
+
                     {<div class="col-md-6 banner">
-                            <a href="" class="banner__links">
+                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
                                 <img src="~/images/@p.Url" alt="" />
                                 <div class="banner__content">
                                     <p>@p.Shops.ShopName</p>
@@ -104,10 +107,11 @@
                             </a>
                         </div>
 
-                    } @foreach (var p in Model.Medias.Where(m => m.ShopID == 5))
+                    }                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Screen Shot"))
+
                     {
                         <div class="col-md-4 banner">
-                            <a href="" class="banner__links">
+                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
                                 <img src="~/images/@p.Url" alt="" />
                                 <div class="banner__content">
                                     <p>@p.Shops.ShopName</p>
@@ -115,10 +119,11 @@
                                 </div>
                             </a>
                         </div>
-                    } @foreach (var p in Model.Medias.Where(m => m.ShopID == 6))
+                    }                     @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Cafe Har"))
+
                     {
                         <div class="col-md-4 banner">
-                            <a href="" class="banner__links">
+                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
                                 <img src="~/images/@p.Url" alt="" />
                                 <div class="banner__content">
                                     <p>@p.Shops.ShopName</p>
@@ -126,10 +131,11 @@
                                 </div>
                             </a>
                         </div>
-                    } @foreach (var p in Model.Medias.Where(m => m.ShopID == 7))
+                    }                     @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "BabyBotte"))
+
                     {
                         <div class="col-md-4 banner">
-                            <a href="" class="banner__links">
+                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
                                 <img src="~/images/@p.Url" alt="" />
                                 <div class="banner__content">
                                     <p>@p.Shops.ShopName</p>
@@ -140,14 +146,17 @@
                     }
                 </div>
             </div>
-            </div>
         </div>
+    </div>
 </section>
 
 <section class="videos">
     <div class="container">
         <div class="row">
             <div class="col-md-12 video__content">
+                @*<iframe width="420" height="315"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+        </iframe>*@
                 <video controls>
                     <source src="~/video/pexels-charles-parker-5825783.mp4">
                 </video>
@@ -163,7 +172,7 @@
         @foreach (var p in Model.Medias.Where(m => m.ShopID == 8))
         {
             <div class="col-md-5 col-6 col-sm-6 zones__item">
-                <a href="">
+                <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID">
                     <img src="~/images/@p.Url" alt="" />
                     <div class="zones__content">
                         <p class="text-center mb-0">@p.Shops.ShopName</p>
@@ -175,7 +184,7 @@
         @foreach (var p in Model.Medias.Where(m => m.ShopID == 9))
         {
             <div class="col-md-5 col-6 col-sm-6 zones__item">
-                <a href="">
+                <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID">
                     <img src="~/images/@p.Url" alt="" />
                     <div class="zones__content">
                         <p class="text-center mb-0">@p.Shops.ShopName</p>
@@ -187,7 +196,7 @@
         @foreach (var p in Model.Medias.Where(m => m.ShopID == 10))
         {
             <div class="col-md-5 col-6 col-sm-6 zones__item">
-                <a href="">
+                <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID">
                     <img src="~/images/@p.Url" alt="" />
                     <div class="zones__content">
                         <p class="text-center mb-0">@p.Shops.ShopName</p>
@@ -199,7 +208,7 @@
         @foreach (var p in Model.Medias.Where(m => m.ShopID == 11))
         {
             <div class="col-md-5 col-6 col-sm-6 zones__item">
-                <a href="">
+                <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID">
                     <img src="~/images/@p.Url" alt="" />
                     <div class="zones__content">
                         <p class="text-center mb-0">@p.Shops.ShopName</p>
@@ -211,7 +220,7 @@
         @foreach (var p in Model.Medias.Where(m => m.ShopID == 12))
         {
             <div class="col-md-5 col-6 col-sm-6 zones__item">
-                <a href="">
+                <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID">
                     <img src="~/images/@p.Url" alt="" />
                     <div class="zones__content">
                         <p class="text-center mb-0">@p.Shops.ShopName</p>
