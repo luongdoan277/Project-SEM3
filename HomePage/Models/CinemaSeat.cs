@@ -13,4 +13,18 @@ namespace HomePage.Models
         public int CinemaHallID { get; set; }
         public virtual CinemaHall CinemaHall { get; set; }
     }
+    public class ListSeat
+    {
+        public List<CinemaSeat> Items { get; set; } = new List<CinemaSeat>();
+        public void CheckboxAdd(CinemaSeat seat)
+        {
+            CinemaSeat item = seat;
+            Items.Add(item);
+        }
+        public void CheckboxRemove(CinemaSeat seat)
+        {
+            CinemaSeat item = seat;
+            Items.RemoveAll(i => i.CinemaSeatID == seat.CinemaSeatID);
+        }
+    }
 }

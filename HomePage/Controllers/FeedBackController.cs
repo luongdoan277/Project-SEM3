@@ -14,14 +14,14 @@ namespace HomePage.Controllers
 {
     public class FeedBackController : Controller
     {
-        private IStoreRepository repository;
+        //private readonly IStoreRepository repository;
 
         private readonly StoreDbContext _context;
 
-        public FeedBackController(IStoreRepository repo)
-        {
-            repository = repo;
-        }
+        //public FeedBackController(IStoreRepository repo)
+        //{
+        //    repository = repo;
+        //}
 
         public ViewResult Index()
         {

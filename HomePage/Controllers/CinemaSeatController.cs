@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using HomePage.Models;
 using HomePage.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using HomePage.Infrastructure;
 
 namespace HomePage.Controllers
 {
     public class CinemaSeatController : Controller
     {
-        private IStoreRepository repository;
-
-        public CinemaSeatController(IStoreRepository repo)
+        private readonly IStoreRepository repository;
+        private readonly StoreDbContext context;
+        //public int totalPrice = 0;
+        public CinemaSeatController(IStoreRepository repo, StoreDbContext _context)
         {
             repository = repo;
+            context = _context;
         }
 
         public ViewResult Index(int MovieID,int CinemaHallID,int ShowID)
@@ -32,15 +35,23 @@ namespace HomePage.Controllers
             };
             return View(model);
         }
-
-        //public JsonResult totalPrice(int Seattype)
-        //{
-
-
-
-        //}
-
-
-
+        public ListSeat ListSeat { get; set; }
+        public IActionResult AddSeat(int Id)
+        {
+            CinemaSeat seat = context.CinemaSeats.Find(Id);
+            ListSeat = HttpContext.Session.GetJson<ListSeat>("ticket") ?? new ListSeat();
+            ListSeat.CheckboxAdd(seat);
+            HttpContext.Session.SetJson("ticket", ListSeat);
+            return Redirect(Request.Headers["Referer"].ToString());
+        }
+        public IActionResult RemoveSeat(int Id)
+        {
+            CinemaSeat seat = context.CinemaSeats.Find(Id);
+            ListSeat = HttpContext.Session.GetJson<ListSeat>("ticket") ?? new ListSeat();
+            ListSeat.CheckboxRemove(seat);
+            HttpContext.Session.SetJson("ticket", ListSeat);
+            var ListSeat1 = HttpContext.Session.GetJson<ListSeat>("ticket");
+            return Redirect(Request.Headers["Referer"].ToString());
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace PageAdmin.Controllers
         public int PageSize = 20;
 
         // GET: Shops
-        public async Task<IActionResult> Index(string category, int productPage = 1)
+        public IActionResult Index(string category, int productPage = 1)
         {
             ShopListViewModel shopList = new ShopListViewModel
             {
