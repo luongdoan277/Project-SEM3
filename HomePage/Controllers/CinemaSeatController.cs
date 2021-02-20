@@ -33,12 +33,6 @@ namespace HomePage.Controllers
             return View(model);
         }
 
-        public JsonResult totalPrice(int Seattype)
-        {
-
-
-
-        }
 
 
 
