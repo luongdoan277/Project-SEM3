@@ -33,6 +33,7 @@ namespace HomePage
                   (Configuration["ConnectionStrings:ABCDMall"]);
               }
               );
+            services.AddSession();
             services.AddScoped<IStoreRepository, EFStoreRepository>();
 
         }
@@ -53,15 +54,16 @@ namespace HomePage
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("Home",
-                   "/",
-                   new { Controller = "Home", action = "Index" });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute("Shops",
                    "Shops",
@@ -93,6 +95,9 @@ namespace HomePage
                   new { Controller = "FeedBack", action = "Index" });
 
                 endpoints.MapControllerRoute("CinemaSeat",
+                  "CinemaSeat/CinemaHallID={CinemaHallID}",
+                  new { Controller = "CinemaSeat", action = "Index" });
+                endpoints.MapControllerRoute("Seat",
                   "CinemaSeat/CinemaHallID={CinemaHallID}",
                   new { Controller = "CinemaSeat", action = "Index" });
 

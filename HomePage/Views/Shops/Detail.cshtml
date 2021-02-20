@@ -2,21 +2,23 @@
 
 @foreach (var p in Model.Medias)
 {
-<section class="slide__shop">
-    <img src="~/images/@p.Url" alt="" />
-    <div class="slide__shop-content">
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
-        <h3>@p.Shops.ShopName</h3>
-        <div class="shop__info">
-            <div class="date-info">@p.Shops.ShopOpenTime</div>
-            <div class="category-info">
-                <span>|</span>
-               @p.Shops.ShopContact
+    <section class="slide__shop">
+        <img src="~/images/@p.Url" alt="" />
+        <div class="slide__shop-content">
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+            <h3>@p.Shops.ShopName</h3>
+            <div class="shop__info">
+                <div class="date-info">@p.Shops.ShopOpenTime</div>
+                <div class="category-info">
+                    <span>|</span>
+                    @p.Shops.ShopContact
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 }
+@foreach (var p in Model.Products)
+{
     <section class="shop">
         <div class="container">
             <div class="row">
@@ -63,3 +65,4 @@
             </div>
         </div>
     </section>
+}
