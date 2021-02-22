@@ -35,6 +35,8 @@ namespace HomePage.Controllers
             };
             return View(model);
         }
+
+
         public ListSeat ListSeat { get; set; }
         public IActionResult AddSeat(int Id)
         {

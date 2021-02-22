@@ -9,38 +9,47 @@
                     <div class="row">
                         <div class="col-md-12">
                             <ul class="links-list">
-                                <li><a href="">Trang chủ </a><span> > </span></li>
-                                <li><a href="">Đặt vé </a> <span> > </span></li>
-                                <li><a href="">(Tên phim)</a></li>
+                                <li><a asp-action="index" asp-controller="Home">Home Page </a><span> > </span></li>
+                                <li><a href="">Book Tickets</a></li>
                             </ul>
                         </div>
                         <div class="col-md-12 limit">
                             <span>
-                                Theo quy định của cục điện ảnh, phim này không dành cho khán
-                                giả dưới 13 tuổi.
+                                It can be said that this is the "number 1" choice of many people because Beta Media is the publisher of many famous films both at home and abroad. A system with many theaters, chestnut price is also an advantage that not all theaters have. It can be said that this is the "number 1" choice of many people because Galaxy is the publisher of many movies. famous both at home and abroad. A system with many theaters, chestnut price is also an advantage that not all theaters have.
+
                             </span>
                         </div>
                         <div class="col-md-12">
                             <div class="row seats">
                                 <div class="col-md-3 seat-icon">
                                     <img src="~/image/seat-buy-normal.png" alt="" />
-                                    <span>Ghế đã bán</span>
+                                    <span>
+                                        Seats sold
+                                    </span>
                                 </div>
                                 <div class="col-md-3 seat-icon">
                                     <img src="~/image/seat-process-normal.png" alt="" />
-                                    <span>Ghế đã bán</span>
+                                    <span>
+                                        Selected chair
+                                    </span>
                                 </div>
                                 <div class="col-md-3 seat-icon">
                                     <img src="~/image/seat-set-normal.png" alt="" />
-                                    <span>Ghế đã bán</span>
+                                    <span>
+                                        Seat reservation
+                                    </span>
                                 </div>
                                 <div class="col-md-3 seat-icon">
                                     <img src="~/image/seat-select-normal.png" alt="" />
-                                    <span>Ghế đã bán</span>
+                                    <span>
+                                        Chairs are kept
+                                    </span>
                                 </div>
                                 <div class="col-md-3 seat-icon">
                                     <img src="~/image/seat-unselect-normal.png" alt="" />
-                                    <span>Ghế đã bán</span>
+                                    <span>
+                                        Empty seat
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +102,7 @@
                                             <img src="~/image/seat-unselect-normal.png" alt="" />
                                         </div>
                                         <div class="col-md-6 col-9 seat-des">
-                                            <p>Ghế thường</p>
+                                            <p>Normal Seat</p>
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +112,7 @@
                                             <img src="~/image/seat-unselect-vip.png" alt="" />
                                         </div>
                                         <div class="col-md-6 col-9 seat-des">
-                                            <p>Ghế VIP</p>
+                                            <p>V.I.P Seat</p>
                                         </div>
                                     </div>
                                 </div>
@@ -113,14 +122,14 @@
                                             <img src="~/image/seat-unselect-double.png" alt="" />
                                         </div>
                                         <div class="col-md-6 col-9 seat-des">
-                                            <p>Ghế đôi</p>
+                                            <p>Double Seat</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12 seat-type">
                                     <div class="row">
                                         <div class="col-md-12 col-12 total-title">
-                                            <span>Tổng tiền</span>
+                                            <span>Total Price</span>
                                         </div>
                                         <div class="col-md-12 col-12 total-price">
                                             <input type="text" id="TotalPrice" name="price" style="border: none; font-size: 20px; text-align: right; " value="$0" disabled />
@@ -142,7 +151,9 @@
                                     </div>
                                     <div class="col-md-6">
                                         <a href="" style="font-weight: bold;text-transform: uppercase;font-size: 14px;color:#1786C3;">@p.Movies.Title</a>
-                                        <p>2D Phụ đề</p>
+                                        <p>
+                                            2D subtitles
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +162,7 @@
                                     <li>
                                         <div class="row">
                                             <div class="col-md-6 title-tickit">
-                                                <i class="fas fa-tags"></i>Thể loại
+                                                <i class="fas fa-tags"></i>Gerne
                                             </div>
                                             <div class="col-md-6">
                                                 <span class="content-tickit">@p.Movies.Genre </span>
@@ -177,19 +188,19 @@
                                     <li>
                                         <div class="row">
                                             <div class="col-md-6 title-tickit"><i class="fas fa-university"></i>Cinema</div>
-                                            <div class="col-md-6"><span class="content-tickit">Beta Thái Nguyên</span></div>
+                                            <div class="col-md-6"><span class="content-tickit">Beta Cineplex</span></div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="row">
-                                            <div class="col-md-6 title-tickit"><i class="far fa-calendar-alt"></i>Start Times</div>
+                                            <div class="col-md-6 title-tickit"><i class="far fa-calendar-alt"></i>Times</div>
                                             <div class="col-md-6"><span class="content-tickit">@p.StartTime</span></div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="row">
                                             <div class="col-md-6 title-tickit"><i class="far fa-clock"></i>Start Times</div>
-                                            <div class="col-md-6"><span class="content-tickit">@p.StartTime</span></div>
+                                            <div class="col-md-6"><span class="content-tickit">@p.StartTime.TimeOfDay</span></div>
                                         </div>
                                     </li>
                                     <li>

@@ -9,6 +9,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\images\2fae0ecc-62fa-4110-afe2-3a626604fd7d_Vans.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\37c665e3-37ab-41b1-a36c-bc900ac1bf11_Oyshio.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\872e3935-a43b-4e8d-828c-6b64bbc4a2d8_Cafe-Har-00915-uai-1601x800.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\8ff8412f-3b03-4e3f-96f6-a6dd5465880f_apple_nso-bangkok_ratchaprasong_07282020-1-uai-2000x2000.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\b63f6674-49ef-4c59-be7d-81cd247eb2e6_Familly.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\images\logo.svg" />
   </ItemGroup>
 
@@ -176,6 +184,10 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\images\b2970f1b-9b44-4b9c-bc9e-4790d48d96d1_edelkochen.jpeg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\ba610e58-8f41-483b-b824-c0150fa0b046_The-North-Face-02534-uai-1056x1056.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
