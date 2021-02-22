@@ -83,6 +83,10 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\380dc155-c696-4cdd-be82-f4c038178ef4_Screen-Shot-2562-09-27-at-00.00.32-uai-856x856.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\3b8fbf5b-a5dc-4117-9369-eb0f5386acca_gojoy.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -159,7 +163,19 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\9af0b8da-909f-4346-941f-4753de4ea683_Screen-Shot-2562-09-26-at-23.20.52-uai-966x966.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\9b77ade6-719f-40f8-a0a9-40e24b734dc4_The-North-Face-02534-uai-1056x1056.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\a234c9e3-9466-4f41-97a0-e7cffe5d1863_media_images_2020_12_02_untitled-1-182422-021220-86.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\b0c9afc7-ffc1-40c1-ba8e-385500ef6e8b_Cafe-Har-00915-uai-1601x800.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -176,6 +192,10 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\images\BackgroundLogin.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\bba357e9-abe0-45c8-b714-193c35ea0784_Screen-Shot-2562-09-30-at-18.38.19-uai-1503x751.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -204,6 +224,10 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\images\d5699741-9b55-46dc-88ce-1de32be96532_pexels-photo-3605345.jpeg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\d5bb0da1-ad50-48d1-98ec-50790e150573_babybotte-6195-1-uai-1309x1309.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -251,7 +275,7 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\images\f1814032-0eeb-44a6-bb87-b564705f465e_Screen-Shot-2562-09-30-at-18.38.19-uai-1503x751.jpg">
+    <Content Update="wwwroot\images\fe139f7b-c3e3-4676-a38e-ea129c0dc88a_apple_nso-bangkok_ratchaprasong_07282020-1-uai-2000x2000.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
