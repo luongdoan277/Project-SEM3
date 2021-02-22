@@ -35,12 +35,8 @@ namespace HomePage.Controllers
             };
             return View(model);
         }
-<<<<<<< HEAD
 
 
-
-
-=======
         public ListSeat ListSeat { get; set; }
         public IActionResult AddSeat(int Id)
         {
@@ -59,6 +55,5 @@ namespace HomePage.Controllers
             var ListSeat1 = HttpContext.Session.GetJson<ListSeat>("ticket");
             return Redirect(Request.Headers["Referer"].ToString());
         }
->>>>>>> f4b1bedcc0cf36da1f384fab8f791c045136c5c7
     }
 }

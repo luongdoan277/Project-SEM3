@@ -1,63 +1,38 @@
 ﻿@model ContentListViewModel
 
+
 <div class="slider">
     <div class="slides">
         <div class="slide">
             <a href="">
-<<<<<<< HEAD
                 <img src="~/image/apple.jpg" alt="">
                 @*<div class="slide__content">
                         <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
                     </div>*@
-=======
-                <img src="~/image/Final-hilight-banner_0005.jpg" alt="">
-                @*<div class="slide__content">
-                    <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
-                </div>*@
->>>>>>> f4b1bedcc0cf36da1f384fab8f791c045136c5c7
             </a>
         </div>
         <div class="slide">
             <a href="">
-<<<<<<< HEAD
                 <img src="~/image/Final-hilight-banner_0006.jpg" alt="">
                 @*<div class="slide__content">
                         <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
                     </div>*@
-=======
-                <img src="~/image/Final-hilight-banner_0003.jpg" alt="">
-                @*<div class="slide__content">
-                    <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
-                </div>*@
->>>>>>> f4b1bedcc0cf36da1f384fab8f791c045136c5c7
             </a>
         </div>
         <div class="slide">
             <a href="">
-<<<<<<< HEAD
                 <img src="~/image/Final-hilight-banner_0005.jpg" alt="">
                 @*<div class="slide__content">
                         <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
                     </div>*@
-=======
-                <img src="~/image/Final-hilight-banner_0006.jpg" alt="">
-                @*<div class="slide__content">
-                    <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
-                </div>*@
->>>>>>> f4b1bedcc0cf36da1f384fab8f791c045136c5c7
             </a>
         </div>
         <div class="slide">
             <a href="">
                 <img src="~/image/banner_high_street-1.jpg" alt="">
                 @*<div class="slide__content">
-<<<<<<< HEAD
                         <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
                     </div>*@
-=======
-                    <p>Lorem ipsum dolor sit,<br> amet consectetur adipisicing elit.</p>
-                </div>*@
->>>>>>> f4b1bedcc0cf36da1f384fab8f791c045136c5c7
             </a>
         </div>
     </div>
@@ -109,30 +84,7 @@
                             </a>
                         </div>
                     }
-                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Apple"))
-                    {
-                        <div class="col-md-6 banner">
-                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
-                                <img src="~/images/@p.Url" alt="" />
-                                <div class="banner__content">
-                                    <p>@p.Shops.ShopName</p>
-                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                </div>
-                            </a>
-                        </div>
-                    }                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Q&B"))
-
-                    {<div class="col-md-6 banner">
-                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
-                                <img src="~/images/@p.Url" alt="" />
-                                <div class="banner__content">
-                                    <p>@p.Shops.ShopName</p>
-                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
-                                </div>
-                            </a>
-                        </div>
-
-                    }                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Screen Shot"))
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "OySho"))
 
                     {
                         <div class="col-md-4 banner">
@@ -156,7 +108,7 @@
                                 </div>
                             </a>
                         </div>
-                    }                     @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "BabyBotte"))
+                    }                     @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Family"))
 
                     {
                         <div class="col-md-4 banner">
@@ -168,6 +120,31 @@
                                 </div>
                             </a>
                         </div>
+                    }
+
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Apple"))
+                    {
+                        <div class="col-md-6 banner">
+                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
+                                <img src="~/images/@p.Url" alt="" />
+                                <div class="banner__content">
+                                    <p>@p.Shops.ShopName</p>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                                </div>
+                            </a>
+                        </div>
+                    }                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Vans"))
+
+                    {<div class="col-md-6 banner">
+                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
+                                <img src="~/images/@p.Url" alt="" />
+                                <div class="banner__content">
+                                    <p>@p.Shops.ShopName</p>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                                </div>
+                            </a>
+                        </div>
+
                     }
                 </div>
             </div>
