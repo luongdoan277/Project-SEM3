@@ -118,7 +118,11 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+<<<<<<< HEAD
     <Content Update="wwwroot\images\37c665e3-37ab-41b1-a36c-bc900ac1bf11_Oyshio.png">
+=======
+    <Content Update="wwwroot\images\380dc155-c696-4cdd-be82-f4c038178ef4_Screen-Shot-2562-09-27-at-00.00.32-uai-856x856.png">
+>>>>>>> 2705e69d472ab12b490450500c484fe084b1535f
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -302,6 +306,7 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+<<<<<<< HEAD
     <Content Update="wwwroot\images\9800ade4-931e-4377-afb5-b83c9cbcdcbb_pexels-photo-812871.jpeg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -311,6 +316,13 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\images\a1353961-eb9a-4033-b1c2-456cb80a6672_bsn_website_homepage_banner_mobile-Stores-869.png">
+=======
+    <Content Update="wwwroot\images\9af0b8da-909f-4346-941f-4753de4ea683_Screen-Shot-2562-09-26-at-23.20.52-uai-966x966.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\9b77ade6-719f-40f8-a0a9-40e24b734dc4_The-North-Face-02534-uai-1056x1056.jpg">
+>>>>>>> 2705e69d472ab12b490450500c484fe084b1535f
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -318,6 +330,7 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+<<<<<<< HEAD
     <Content Update="wwwroot\images\a2ee08cc-e30a-4149-941f-e8587c7b669f_apple_nso-bangkok_outdoor-plaza_07282020.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -335,6 +348,9 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\images\af48620e-7e3c-4375-9183-888798ce28c5_The-North-Face-02542.jpg">
+=======
+    <Content Update="wwwroot\images\b0c9afc7-ffc1-40c1-ba8e-385500ef6e8b_Cafe-Har-00915-uai-1601x800.jpg">
+>>>>>>> 2705e69d472ab12b490450500c484fe084b1535f
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -362,11 +378,15 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+<<<<<<< HEAD
     <Content Update="wwwroot\images\bb08198f-625b-4a2d-83aa-0d87fd026a01_IMG0087-copy.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\images\bcaeaf10-803d-4515-9aec-ac44668a30db_210225-icon-hp-hero-d-1.jpg">
+=======
+    <Content Update="wwwroot\images\bba357e9-abe0-45c8-b714-193c35ea0784_Screen-Shot-2562-09-30-at-18.38.19-uai-1503x751.jpg">
+>>>>>>> 2705e69d472ab12b490450500c484fe084b1535f
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -407,6 +427,10 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\images\d5699741-9b55-46dc-88ce-1de32be96532_pexels-photo-3605345.jpeg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\d5bb0da1-ad50-48d1-98ec-50790e150573_babybotte-6195-1-uai-1309x1309.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -470,6 +494,7 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+<<<<<<< HEAD
     <Content Update="wwwroot\images\ece78dee-59bb-4945-ade6-e04cc7277b35_ap0463-full.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -479,6 +504,9 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\images\f1814032-0eeb-44a6-bb87-b564705f465e_Screen-Shot-2562-09-30-at-18.38.19-uai-1503x751.jpg">
+=======
+    <Content Update="wwwroot\images\fe139f7b-c3e3-4676-a38e-ea129c0dc88a_apple_nso-bangkok_ratchaprasong_07282020-1-uai-2000x2000.jpg">
+>>>>>>> 2705e69d472ab12b490450500c484fe084b1535f
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
