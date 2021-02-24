@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using PayPal.Core;
 using PayPal.v1.Payments;
 using BraintreeHttp;
+using System.Text;
 
 namespace HomePage.Controllers
 {
@@ -66,6 +67,8 @@ namespace HomePage.Controllers
         [HttpPost]
         public async Task<IActionResult> checkoutTicket(string Name, string Email, int ShowID, double Price)
         {
+            Random random = new Random();
+            int Number = random.Next();
             UserBooking user = new UserBooking
             {
                 UserBookingName = Name,
@@ -74,10 +77,10 @@ namespace HomePage.Controllers
             await context.UserBookings.AddAsync(user);
             await context.SaveChangesAsync();
             var list = HttpContext.Session.GetJson<ListSeat>("ticket");
-            var i = list.Items.Count;
+            //var i = list.Items.Count;
             Booking booking = new Booking
             {
-                NumberOfSeat = i,
+                NumberOfSeat = Number,
                 Timestamp = DateTime.Now,
                 Status = 0,
                 UserBookingID = user.UserBookingID,
@@ -116,6 +119,7 @@ namespace HomePage.Controllers
                     CinemaSeatID = seat.CinemaSeatID,
                 };
             }
+
             return Redirect(url);
         }
         public async Task<string> PaypalPayment(double total)
