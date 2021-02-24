@@ -96,7 +96,7 @@
                                 </div>
                             </a>
                         </div>
-                    }                     @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Cafe Har"))
+                    }                     @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Apple"))
 
                     {
                         <div class="col-md-4 banner">
@@ -122,7 +122,7 @@
                         </div>
                     }
 
-                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Apple"))
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Cafe Har"))
                     {
                         <div class="col-md-6 banner">
                             <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
@@ -183,7 +183,7 @@
                 </a>
             </div>
         }
-        @foreach (var p in Model.Medias.Where(m => m.ShopID == 9))
+        @foreach (var p in Model.Medias.Where(m => m.ShopID == 15))
         {
             <div class="col-md-5 col-6 col-sm-6 zones__item">
                 <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID">

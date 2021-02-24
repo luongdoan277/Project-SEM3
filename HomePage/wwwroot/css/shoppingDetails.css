@@ -3,7 +3,7 @@
     height: 30rem;
     overflow: hidden;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 11rem;
 }
 
 .slide__shop > img{
@@ -56,9 +56,11 @@
 .shop{
     margin-top: 30px;
 }
-
+.shop__des-infor > p{
+    font-weight: 300;
+}
 .shop__img {
-    margin-bottom: 40px;
+    margin-bottom: 11rem;
 }
 .shop__img > img{
     width: 100%;
@@ -70,8 +72,12 @@
     padding: 20px;
     margin-bottom: 20px;
 }
-.shop__des{
-    margin-bottom: 50px;
+
+    .shop__infor > p {
+        font-weight: 300;
+    }
+    .shop__des{
+    margin-bottom:11rem;
 }
 .shop__des-img > img{
     width: 100%;

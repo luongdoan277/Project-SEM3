@@ -1,29 +1,53 @@
 ﻿@model ContentListViewModel
 
 
-    <section class="slide-gallery"></section>
-    <section class="gallery-content">
-        <div class="gallery-container">
-            <div class="row">
-                <div class="col-md-12 list-gallery">
-                    @foreach (var p in Model.Medias)
-                    {
-                        <div class="col-md-5 col-6 gallery">
-                            <div class="row">
-                                <div class="col-md-12 img-gallery">
-                                    <img src="~/images/@p.Url"
-                                         alt="" />
-                                </div>
-                                <div class="col-md-12 des-gallery">
-                                    <p>@p.Shops.ShopOpenTime</p>
-                                    <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID">
-                                        @p.Shops.ShopName
-                                    </a>
-                                </div>
+<div class="floor-map">
+    <div class="floors-container">
+        <ul class="floors">
+            <li class="floors__item">BaseMent 1</li>
+            <li class="floors__item">G Floor</li>
+            <li class="floors__item">2ND Floor</li>
+            <li class="floors__item">3RD Floor</li>
+            <li class="floors__item">4TH Floor</li>
+        </ul>
+        <div class="img-floors">
+            <img class="active-img" src="../image/c1.jpeg" alt="">
+            <img src="~/image/c2.jpg" alt="">
+            <img src="~/image/c3.jpg" alt="">
+            <img src="~/image/c4.jpg" alt="">
+            <img src="~/image/c5.jpg" alt="">
+        </div>
+        <div class="close-map">
+            <p><i class="fas fa-times"></i></p>
+        </div>
+    </div>
+</div>
+<section class="view-map">
+    <p class="mall-map"> View Mall Map</p>
+</section>
+<section class="gallery-content">
+    <div class="gallery-container">
+        <div class="row">
+            <div class="col-md-12 list-gallery">
+                @foreach (var p in Model.Medias)
+                {
+                    <div class="col-md-5 col-6 gallery">
+                        <div class="row">
+                            <div class="col-md-12 img-gallery">
+                                <img src="~/images/@p.Url"
+                                     alt="" />
+                            </div>
+                            <div class="col-md-12 des-gallery">
+                                <p><i class="fas fa-phone"></i>: @p.Shops.ShopContact</p>
+                                <p><i class="far fa-clock"></i>: @p.Shops.ShopOpenTime</p>
+                                <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID">
+                                    @p.Shops.ShopName
+                                </a>
                             </div>
                         </div>
-                    }
-                </div>
+                    </div>
+                }
             </div>
         </div>
-    </section>
+    </div>
+</section>

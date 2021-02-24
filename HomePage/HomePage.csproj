@@ -9,11 +9,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\images\0232dc87-6b60-4af4-b675-0dac7385f3c0_Cafe-Har-00915-500x333.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\1ce27116-279c-4989-bd95-6ff3462b34fa_learn3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\25aebd01-bd84-4595-a69d-5d0c2e009a49_apple_nso-bangkok_freestanding-displays_07282020-1024x775.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\263b94b4-3e4d-4c5b-9e34-a407239f52ce_learn2.jpg" />
     <_ContentIncludedByDefault Remove="wwwroot\images\2fae0ecc-62fa-4110-afe2-3a626604fd7d_Vans.png" />
     <_ContentIncludedByDefault Remove="wwwroot\images\37c665e3-37ab-41b1-a36c-bc900ac1bf11_Oyshio.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\4135d4f6-703a-4505-b159-0a1ed06094cb_jacket-pie0247_1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\54703584-e175-4f27-87e9-199807e2219c_170139Cstandard.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\5c3ff212-ff42-47a8-93f1-2ea4e9140a7f_168697Cstandard.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\62a0332d-5b7b-485f-b3f8-d9c42c2254e4_01WiczpInfEy7owWMb0Ss9U-4..1601558699.jpg" />
     <_ContentIncludedByDefault Remove="wwwroot\images\872e3935-a43b-4e8d-828c-6b64bbc4a2d8_Cafe-Har-00915-uai-1601x800.jpg" />
     <_ContentIncludedByDefault Remove="wwwroot\images\8ff8412f-3b03-4e3f-96f6-a6dd5465880f_apple_nso-bangkok_ratchaprasong_07282020-1-uai-2000x2000.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\903edaa2-a57d-4e75-8013-5a088aaad540_0_fFzYitUK_a2d2d2a0a4d6279c9d120b363a286424ae120134.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\a79b3fc8-d8fd-4cce-982f-5b2153cc8bd8_1-3.jpg" />
     <_ContentIncludedByDefault Remove="wwwroot\images\b63f6674-49ef-4c59-be7d-81cd247eb2e6_Familly.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\efd0110e-482e-469c-98bf-b8763a058d16_cua-hang-an-phuoc.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +47,10 @@
 
   <ItemGroup>
     <Content Update="wwwroot\images\004f28d1-5c7f-4dd2-a23a-1e2bcce039ed_pexels-photo-2463700.jpeg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\0232dc87-6b60-4af4-b675-0dac7385f3c0_Cafe-Har-00915-500x333.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -71,6 +86,14 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\25aebd01-bd84-4595-a69d-5d0c2e009a49_apple_nso-bangkok_freestanding-displays_07282020-1024x775.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\25b50940-425c-4997-9c6c-f6e1b1967136_Screen-Shot-2562-09-30-at-18.37.53-768x512.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\25dfd97e-1b05-4e62-a58f-5798d1014fd6_anphuoc.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -79,11 +102,31 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\2f5328bd-9ac5-4da1-8136-bbd9cbae9b75_DSC_7452-1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\2fae0ecc-62fa-4110-afe2-3a626604fd7d_Vans.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\337808d3-0719-4b5d-9fca-473b76e2fa65_vans3.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\35558db4-6f8e-465e-9a67-562b831d0867_TranPhuong.PNG">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\37c665e3-37ab-41b1-a36c-bc900ac1bf11_Oyshio.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\3b8fbf5b-a5dc-4117-9369-eb0f5386acca_gojoy.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\3e7d8b8f-81d0-4b50-8608-c39fa4cff42a_apple_nso-bangkok_ratchaprasong_07282020-1-500x333.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -107,7 +150,23 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\4a0cf99c-8e8d-4044-acce-5172ec530b98_Cafe-Har-00916-1024x682.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\4deda9ca-5da5-41cb-a561-7219dd9c4350_Screen-Shot-2562-09-30-at-18.38.19-1024x554.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\500.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\54703584-e175-4f27-87e9-199807e2219c_170139Cstandard.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\5c3ff212-ff42-47a8-93f1-2ea4e9140a7f_168697Cstandard.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -115,7 +174,19 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\62a0332d-5b7b-485f-b3f8-d9c42c2254e4_01WiczpInfEy7owWMb0Ss9U-4..1601558699.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\67478784-6c0a-4371-a8ec-e2a5180381ba_vans2.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\6a2c5c13-0e33-4baf-a07d-c7920479a703_americanlab.jpeg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\6a90720a-5cd2-46ac-8a27-e43eda7da613_mg_3118-a.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -127,7 +198,23 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\6d7f74ef-fd8e-4b5d-a2c0-1d75f1c24155_Screen-Shot-2562-09-26-at-21.39.27.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\6e0ea3c3-180e-4277-b551-0399a91c3705_169525Cstandard.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\724fb345-c05a-4b16-927b-25463dd52662_1519.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\742e7a38-c151-408c-9f77-1cfbf806a6c9_Screen-Shot-2562-09-30-at-18.37.28-500x328.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\773522c3-0f5d-4fad-b10e-3125e9523cb0_Cafe-Har-00920-1024x683.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -135,7 +222,23 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\7ad5995a-28c8-44a0-b321-e238ef87f082_DSC_7452-1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\7e824628-4036-459e-b4d0-d8b628ef77cf_kingbbq.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\8018f6f8-2c9a-4acc-aba7-4417231ce96b_thumb-1794428356_Eshab6Zi_0229613a148b6fcdc891e74288e68cec121f3941_360x360.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\84a665c4-40cd-4b18-9cb9-b59b59b734ff_The-North-Face-02535-1024x683.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\8646765b-397c-45a6-a0e4-9d7d432daeca_king-bbq.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -143,7 +246,31 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\872e3935-a43b-4e8d-828c-6b64bbc4a2d8_Cafe-Har-00915-uai-1601x800.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\87a63eea-a7ff-48e3-9109-588491a7c74d_learn1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\8c4b0165-a805-4f24-907c-f114932b0c7d_hotpot.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\8c6bad60-7a4e-4b9d-921f-ca9f9001f457_thumb-245452257_03r7iZSy_0d154f98466f6a17491dbebf26fb785a760c1c68_360x360.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\8ff8412f-3b03-4e3f-96f6-a6dd5465880f_apple_nso-bangkok_ratchaprasong_07282020-1-uai-2000x2000.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\903edaa2-a57d-4e75-8013-5a088aaad540_0_fFzYitUK_a2d2d2a0a4d6279c9d120b363a286424ae120134.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\913cbf9e-6498-4f0a-9077-d73940744067_Screen-Shot-2562-09-26-at-21.37.56.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -155,11 +282,59 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\92a85117-9d5e-4664-991a-37cdc5ad1c19_fzn_0469_ll.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\95a0b2ee-d633-4ecc-97c5-be90ce2c29d0_IMG0087-copy.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\95e18dfa-88f7-4362-9b6c-4d9b41701498_885267693411_l.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\96fa497b-0d3b-4266-8e4d-3449076c1086_0_ZezFpAdU_4ab5c5051d0e89a8d4a6132eda63053beed7ee3e.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\973d426b-17d7-4fc0-ad01-39248a24e1c2_chileno.jpeg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\9800ade4-931e-4377-afb5-b83c9cbcdcbb_pexels-photo-812871.jpeg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\a115b033-ed47-437f-b615-c172df10983e_banner-web-before-offical.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\a1353961-eb9a-4033-b1c2-456cb80a6672_bsn_website_homepage_banner_mobile-Stores-869.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\a234c9e3-9466-4f41-97a0-e7cffe5d1863_media_images_2020_12_02_untitled-1-182422-021220-86.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\a2ee08cc-e30a-4149-941f-e8587c7b669f_apple_nso-bangkok_outdoor-plaza_07282020.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\a575309f-c78c-41d2-995f-fb78f5e02257_tải xuống.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\a79b3fc8-d8fd-4cce-982f-5b2153cc8bd8_1-3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\acc32780-b868-4313-a571-769d83e0ddfa_Screen-Shot-2562-09-26-at-21.36.31.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\af48620e-7e3c-4375-9183-888798ce28c5_The-North-Face-02542.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -171,11 +346,27 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\b55b7168-4253-4d97-800c-f33ce769ac84_vans1.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\b63f6674-49ef-4c59-be7d-81cd247eb2e6_Familly.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\ba610e58-8f41-483b-b824-c0150fa0b046_The-North-Face-02534-uai-1056x1056.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\images\BackgroundLogin.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\bb08198f-625b-4a2d-83aa-0d87fd026a01_IMG0087-copy.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\bcaeaf10-803d-4515-9aec-ac44668a30db_210225-icon-hp-hero-d-1.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -191,6 +382,10 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\cea58ad2-7d11-4ae6-aa88-26b6bbd92731_Chuck-70-banner-web-home.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\cf1dc801-6e9c-4384-ae6f-06b5ac6067d6_media_images_2021_01_14_22-01-2021-nam-sinh-so-11-152247-140121-98.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -200,6 +395,14 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="wwwroot\images\d21781fa-cfe0-4a04-a2b1-69bb68a96609_pexels-photo-3605345.jpeg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\d339cbc5-12fd-4828-a988-ed7ef05082e0_NF0A3YU2_T6N_hero.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\d5563e15-6bb4-4560-95c5-2f1992b81426_IMG_4577.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -231,7 +434,19 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\dc1f0dd3-fc16-4d58-aae4-69f0e2d8d2b0_IMG0074.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\de864712-8221-418a-9772-6693c1915400_media_images_2021_01_13_tay-xa-thu-101423-130121-82.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\ded21f50-04eb-452d-b89d-6a2c66d0422b_NF0A4QZF_RG1_hero.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\e43c4d1f-fc19-4567-ac38-7a191e2832fa_The-North-Face-02549-1024x683.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -243,6 +458,10 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\e827f7d5-c2b1-4c9a-8d63-e40b0af42658_IMG0074.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\e97f9a11-b744-4325-b191-cbaf12ac41f5_media_images_2020_12_02_untitled-1-182422-021220-86.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -251,7 +470,23 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Update="wwwroot\images\ece78dee-59bb-4945-ade6-e04cc7277b35_ap0463-full.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\efd0110e-482e-469c-98bf-b8763a058d16_cua-hang-an-phuoc.jpeg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\images\f1814032-0eeb-44a6-bb87-b564705f465e_Screen-Shot-2562-09-30-at-18.38.19-uai-1503x751.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\f9a5aaa2-bc59-45c1-a71c-00bb65e93491_NF0A3Y3N_Q31_hero.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\fae8995f-419c-4d76-b7b0-35809075388a_originals-fw20-adicolor-november-m-glp-tc-d_tcm212-565477.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

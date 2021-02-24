@@ -1,6 +1,30 @@
-.gallery-content{
-    background: #f7f7f7;
+
+
+.view-map{
+    padding: 0 72px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
+
+    .view-map > p {
+        margin-top: 30px;
+        padding: 9px 30px;
+        font-weight: 300;
+        text-transform: uppercase;
+        background: #fff;
+        border: 1px solid;
+        letter-spacing: 8px;
+        transition: 0.3s;
+    }
+        .view-map > p:hover {
+            background: #3870b4;
+            color: #fff;
+        }
+
+/*    .gallery-content {
+    background: #f7f7f7;
+}*/
 
 .gallery-container{
     padding: 60px;
@@ -16,7 +40,7 @@
     margin: 0 auto;
     margin-bottom: 50px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
-    height: 27rem;
+    /*height: 27rem;*/
 }
 .img-gallery{
     padding: 0;
@@ -36,6 +60,89 @@
     font-size: 13px;
 }
 
-.des-gallery > a{
-    font-size: 15px;
+    .des-gallery > a {
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+
+
+/* Floor map */
+.floor-map {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    min-height: 100px;
+    background-color: hsla(0,0%,100%,.89);
+    padding: 15rem 0;
+    display: none;
 }
+
+.active-map {
+    display: block;
+}
+
+.close-map {
+    position: absolute;
+    top: 10rem;
+    right: 4rem;
+    font-size: 44px;
+    cursor: pointer;
+}
+
+.un-active-map {
+    display: none;
+}
+
+.mall-map {
+    cursor: pointer;
+}
+
+.floors-container {
+    width: 80%;
+    background: #ffffff;
+    margin: 0 auto;
+    padding: 12px;
+    box-shadow: 2px 0 13px 0 #727070;
+}
+
+.floors {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.floors__item {
+    padding: 9px 30px;
+    border: 1px solid #d1d1d1;
+    cursor: pointer;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+.img-floors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .img-floors > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: none;
+        transition: 0.3s all;
+    }
+
+        .img-floors > img.active-img {
+            display: block;
+        }

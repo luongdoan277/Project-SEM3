@@ -14,9 +14,9 @@ namespace HomePage.Controllers
 {
     public class FeedBackController : Controller
     {
-        //private readonly IStoreRepository repository;
+        private readonly IStoreRepository repository;
 
-        private readonly StoreDbContext _context;
+        private readonly StoreDbContext context;
 
         //public FeedBackController(IStoreRepository repo)
         //{
@@ -29,22 +29,22 @@ namespace HomePage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(Feedback model)
+        public async Task<IActionResult> Index(string FullName,string Email,string Message,string NumberPhone,string Subject)
         {
-            var newFeedback = new Feedback()
+            Feedback feedback = new Feedback
             {
-                FullName = model.FullName,
-                Email = model.Email,
-                Message = model.Message,
-                NumberPhone = model.NumberPhone,
-                Subject = model.Subject,
-                FeedbackDate = DateTime.UtcNow
+                FullName = FullName,
+                Email = Email,
+                Message = Message,
+                NumberPhone = NumberPhone,
+                Subject = Subject,
+                FeedbackDate = DateTime.Now
             };
 
-            _context.Feedbacks.Add(newFeedback);
-            _context.SaveChanges();
+             await context.Feedbacks.AddAsync(feedback);
+            await context.SaveChangesAsync();
 
-            return View(model);
+            return View();
         }
     }
 }
