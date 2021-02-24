@@ -135,7 +135,6 @@ a:hover {
             padding: 10px;
             cursor: pointer;
             text-decoration: none;
-            text-transform: uppercase;
             transition: .3s all;
         }
 
