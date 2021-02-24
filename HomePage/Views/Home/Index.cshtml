@@ -1,6 +1,5 @@
 ﻿@model ContentListViewModel
 
-
 <div class="slider">
     <div class="slides">
         <div class="slide">
@@ -72,7 +71,6 @@
                         </div>
                     }
                     @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Jim Thompson"))
-
                     {
                         <div class="col-md-8 banner">
                             <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
@@ -95,9 +93,10 @@
                                 </div>
                             </a>
                         </div>
-                    }                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Q&B"))
-
-                    {<div class="col-md-6 banner">
+                    }
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Q&B"))
+                    {
+                        <div class="col-md-6 banner">
                             <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
                                 <img src="~/images/@p.Url" alt="" />
                                 <div class="banner__content">
@@ -106,10 +105,20 @@
                                 </div>
                             </a>
                         </div>
-                    }                     @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Family"))
-
-                    }                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Screen Shot"))
-
+                    }
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Family"))
+                    {
+                        <div class="col-md-6 banner">
+                            <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
+                                <img src="~/images/@p.Url" alt="" />
+                                <div class="banner__content">
+                                    <p>@p.Shops.ShopName</p>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Screen Shot"))
                     {
                         <div class="col-md-4 banner">
                             <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
@@ -120,9 +129,8 @@
                                 </div>
                             </a>
                         </div>
-
-                    }                     @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Cafe Har"))
-
+                    }
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "Cafe Har"))
                     {
                         <div class="col-md-4 banner">
                             <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">
@@ -133,8 +141,8 @@
                                 </div>
                             </a>
                         </div>
-                    }                     @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "BabyBotte"))
-
+                    }
+                    @foreach (var p in Model.Medias.Where(m => m.Shops.ShopName == "BabyBotte"))
                     {
                         <div class="col-md-4 banner">
                             <a asp-action="Detail" asp-controller="Shops" asp-route-ShopID="@p.ShopID" class="banner__links">

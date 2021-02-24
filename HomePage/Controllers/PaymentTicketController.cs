@@ -88,7 +88,7 @@ namespace HomePage.Controllers
             };
             await context.Bookings.AddAsync(booking);
             await context.SaveChangesAsync();
-            string url = await PaypalPayment(Price);
+            string url = await PaypalPayment(Price, booking, ShowID);
             if (url != null)
             {
                 booking.Status = 1;
@@ -118,11 +118,13 @@ namespace HomePage.Controllers
                     Price = p,
                     CinemaSeatID = seat.CinemaSeatID,
                 };
+                await context.ShowSeats.AddAsync(showSeat);
+                await context.SaveChangesAsync();
             }
-
             return Redirect(url);
+            //return RedirectToAction("Booking","Alert",booking);
         }
-        public async Task<string> PaypalPayment(double total)
+        public async Task<string> PaypalPayment(double total, Booking booking, int showid)
         {
             var environment = new SandboxEnvironment(configuration["PayPal:clientId"], configuration["PayPal:secret"]);
             var client = new PayPalHttpClient(environment);
@@ -144,7 +146,7 @@ namespace HomePage.Controllers
                 RedirectUrls = new RedirectUrls()
                 {
                     CancelUrl = configuration["PayPal:cancelUrl"],
-                    ReturnUrl = configuration["PayPal:returnUrl"]
+                    ReturnUrl = "https://localhost:44365/Alert/Booking?booking="+booking.BookingID+"&show="+showid
                 },
                 Payer = new Payer()
                 {

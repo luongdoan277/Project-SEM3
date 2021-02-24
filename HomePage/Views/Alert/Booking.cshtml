@@ -1,0 +1,78 @@
+﻿@model ContentListViewModel
+@using System.Globalization;
+
+<section class="container">
+    <div class="text-center">
+        <p>Code</p>
+        <br />
+        @foreach (var p in Model.Bookings)
+        {
+            <p style="padding: 20px 30px; background-color: #4cdb5c; width:300px; margin: 0 auto 10px;">@p.NumberOfSeat</p>
+        }
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            <div>
+                <h3>Show</h3>
+                @foreach (var m in Model.Shows)
+                {
+                    <p>Name: @m.Movie.Title</p>
+                    <p>Date: @m.Date.ToString("dddd, MMMM dd yyyy", DateTimeFormatInfo.InvariantInfo)</p>
+                    <p>Time: @m.StartTime.ToString("t") - @m.EndTime.ToString("t")</p>
+                }
+            </div>
+            <div>
+                <h3>User</h3>
+                @foreach (var u in Model.Bookings)
+                {
+                    <p>Name: @u.UserBooking.UserBookingName</p>
+                    <p>Email: @u.UserBooking.UserBookingEmail</p>
+                }
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Number seat
+                        </th>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ShowSeats)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CinemaSeat.SeatNumber)
+                            </td>
+                            <td>
+                                @if (item.CinemaSeat.Type == 1)
+                                {
+                                    <p>Basic</p>
+                                }
+                                @if (item.CinemaSeat.Type == 2)
+                                {
+                                    <p>Vip</p>
+                                }
+                                @if (item.CinemaSeat.Type == 3)
+                                {
+                                    <p>Couple</p>
+                                }
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
