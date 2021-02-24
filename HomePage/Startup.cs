@@ -1,4 +1,5 @@
 using HomePage.Models;
+using HomePage.Services.Email;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +34,9 @@ namespace HomePage
                   (Configuration["ConnectionStrings:ABCDMall"]);
               }
               );
+            services.AddOptions();
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            //services.AddTransient<ISendMailService, SendMailService>();
             services.AddSession();
             services.AddScoped<IStoreRepository, EFStoreRepository>();
 

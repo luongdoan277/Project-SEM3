@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using PayPal.Core;
 using PayPal.v1.Payments;
 using BraintreeHttp;
+using System.Text;
 
 namespace HomePage.Controllers
 {
@@ -66,6 +67,8 @@ namespace HomePage.Controllers
         [HttpPost]
         public async Task<IActionResult> checkoutTicket(string Name, string Email, int ShowID, double Price)
         {
+            Random random = new Random();
+            int Number = random.Next();
             UserBooking user = new UserBooking
             {
                 UserBookingName = Name,
@@ -74,10 +77,10 @@ namespace HomePage.Controllers
             await context.UserBookings.AddAsync(user);
             await context.SaveChangesAsync();
             var list = HttpContext.Session.GetJson<ListSeat>("ticket");
-            var i = list.Items.Count;
+            //var i = list.Items.Count;
             Booking booking = new Booking
             {
-                NumberOfSeat = i,
+                NumberOfSeat = Number,
                 Timestamp = DateTime.Now,
                 Status = 0,
                 UserBookingID = user.UserBookingID,
@@ -85,7 +88,7 @@ namespace HomePage.Controllers
             };
             await context.Bookings.AddAsync(booking);
             await context.SaveChangesAsync();
-            string url = await PaypalPayment(Price);
+            string url = await PaypalPayment(Price, booking, ShowID);
             if (url != null)
             {
                 booking.Status = 1;
@@ -115,10 +118,13 @@ namespace HomePage.Controllers
                     Price = p,
                     CinemaSeatID = seat.CinemaSeatID,
                 };
+                await context.ShowSeats.AddAsync(showSeat);
+                await context.SaveChangesAsync();
             }
             return Redirect(url);
+            //return RedirectToAction("Booking","Alert",booking);
         }
-        public async Task<string> PaypalPayment(double total)
+        public async Task<string> PaypalPayment(double total, Booking booking, int showid)
         {
             var environment = new SandboxEnvironment(configuration["PayPal:clientId"], configuration["PayPal:secret"]);
             var client = new PayPalHttpClient(environment);
@@ -140,7 +146,7 @@ namespace HomePage.Controllers
                 RedirectUrls = new RedirectUrls()
                 {
                     CancelUrl = configuration["PayPal:cancelUrl"],
-                    ReturnUrl = configuration["PayPal:returnUrl"]
+                    ReturnUrl = "https://localhost:44365/Alert/Booking?booking="+booking.BookingID+"&show="+showid
                 },
                 Payer = new Payer()
                 {
