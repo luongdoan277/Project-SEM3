@@ -5,7 +5,7 @@
         <div class="container-fuild">
             <div class="page-title">
                 <div class="title__dashboard">
-                    <h1>Shops</h1>
+                    <h3>Shops</h3>
                 </div>
                 <div class="title__dashboardchild">
                     <a href="#">Ecommerce</a>
@@ -14,17 +14,12 @@
                 </div>
             </div>
             <p>
-                <a asp-action="Create" class="btn btn-info">Create New</a>
+                <a asp-action="Create" class="btn create-product">Create New</a>
             </p>
             <div class="product-content">
                 <div class="filter">
                     <div>
-                        <h5 style="
-                        font-size: 14px;
-                        color: #495057;
-                        margin-bottom: 1rem;
-                        font-weight: bold;
-                      ">
+                        <h5>
                             <a style="color:black" asp-action="Index" asp-controller="Shops"
                                asp-route-category=""
                                asp-route-productPage="1">
@@ -59,65 +54,115 @@
                             </form>
                         </div>
                     </div>
-                    <div class="clothes__content">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        Name
-                                    </th>
-                                    <th>
-                                        Location
-                                    </th>
-                                    <th>
-                                        OpenTime
-                                    </th>
-                                    <th>
-                                        Contact
-                                    </th>
-                                    <th>
-                                        Categories
-                                    </th>
-                                    <th>
-                                        Status
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model.Shop)
-                                {
-                                    <tr>
-                                        <td>
-                                            <a asp-action="Edit" asp-route-id="@item.ShopID">@Html.DisplayFor(modelItem => item.ShopName)</a>
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ShopLocation)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ShopOpenTime)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ShopContact)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Categories.CategoryName)
-                                        </td>
-                                        <td>
-                                            <a asp-action="Edit" asp-route-id="@item.ShopID">Edit</a> |
-                                            <a asp-action="Details" asp-route-id="@item.ShopID">Details</a> |
-                                            <a asp-action="Delete" asp-route-id="@item.ShopID">Delete</a>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                        <div page-model="@Model.PagingInfo" page-action="Index"
-                             page-classes-enabled="true"
-                             page-class="btn" page-class-normal="btn-outline-dark"
-                             page-class-selected="btn-primary"
-                             class="btn-group pull-right m-1">
+                    <div class="card-content">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Latest Transaction</h4>
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Location</th>
+                                                <th>OpenTime</th>
+                                                <th>Contact</th>
+                                                <th>Categories</th>
+                                                <th>Method</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.Shop)
+                                            {
+                                                <tr>
+                                                    <td> <a asp-action="Edit" asp-route-id="@item.ShopID">@Html.DisplayFor(modelItem => item.ShopName)</a></td>
+
+                                                    <td>@Html.DisplayFor(modelItem => item.ShopLocation)</td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ShopOpenTime)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ShopContact)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Categories.CategoryName)
+                                                    </td>
+                                                    <td style="display: flex;justify-content:space-between;align-items: center">
+                                                        <a class="view-detail" asp-action="Details" asp-route-id="@item.ShopID">Detail</a>
+                                                        <a class="success-brd"asp-action="Edit" asp-route-id="@item.ShopID">Edit</a>
+                                                        <a class="warning-brd" asp-action="Delete" asp-route-id="@item.ShopID">Delete</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+
+
+
+
+                    @*<div class="clothes__content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Location
+                                        </th>
+                                        <th>
+                                            OpenTime
+                                        </th>
+                                        <th>
+                                            Contact
+                                        </th>
+                                        <th>
+                                            Categories
+                                        </th>
+                                        <th>
+                                            Status
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Shop)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <a asp-action="Edit" asp-route-id="@item.ShopID">@Html.DisplayFor(modelItem => item.ShopName)</a>
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ShopLocation)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ShopOpenTime)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ShopContact)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Categories.CategoryName)
+                                            </td>
+                                            <td>
+                                                <a asp-action="Edit" asp-route-id="@item.ShopID">Edit</a> |
+                                                <a asp-action="Details" asp-route-id="@item.ShopID">Details</a> |
+                                                <a asp-action="Delete" asp-route-id="@item.ShopID">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <div page-model="@Model.PagingInfo" page-action="Index"
+                                 page-classes-enabled="true"
+                                 page-class="btn" page-class-normal="btn-outline-dark"
+                                 page-class-selected="btn-primary"
+                                 class="btn-group pull-right m-1">
+                            </div>
+                        </div>*@
                     @*<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
                         page-class="btn" page-class-normal="btn-outline-dark"
                         page-class-selected="btn-primary" class="btn-group pull-right mt-3"></div>*@
@@ -126,3 +171,5 @@
         </div>
     </div>
 </div>
+
+

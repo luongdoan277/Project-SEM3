@@ -12,6 +12,7 @@ namespace HomePage.Models
         public int? ShopID { get; set; }
         public int? MovieID { get; set; }
         public int? ProductID { get; set; }
+
         public virtual Shop Shops { get; set; }
         public virtual Movie Movies { get; set; }
         public virtual Product Products { get; set; }
