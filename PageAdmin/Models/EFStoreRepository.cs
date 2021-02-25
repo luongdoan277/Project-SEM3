@@ -18,5 +18,7 @@ namespace PageAdmin.Models
         public IQueryable<Category> Categories => context.Categories;
         public IQueryable<Media> Medias => context.Medias;
         public IQueryable<Movie> Movies => context.Movies;
+        public IQueryable<Booking> Bookings => context.Bookings;
+        public IQueryable<ShowSeat> ShowSeats => context.ShowSeats;
     }
 }

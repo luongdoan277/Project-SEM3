@@ -1,4 +1,4 @@
-﻿@model PageAdmin.Models.Booking
+﻿@model PageAdmin.Models.ViewModels.BookingListViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -7,43 +7,64 @@
 
 <h1>Details</h1>
 
-<div>
-    <h4>Booking</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NumberOfSeat)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NumberOfSeat)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Timestamp)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Timestamp)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserBooking)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserBooking.UserBookingID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Shows)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Shows.ShowID)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.BookingID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Booking</h4>
+        <hr />
+    </div>
+    <div class="col-lg-5">
+        @foreach (var b in Model.Bookings)
+        {
+            <p>Code booking: @b.NumberOfSeat</p>
+            <p>Time booking: @b.Timestamp.ToString("f")</p>
+            <p>Movie: @b.Shows.Movie.Title</p>
+            <p>Time: @b.Shows.StartTime.ToString("t") - @b.Shows.EndTime.ToString("t")</p>
+            <p>Name: @b.UserBooking.UserBookingName</p>
+            <p>Email: @b.UserBooking.UserBookingEmail</p>
+        }
+    </div>
+    <div class="col-lg-7">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Number seat
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ShowSeats)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CinemaSeat.SeatNumber)
+                        </td>
+                        <td>
+                            @if (item.CinemaSeat.Type == 1)
+                            {
+                                <p>Basic</p>
+                            }
+                            @if (item.CinemaSeat.Type == 2)
+                            {
+                                <p>Vip</p>
+                            }
+                            @if (item.CinemaSeat.Type == 3)
+                            {
+                                <p>Couple</p>
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

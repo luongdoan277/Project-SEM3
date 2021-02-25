@@ -18,10 +18,10 @@ namespace HomePage.Controllers
 
         private readonly StoreDbContext context;
 
-        //public FeedBackController(IStoreRepository repo)
-        //{
-        //    repository = repo;
-        //}
+        public FeedBackController(StoreDbContext _context)
+        {
+            context = _context;
+        }
 
         public ViewResult Index()
         {
@@ -41,8 +41,8 @@ namespace HomePage.Controllers
                 FeedbackDate = DateTime.Now
             };
 
-             await context.Feedbacks.AddAsync(feedback);
-            await context.SaveChangesAsync();
+            context.Add(feedback);
+            context.SaveChanges();
 
             return View();
         }

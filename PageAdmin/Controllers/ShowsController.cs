@@ -84,6 +84,7 @@ namespace PageAdmin.Controllers
                 return NotFound();
             }
             ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "Title", show.MovieID);
+            ViewData["CinemaHallID"] = new SelectList(_context.CinemaHalls, "CinemaHallID", "Name");
             return View(show);
         }
 
@@ -92,7 +93,7 @@ namespace PageAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ShowID,Date,StartTime,EndTime,CinemaHellID,MovieID")] Show show)
+        public async Task<IActionResult> Edit(int id, [Bind("ShowID,Date,StartTime,EndTime,CinemaHallID,MovieID")] Show show)
         {
             if (id != show.ShowID)
             {
@@ -119,6 +120,7 @@ namespace PageAdmin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CinemaHallID"] = new SelectList(_context.CinemaHalls, "CinemaHallID", "Name");
             ViewData["MovieID"] = new SelectList(_context.Movies, "MovieID", "Title", show.MovieID);
             return View(show);
         }

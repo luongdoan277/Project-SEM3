@@ -7,43 +7,50 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PageAdmin.Data;
 using PageAdmin.Models;
+using PageAdmin.Models.ViewModels;
 
 namespace PageAdmin.Controllers
 {
     public class BookingsController : Controller
     {
         private readonly PageAdminContext _context;
+        private readonly IStoreRepository repository;
 
-        public BookingsController(PageAdminContext context)
+        public BookingsController(PageAdminContext context, IStoreRepository _repository)
         {
             _context = context;
+            repository = _repository;
         }
 
         // GET: Bookings
         public async Task<IActionResult> Index()
         {
-            var pageAdminContext = _context.Bookings.Include(b => b.Shows).Include(b => b.UserBooking);
+            var pageAdminContext = _context.Bookings.Include(b => b.Shows).Include(b => b.UserBooking).OrderByDescending(m => m.BookingID);
             return View(await pageAdminContext.ToListAsync());
         }
 
         // GET: Bookings/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
-            var booking = await _context.Bookings
-                .Include(b => b.Shows)
+            BookingListViewModel model = new BookingListViewModel
+            {
+                Bookings = repository.Bookings
+                .Include(b => b.Shows.Movie)
                 .Include(b => b.UserBooking)
-                .FirstOrDefaultAsync(m => m.BookingID == id);
-            if (booking == null)
+                .Where(m => m.BookingID == id),
+                ShowSeats = repository.ShowSeats.Where(m => m.BookingID == id).Include(m => m.CinemaSeat)
+            };
+            
+            if (model == null)
             {
                 return NotFound();
             }
 
-            return View(booking);
+            return View(model);
         }
 
         //// GET: Bookings/Create

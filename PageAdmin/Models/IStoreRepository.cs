@@ -11,5 +11,7 @@ namespace PageAdmin.Models
         IQueryable<Movie> Movies { get; }
         IQueryable<Media> Medias { get; }
         IQueryable<Category> Categories { get; }
+        IQueryable<Booking> Bookings { get; }
+        IQueryable<ShowSeat> ShowSeats { get; }
     }
 }
