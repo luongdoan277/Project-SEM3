@@ -9,83 +9,95 @@
 
 <h4>Movie</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+
+<div class="container-fuild">
+    <div class="page-title">
+        <div class="title__dashboard">
+            <p>Create Shop</p>
+        </div>
+        <div class="title__dashboardchild">
+            <a href="#">Ecommerce</a>
+            <span>/</span>
+            <p>Product</p>
+        </div>
+    </div>
+    <div class="add-product">
+        <h4 class="add-product__title">Basic Information</h4>
+        <p class="add-product__desc">Fill all information below</p>
         <form asp-action="Edit" enctype="multipart/form-data" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="MovieID" />
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Trailer" class="control-label"></label>
-                <input asp-for="Trailer" class="form-control" />
-                <span asp-validation-for="Trailer" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Director" class="control-label"></label>
-                <input asp-for="Director" class="form-control" />
-                <span asp-validation-for="Director" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cast" class="control-label"></label>
-                <input asp-for="Cast" class="form-control" />
-                <span asp-validation-for="Cast" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Duration" class="control-label"></label>
-                <input asp-for="Duration" class="form-control" />
-                <span asp-validation-for="Duration" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Language" class="control-label"></label>
-                <input asp-for="Language" class="form-control" />
-                <span asp-validation-for="Language" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReleaseDate" class="control-label"></label>
-                <input asp-for="ReleaseDate" class="form-control" />
-                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Country" class="control-label"></label>
-                <input asp-for="Country" class="form-control" />
-                <span asp-validation-for="Country" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Genre" class="control-label"></label>
-                <input asp-for="Genre" class="form-control" />
-                <span asp-validation-for="Genre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Image</label>
-                <div class="custom-file">
-                    <input name="file" type="file" class="custom-file-input" id="customFile">
-                    <label class="custom-file-label" for="customFile">Choose file</label>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="hidden" asp-for="MovieID" />
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Title"></label>
+                        <input type="text"
+                               asp-for="Title"
+                               class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description"></label>
+                        <input type="text"
+                               asp-for="Description"
+                               class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Trailer"></label>
+                        <input type="text"
+                               asp-for="Trailer"
+                               class="form-control" />
+                        <span asp-validation-for="Trailer" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Director"></label>
+                        <input type="text" asp-for="Director" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Duration"></label>
+                        <input type="text" asp-for="Duration" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Language"></label>
+                        <input type="text" asp-for="Language" class="form-control" />
+                    </div>
+                    
                 </div>
-                @*<span asp-validation-for="Media" class="text-danger"></span>*@
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Genre"></label>
+                        <input type="text" asp-for="Genre" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Cast"></label>
+                        <input type="text" asp-for="Cast" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ReleaseDate"></label>
+                        <input type="text" asp-for="ReleaseDate" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Country"></label>
+                        <input type="text" asp-for="Country" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Status"></label>
+                        <input type="text" asp-for="Status" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Image</label>
+                        <div class="custom-file">
+                            <input name="file" type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                        @*<span asp-validation-for="Media" class="text-danger"></span>*@
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+            <button type="submit" class="create-product">Save Changes</button>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

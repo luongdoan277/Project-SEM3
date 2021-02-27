@@ -8,41 +8,51 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="create-product">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryIcon)
-            </th>
-            <th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryIcon)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CategoryID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CategoryID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategoryID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="card-content">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Latest Transaction</h4>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CategoryName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CategoryImage)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CategoryIcon)
+
+                            </th>
+                            <th>Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.CategoryName</td>
+                                <td>
+                                    <img src="@item.CategoryImage" style="height: 50px" />
+                                </td>
+                                <td>
+                                    @item.CategoryIcon
+                                </td>
+                                <td style="display: flex;justify-content:space-between;align-items: center">
+                                    <a class="view-detail" asp-action="Details" asp-route-id="@item.CategoryID">Detail</a>
+                                    <a class="success-brd" asp-action="Edit" asp-route-id="@item.CategoryID">Edit</a>
+                                    <a class="warning-brd" asp-action="Delete" asp-route-id="@item.CategoryID">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

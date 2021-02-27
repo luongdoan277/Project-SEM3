@@ -10,28 +10,50 @@
 <div>
     <h4>Category</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryImage)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryImage)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryIcon)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryIcon)
-        </dd>
-    </dl>
+
+    <div class="card-content">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Latest Transaction</h4>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CategoryName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CategoryImage)
+
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CategoryIcon)
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(model => model.CategoryName)
+                                </td>
+
+                                <td><img src="@Model.CategoryImage" alt="Alternate Text" style="height: 70px" /></td>
+                                <td>
+                                    @Html.DisplayFor(model => model.CategoryIcon)
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div style="padding: 21px; margin-top: 10px">
+            <a asp-action="Edit" asp-route-id="@Model.CategoryID" class="btn btn-danger">Edit</a>
+            <a asp-action="Index" class="create-product" style="margin-left: 20px">Back to List</a>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.CategoryID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

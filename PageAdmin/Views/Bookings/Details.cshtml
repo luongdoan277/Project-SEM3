@@ -13,58 +13,67 @@
         <hr />
     </div>
     <div class="col-lg-5">
-        @foreach (var b in Model.Bookings)
-        {
-            <p>Code booking: @b.NumberOfSeat</p>
-            <p>Time booking: @b.Timestamp.ToString("f")</p>
-            <p>Movie: @b.Shows.Movie.Title</p>
-            <p>Time: @b.Shows.StartTime.ToString("t") - @b.Shows.EndTime.ToString("t")</p>
-            <p>Name: @b.UserBooking.UserBookingName</p>
-            <p>Email: @b.UserBooking.UserBookingEmail</p>
-        }
+        <div class="card">
+            <div class="card-body">
+                @foreach (var b in Model.Bookings)
+                {
+                    <p>Code booking: @b.NumberOfSeat</p>
+                    <p>Time booking: @b.Timestamp.ToString("f")</p>
+                    <p>Movie: @b.Shows.Movie.Title</p>
+                    <p>Time: @b.Shows.StartTime.ToString("t") - @b.Shows.EndTime.ToString("t")</p>
+                    <p>Name: @b.UserBooking.UserBookingName</p>
+                    <p>Email: @b.UserBooking.UserBookingEmail</p>
+                }
+            </div>
+        </div>
     </div>
     <div class="col-lg-7">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        Number seat
-                    </th>
-                    <th>
-                        Type
-                    </th>
-                    <th>
-                        Price
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.ShowSeats)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CinemaSeat.SeatNumber)
-                        </td>
-                        <td>
-                            @if (item.CinemaSeat.Type == 1)
-                            {
-                                <p>Basic</p>
-                            }
-                            @if (item.CinemaSeat.Type == 2)
-                            {
-                                <p>Vip</p>
-                            }
-                            @if (item.CinemaSeat.Type == 3)
-                            {
-                                <p>Couple</p>
-                            }
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Price)
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        <div class="card-content">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Latest Transaction</h4>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Number Seat</th>
+                                    <th>Type</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.ShowSeats)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CinemaSeat.SeatNumber)
+                                        </td>
+                                        <td>
+                                            @if (item.CinemaSeat.Type == 1)
+                                            {
+                                                <p>Basic</p>
+                                            }
+                                            @if (item.CinemaSeat.Type == 2)
+                                            {
+                                                <p>Vip</p>
+                                            }
+                                            @if (item.CinemaSeat.Type == 3)
+                                            {
+                                                <p>Couple</p>
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Price)
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
