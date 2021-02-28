@@ -6,7 +6,54 @@
 }
 
 <h1>Index</h1>
-<table class="table">
+<div class="card-content">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Latest Transaction</h4>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NumberOfSeat</th>
+                            <th>Timestamp</th>
+                            <th>Status</th>
+                            <th>UserBooking</th>
+                            <th>Shows</th>
+                            <th>Methods</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@Html.DisplayFor(modelItem => item.NumberOfSeat)</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Timestamp)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserBooking.UserBookingName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Shows.Date)
+                                </td>
+                                <td style="display: flex;justify-content:space-between;align-items: center">
+                                    <a class="view-detail" asp-action="Details" asp-route-id="@item.BookingID">Detail</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -28,27 +75,28 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfSeat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Timestamp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserBooking.UserBookingID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Shows.ShowID)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.BookingID">Details</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfSeat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Timestamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserBooking.UserBookingID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Shows.ShowID)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.BookingID">Details</a>
+                </td>
+            </tr>
+        }
     </tbody>
-</table>
+</table>*@

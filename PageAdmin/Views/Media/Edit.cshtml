@@ -9,7 +9,7 @@
 
 <h4>Media</h4>
 <hr />
-<div class="row">
+<!--<div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -17,9 +17,9 @@
             <div class="form-group">
                 <label class="control-label">Image</label>
                 <br />
-                <img src="~/images/@Model.Url"/>
+                <img src="~/images/@Model.Url"/>-->
                 @*<span asp-validation-for="Url" class="text-danger"></span>*@
-            </div>
+            <!--</div>
             <div class="form-group">
                 <label asp-for="ShopID" class="control-label"></label>
                 <select asp-for="ShopID" class="form-control" asp-items="ViewBag.ShopID"></select>
@@ -40,11 +40,59 @@
             </div>
         </form>
     </div>
+</div>-->
+
+
+<div class="container-fuild">
+    <div class="page-title">
+        <div class="title__dashboard">
+            <p>Edit Media</p>
+        </div>
+        <div class="title__dashboardchild">
+            <a href="#">Ecommerce</a>
+            <span>/</span>
+            <p>Media</p>
+        </div>
+    </div>
+    <div class="add-product">
+        <h4 class="add-product__title">Basic Information</h4>
+        <p class="add-product__desc">Fill all information below</p>
+        <form asp-action="Edit">
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="hidden" asp-for="MediaID" />
+                    <div class="form-group">
+                        <label class="control-label">Image</label>
+                        <br />
+                        <img src="~/images/@Model.Url" />
+                        @*<span asp-validation-for="Url" class="text-danger"></span>*@
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ShopID"></label>
+                        <select asp-for="ShopID" class="form-control product-category" asp-items="ViewBag.ShopID"></select>
+                        <span asp-validation-for="ShopID" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="MovieID"></label>
+                        <select asp-for="MovieID" class="form-control product-category" asp-items="ViewBag.MovieID"></select>
+                        <span asp-validation-for="MovieID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductID"></label>
+                        <select asp-for="ProductID" class="form-control product-category" asp-items="ViewBag.ProductID"></select>
+                        <span asp-validation-for="ProductID" class="text-danger"></span>
+                    </div>
+
+                </div>
+            </div>
+            <button type="submit" class="create-product">Save Changes</button>
+        </form>
+    </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -8,47 +8,53 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="create-product">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductLike)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Shops)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductLike)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Shops.ShopID)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="card-content">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Latest Transaction</h4>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+                            <th> @Html.DisplayNameFor(model => model.ProductImage)</th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ProductLike)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Shops)
+                            </th>
+                            <th>Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ProductName</td>
+                                <td>
+                                    <img src="~/images/@item.ProductImage" style="height: 50px" />
+                                </td>
+                                <td>
+                                   @item.ProductLike
+                                </td>
+                                <td>
+                                    @item.Shops.ShopName
+                                </td>
+                                <td style="display: flex;justify-content:space-between;align-items: center">
+                                    <a class="view-detail" asp-action="Details" asp-route-id="@item.ProductID">Detail</a>
+                                    <a class="success-brd" asp-action="Edit" asp-route-id="@item.ProductID">Edit</a>
+                                    <a class="warning-brd" asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

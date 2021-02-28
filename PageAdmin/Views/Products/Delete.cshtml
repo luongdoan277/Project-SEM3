@@ -11,36 +11,58 @@
 <div>
     <h4>Product</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductImage)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ProductImage)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductLike)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ProductLike)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Shops)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Shops.ShopID)
-        </dd class>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="ProductID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    <div class="card-content">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Latest Transaction</h4>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ProductImage)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ProductLike)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Shops)
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(model => model.ProductName)
+                                </td>
+
+                                <td><img src="~/images/@Model.ProductImage" alt="Alternate Text" style="height: 70px" /></td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.ProductLike)
+
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.Shops.ShopName)
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div style="padding: 21px; margin-top: 10px">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="ProductID" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a asp-action="Index" class="create-product" style="margin-left: 20px">Back to List</a>
+            </form>
+        </div>
+    </div>
+
 </div>
+
+

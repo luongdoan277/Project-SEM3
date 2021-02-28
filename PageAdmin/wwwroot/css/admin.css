@@ -33,7 +33,7 @@
 }
 
 .filter {
-    width: 25%;
+    width: 19%;
     background: #fff;
     padding: 1.25rem;
     box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
@@ -46,6 +46,7 @@
 
 .product-list {
     list-style: none;
+    padding: 0;
 }
 
     .product-list > li > a {
@@ -67,7 +68,7 @@
         }
 
 .clothes {
-    width: 70%;
+    width: 79%;
 }
 
 .head-clothes {
@@ -141,3 +142,224 @@
                 text-align: center;
                 padding: 12px;
             }
+
+.create-product {
+    padding: .47rem .75rem;
+    background-color: #556ee6;
+    color: #fff;
+    border-radius: .25rem;
+    border: none;
+    outline: none;
+}
+
+.add-product {
+    width: 100%;
+    background-color: #fff;
+    padding: 1.25rem;
+    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
+    border-radius: .25rem;
+}
+
+.add-product__title {
+    font-size: 15px;
+    margin: 0 0 7px 0;
+    font-weight: 600;
+}
+
+.add-product__desc {
+    color: #74788d;
+    margin-bottom: 24px;
+}
+
+.product-category {
+    width: 100%;
+    padding: .375rem .75rem;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #ced4da;
+}
+
+    .product-category:focus {
+        outline: none;
+    }
+
+    .product-category > option {
+        padding: 15px;
+    }
+
+.create-product {
+    padding: .47rem .75rem;
+    background-color: #556ee6;
+    color: #fff;
+    border-radius: .25rem;
+    border: none;
+    outline: none;
+}
+
+    .create-product:hover {
+        background-color: #4d62ce;
+    }
+
+.card-body {
+    background: #fff;
+}
+
+.img-fuild, .img-gallery {
+    width: 100%;
+    height: auto;
+}
+
+.image-preview-admin {
+    list-style: none;
+}
+
+    .image-preview-admin > li {
+    }
+
+.nav-link {
+    margin: 10px 0;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+}
+
+.active-img {
+    background-color: #f6f6f6;
+}
+
+.text-muted {
+    color: #74788d !important;
+}
+
+.sidebar-logo {
+    background: #2a3042 !important;
+    
+}
+
+.logo-text {
+    color: #fff !important;
+}
+
+.sidebar-menu li a {
+    color: #eee !important;
+}
+
+.sidebar-menu {
+    background: #2a3042 !important;
+}
+
+
+.card {
+    box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+    background-color: #fff;
+    border: none !important;
+}
+
+.card-body__left {
+    padding: 1.25rem;
+    display: flex;
+}
+
+.table-responsive > table {
+    width: 100%;
+    color: #495057;
+}
+
+    .table-responsive > table > thead > tr > th {
+        color: #495057;
+        background-color: #f8f9fa;
+        border-color: #eff2f7;
+        padding: 12px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .table-responsive > table > tbody > tr {
+        border-top: 1px solid #eff2f7;
+    }
+
+        .table-responsive > table > tbody > tr > td {
+            text-align: center;
+            padding: 12px;
+            border-top: 1px solid #eff2f7;
+            font-size: 14px;
+        }
+
+            .table-responsive > table > tbody > tr > td > a {
+                text-decoration: none;
+                color: #495057;
+                font-weight: bold;
+            }
+
+.success-brd {
+    padding: 3px 7.2px;
+    color: #34c38f;
+    background-color: rgba(52, 195, 143, 0.18);
+    border-radius: 10rem;
+}
+
+.danger-brd {
+    padding: 3px 7.2px;
+    color: #f46a6a;
+    background-color: rgba(244, 106, 106, 0.18);
+    border-radius: 10rem;
+}
+
+.warning-brd {
+    padding: 3px 7.2px;
+    color: #f1b44c;
+    background-color: rgba(241, 180, 76, 0.18);
+    border-radius: 10rem;
+}
+
+
+
+
+.card__left {
+    width: 100%;
+    min-height: 255px;
+    background: #fff;
+    margin-bottom: 24px;
+    box-shadow: rgba(18, 38, 63, 0.03) 0px 0.75rem 1.5rem;
+}
+
+.card-primary__left {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    display: flex;
+    background: rgba(85, 110, 230, 0.25);
+}
+
+.card-titles {
+    width: 56%;
+    padding: 16px;
+}
+.view-detail {
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 30px;
+    font-size: 0.71094rem;
+    color: #fff !important;
+    background-color: #556ee6;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 30px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(80 80 92);
+    border-radius: 10px;
+}

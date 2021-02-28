@@ -10,46 +10,45 @@
 <div>
     <h4>Shop</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ShopName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ShopName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ShopLocation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ShopLocation)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ShopOpenTime)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ShopOpenTime)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ShopContact)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ShopContact)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ShopAbout)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ShopAbout)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Categories)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Categories.CategoryID)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ShopID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="card-content">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Latest Transaction</h4>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>OpenTime</th>
+                                <th>Contact</th>
+                                <th>Categories</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.ShopName)</td>
+
+                                <td>@Html.DisplayFor(model => model.ShopLocation)</td>
+                                <td>
+                                    @Html.DisplayFor(model => model.ShopOpenTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.ShopContact)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Categories.CategoryName)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div style="padding: 21px; margin-top: 10px">
+            <a asp-action="Edit" asp-route-id="@Model.ShopID" class="btn btn-danger">Edit</a> 
+            <a asp-action="Index" class="create-product" style="margin-left: 20px">Back to List</a>
+        </div>
+    </div>
 </div>
